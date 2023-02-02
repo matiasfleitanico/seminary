@@ -21,6 +21,10 @@ export const usuario = {
             access: [0]
         },
         {
+            email: "seminariopoderdedios@gmail.com",
+            access: [0, 1, 2]
+        },
+        {
             email: "aldanamoiostriz@gmail.com",
             access: [0]
         },
