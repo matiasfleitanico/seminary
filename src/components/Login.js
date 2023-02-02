@@ -33,6 +33,8 @@ export  default function Login() {
                 setError("Su contraseña es incorrecta, intente nuevamente.")
             } else if (error.code === "auth/user-not-found") {
                 setError("Usuario no encontrado")
+            } else if(error.code === "auth/too-many-requests") {
+                setError("Intentó demasiadas veces, intente de nuevo más tarde.")
             }
         }
         
