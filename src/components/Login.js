@@ -29,6 +29,10 @@ export  default function Login() {
                 setError("Correo inválido.")
             } else if(error.code === "auth/email-already-in-use") {
                 setError("Este correo ya está registrado.")
+            } else if (error.code === "auth/wrong-password") {
+                setError("Su contraseña es incorrecta, intente nuevamente.")
+            } else if (error.code === "auth/user-not-found") {
+                setError("Usuario no encontrado")
             }
         }
         
