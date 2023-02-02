@@ -1,0 +1,92 @@
+{
+    "questions": {
+            "questions_1": {
+                "1": {
+                    "question": "¿Cuál de estos países es limítrofe con Rusia?",
+                    "answer_1": "Afganistan",
+                    "answer_2": "Pakistan",
+                    "answer_3": "Letonia",
+                    "correct_answer": "answer_3"
+                },
+                "2": {
+                    "question": "¿Cuál de estos países tiene el color rojo en su bandera?",
+                    "answer_1": "Perú",
+                    "answer_2": "Brasil",
+                    "answer_3": "Venezuela",
+                    "correct_answer": "answer_1"
+                }
+            },
+            "questions_2": {
+                "1": {
+                    "question": "¿Cuál de estos países es limítrofe con Rusia?",
+                    "answer_1": "Afganistan",
+                    "answer_2": "Pakistan",
+                    "answer_3": "Letonia",
+                    "correct_answer": "answer_3"
+                },
+                "2": {
+                    "question": "¿Cuál de estos países tiene el color rojo en su bandera?",
+                    "answer_1": "Perú",
+                    "answer_2": "Brasil",
+                    "answer_3": "Venezuela",
+                    "correct_answer": "answer_1"
+                }
+            },
+            "questions_3": {
+                "1": {
+                    "question": "¿Cuál de estos países es limítrofe con Rusia?",
+                    "answer_1": "Afganistan",
+                    "answer_2": "Pakistan",
+                    "answer_3": "Letonia",
+                    "correct_answer": "answer_3"
+                },
+                "2": {
+                    "question": "¿Cuál de estos países tiene el color rojo en su bandera?",
+                    "answer_1": "Perú",
+                    "answer_2": "Brasil",
+                    "answer_3": "Venezuela",
+                    "correct_answer": "answer_1"
+                }
+            },
+            "questions_4": {
+                "1": {
+                    "question": "¿Cuál de estos países es limítrofe con Rusia?",
+                    "answer_1": "Afganistan",
+                    "answer_2": "Pakistan",
+                    "answer_3": "Letonia",
+                    "correct_answer": "answer_3"
+                },
+                "2": {
+                    "question": "¿Cuál de estos países tiene el color rojo en su bandera?",
+                    "answer_1": "Perú",
+                    "answer_2": "Brasil",
+                    "answer_3": "Venezuela",
+                    "correct_answer": "answer_1"
+                }
+            },
+            "questions_5": {
+                "1": {
+                    "question": "¿Cuál de estos países es limítrofe con Rusia?",
+                    "answer_1": "Afganistan",
+                    "answer_2": "Pakistan",
+                    "answer_3": "Letonia",
+                    "correct_answer": "answer_3"
+                },
+                "2": {
+                    "question": "¿Cuál de estos países tiene el color rojo en su bandera?",
+                    "answer_1": "Perú",
+                    "answer_2": "Brasil",
+                    "answer_3": "Venezuela",
+                    "correct_answer": "answer_1"
+                }
+            }
+        },
+    "users": {
+        "MH5Fv0wU6wZvrhOSz8u7dOf9F4v1":{
+            "points": 0,
+            "answer_1": true,
+            "answer_2": false,
+            "answer_3": false
+        }
+    }
+}
