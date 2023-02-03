@@ -28,6 +28,14 @@ export const usuario = {
             email: "aldanamoiostriz@gmail.com",
             access: [0]
         },
+        {
+            email: "ezekielfleita10@gmail.com",
+            access: [0]
+        },
+        {
+            email: "mai.quintanaaaa@gmail.com",
+            access: [0]
+        },
     ],
     materias: [ 
         {

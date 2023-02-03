@@ -123,6 +123,9 @@ export  default function Identidad() {
             </div>
             <div style={customStyle}>
                 <h1>Tarea</h1>
+                <p style={center}>TAREA: Luego de leer los MÓDULOS I y II - PDF”, la “Biografía de ESDRAS – PDF”, <br />
+                    el “Significado de la palabra CONSAGRAR” y las “Características del líder cristiano” responder el siguiente cuestionario. <br />
+                    <b>IMPORTANTE: sólo se permite enviarla una sola vez.</b> </p>
                 <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSdw7z44T3Zjf5ewFadzhC7Co8CemsFGMtHwiBSA2dPd_haujw/viewform?embedded=true" width="640" height="1376" frameborder="0" marginheight="0" marginwidth="0">Cargando…</iframe>            
             </div>
             <div style={customStyle}>
@@ -131,7 +134,11 @@ export  default function Identidad() {
             </div>
             <div style={customStyle}>
                 <h1>Examen Final</h1>
-                <p></p>
+                <p style={center}>
+                EXAMEN: TENIENDO EN CUENTA los módulos, la video-clase (diagramas y apuntes),  <br />
+                indicar la respuesta correcta!! <br />
+                 <b>IMPORTANTE: sólo se permite enviar el examen una sola vez una sola vez.</b>
+                </p>
                 <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSeQaRFzeHYF5bWnw2G1iTkst6mj0liZtkPEuQMtbmeAiUn7jw/viewform?embedded=true" width="640" height="7139" frameborder="0" marginheight="0" marginwidth="0">Cargando…</iframe>
             </div>
         </div>
