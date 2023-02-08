@@ -90,8 +90,9 @@ export  default function Identidad() {
         <div>
             <div style={customStyle}>
                 <img style={img_1} src={"https://i.imgur.com/QoeAo7L.jpg"}></img>
-                <h1>Identidad y Genética del Avivamiento</h1>
-                <p style={center}> El origen de nuestra identidad y la lucha contra Satanás y el pecado que intentan distorsionarla. Los principios del ADN espiritual que Esdras, Nehemías y otros hombres del AT usaron para originar los grandes avivamientos escriturales. La Biblia y Jesús como modelos únicos de lo que somos, lo que tenemos, lo que podemos ser (propósito); y a dónde vamos (destino)</p>
+                <h1>VINO NUEVO EN ODRES NUEVOS</h1>
+                <p style={center}> 
+El vino nuevo como metáfora de lo que el nuevo pacto hace en el corazón del hombre y cómo su nueva doctrina forma discípulos justificados, sin velo, libres y competentes. La esencia de la copa del nuevo pacto en relación con la ley y la gracia y los beneficios sobre la iglesia de hoy que va hacia la gloria.</p>
             </div>
             <div style={customStyle}>
                 <h1>Módulos</h1>
@@ -101,45 +102,34 @@ export  default function Identidad() {
                 <b>Presiona la imagen corespondiente </b>
                 </p>
                 <div style={content}>
-                    <a style={box} href="https://drive.google.com/file/d/1RTAWXIuU4_C0agP5xZ4kKtJWLRfBDJWz/view" download>            
+                    <a style={box} href="https://drive.google.com/file/d/1xhd88-dQd8EVxLUUA9qW5pHl2NGsgMgf/view" download>            
                         <h2>Módulo 1</h2>
                         <img style={img} src={"https://i.imgur.com/cJ4UvSR.jpg"}></img>
                     </a>
-                    <a style={box} href="https://drive.google.com/file/d/1FEDvzUT7GctKb4MUxdQw3MAqFyu2MZHl/view" download>            
+                    <a style={box} href="https://drive.google.com/file/d/1xPX4DaUrXh9MBnBhDBQalY2gILX5g1IV/view" download>            
                         <h2>Módulo 2</h2>
                         <img style={img} src={"https://i.imgur.com/SwPdQqO.jpg"}></img>
                     </a>
                 </div>
-                <h2>Lecturas complementarias</h2>
-                <a style={box} href="https://drive.google.com/file/d/1v7e9492nT5jqD_imZ-lmact378crEuSz/view" download>            
-                        <h2>Biografía de Esdras</h2>
-                </a>
-                <a style={box} href="https://drive.google.com/file/d/17YhlvszxB3Dy2PQ8HBzXvbS3A2FLzZU3/view" download>            
-                        <h2>Significado de CONSAGRAR</h2>
-                </a>
-                <a style={box} href="https://drive.google.com/file/d/1qOxuLv7tymtwme5FAAZI1Pqu2l6AxBHa/view" download>            
-                        <h2>Caracteríticas del Líder</h2>
-                </a>
             </div>
             <div style={customStyle}>
                 <h1>Tarea</h1>
-                <p style={center}>TAREA: Luego de leer los MÓDULOS I y II - PDF”, la “Biografía de ESDRAS – PDF”, <br />
-                    el “Significado de la palabra CONSAGRAR” y las “Características del líder cristiano” responder el siguiente cuestionario. <br />
-                    <b>IMPORTANTE: sólo se permite enviarla una sola vez.</b> </p>
-                <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSdw7z44T3Zjf5ewFadzhC7Co8CemsFGMtHwiBSA2dPd_haujw/viewform?embedded=true" width="640" height="1376" frameborder="0" marginheight="0" marginwidth="0">Cargando…</iframe>            
+                <p style={center}>TAREA: Luego de leer los MÓDULOS I y II, responder el siguiente cuestionario. <br />
+                <b>IMPORTANTE: sólo se permite enviarla una sola vez.</b> </p>
+                    <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSeLs3FmfOsH9FKZXqdzvc2V6TPOqNeaPSHSLw5Mt1EQDJLgdw/viewform?embedded=true" width="640" height="2088" frameborder="0" marginheight="0" marginwidth="0">Cargando…</iframe>            </div>
+            <div style={customStyle}>
+                <h1>Videoclase I</h1>
+                <iframe width="1280" height="720" src="https://www.youtube.com/embed/N2a-F9346so" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>            
             </div>
             <div style={customStyle}>
-                <h1>Videoclase</h1>
-                <iframe width="1280" height="720" src="https://www.youtube.com/embed/8QqtcQYSJtk" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" ></iframe>
-            </div>
+                <h1>Videoclase II</h1>
+                <iframe width="1280" height="720" src="https://www.youtube.com/embed/Vso67uwCc5M" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>            
+                </div>
             <div style={customStyle}>
                 <h1>Examen Final</h1>
-                <p style={center}>
-                EXAMEN: TENIENDO EN CUENTA los módulos, la video-clase (diagramas y apuntes),  <br />
-                indicar la respuesta correcta!! <br />
-                 <b>IMPORTANTE: sólo se permite enviar el examen una sola vez una sola vez.</b>
+                <p style={center}> <br />
+                 <b>PROXIMAMENTE</b>
                 </p>
-                <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSeQaRFzeHYF5bWnw2G1iTkst6mj0liZtkPEuQMtbmeAiUn7jw/viewform?embedded=true" width="640" height="7139" frameborder="0" marginheight="0" marginwidth="0">Cargando…</iframe>
             </div>
         </div>
     );
