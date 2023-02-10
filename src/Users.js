@@ -33,6 +33,10 @@ export const usuario = {
             access: [0]
         },
         {
+            email: "gabrielvgarcia02@gmail.com",
+            access: [0]
+        },
+        {
             email: "ezekielfleita10@gmail.com",
             access: [0]
         },
