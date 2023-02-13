@@ -8,6 +8,7 @@ import IdentityTwo from "./components/Identity/IdentityTwo";
 import IdentityThree from "./components/Identity/IdentityThree";
 import IdentityFourth from "./components/Identity/IdentityFourth"; 
 import IdentityFiveth from "./components/Identity/IdentityFiveth"; 
+
 import NewWineOne from "./components/NewWine/NewWineOne";
 import NewWineTwo from "./components/NewWine/NewWineTwo";
 import NewWineThree from "./components/NewWine/NewWineThree";
@@ -15,6 +16,13 @@ import NewWineFourth from "./components/NewWine/NewWineFourth";
 import NewWineFiveth from "./components/NewWine/NewWineFiveth"; 
 import NewWineSixth from "./components/NewWine/NewWineSixth"; 
 import NewWine from "./components/NewWinBase";
+
+import HolySpiritOne from "./components/HolySpirit/HolySpiritOne";
+import HolySpiritTwo from "./components/HolySpirit/HolySpiritTwo";
+import HolySpiritThree from "./components/HolySpirit/HolySpiritThree";
+import HolySpiritFourth from "./components/HolySpirit/HolySpiritFourth"; 
+import HolySpiritFiveth from "./components/HolySpirit/HolySpiritFiveth"; 
+import HolySpiritSixth from "./components/HolySpirit/HolySpiritSixth"; 
 import { AuthProvider } from "./context/authContext"
 
 
@@ -75,6 +83,31 @@ function App() {
           <Route path="/vinonuevo/6" element={
           <ProtectedRoute>
             <NewWineSixth/>
+          </ProtectedRoute>} />
+
+          <Route path="/espiritusanto/1" element={
+          <ProtectedRoute>
+            <HolySpiritOne/>
+          </ProtectedRoute>} />
+          <Route path="/espiritusanto/2" element={
+          <ProtectedRoute>
+            <HolySpiritTwo/>
+          </ProtectedRoute>} />
+          <Route path="/espiritusanto/3" element={
+          <ProtectedRoute>
+            <HolySpiritThree/>
+          </ProtectedRoute>} />
+          <Route path="/espiritusanto/4" element={
+          <ProtectedRoute>
+            <HolySpiritFourth/>
+          </ProtectedRoute>} />
+          <Route path="/espiritusanto/5" element={
+          <ProtectedRoute>
+            <HolySpiritFiveth/>
+          </ProtectedRoute>} />
+          <Route path="/espiritusanto/6" element={
+          <ProtectedRoute>
+            <HolySpiritSixth/>
           </ProtectedRoute>} />
 
 

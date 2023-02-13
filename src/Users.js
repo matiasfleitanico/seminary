@@ -2,7 +2,7 @@ export const usuario = {
     alumnos:[
         {
             email: "matiasfleitanico@gmail.com",
-            access: [0, 1]
+            access: [0, 1, 2]
         },
         {
             email: "excelenciafull@gmail.com",
@@ -62,10 +62,10 @@ export const usuario = {
         },
         {
             id:2,
-            title: "Salud Global",
-            description: "Salud Global",
-            link: "https://i.ytimg.com/vi/hryL4tlmO-M/maxresdefault.jpg",
-            path: "global-health"
+            title: "La persona del Espíritu Santo",
+            description: "El vino nuevo como metáfora de lo que el nuevo pacto hace en el corazón del hombre y cómo su nueva doctrina forma discípulos justificados, sin velo, libres y competentes...",
+            link: "https://i.imgur.com/FpU0GdA.jpg",
+            path: "espiritusanto/1"
         },
     ]
 }
