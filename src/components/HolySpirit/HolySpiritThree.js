@@ -189,32 +189,32 @@ export  default function Identidad() {
     return (
         <div style={main}>
             <div style={sidebar}>
-                <a style={box} href="/vinonuevo/1">
+                <a style={box} href="/espiritusanto/1">
                     <div style={button_pressed}>
                         <span style={span_2} class="material-symbols-outlined"> home </span> 
                     </div>
                 </a>
-                <a style={box} href="/vinonuevo/2">
+                <a style={box} href="/espiritusanto/2">
                     <div style={button_pressed}>
                         <span style={span_2} class="material-symbols-outlined"> picture_as_pdf </span> 
                     </div>
                 </a>
-                <a style={box} href="/vinonuevo/3">
+                <a style={box} href="/espiritusanto/3">
                     <div style={button_selected}>
                         <span style={span} class="material-symbols-outlined"> task </span> 
                     </div>
                 </a>
-                <a style={box} href="/vinonuevo/4">
+                <a style={box} href="/espiritusanto/4">
                     <div style={button}>
                         <span style={span_1} class="material-symbols-outlined"> auto_videocam </span> 
                     </div>
                 </a>
-                <a style={box} href="/vinonuevo/5">
+                <a style={box} href="/espiritusanto/5">
                     <div style={button}>
                         <span style={span_1} class="material-symbols-outlined"> auto_videocam </span> 
                     </div>
                 </a>   
-                <a style={box} href="/vinonuevo/6">
+                <a style={box} href="/espiritusanto/6">
                     <div style={button}>
                         <span style={span_1} class="material-symbols-outlined"> preliminary </span> 
                     </div>
@@ -225,7 +225,7 @@ export  default function Identidad() {
                     <h1>Tarea</h1>
                     <p style={center}>TAREA: Luego de leer los MÓDULOS I y II, responder el siguiente cuestionario. <br />
                     <b>IMPORTANTE: sólo se permite enviarla una sola vez.</b> </p>
-                    <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSeLs3FmfOsH9FKZXqdzvc2V6TPOqNeaPSHSLw5Mt1EQDJLgdw/viewform?embedded=true" width="640" height="2088" frameborder="0" marginheight="0" marginwidth="0">Cargando…</iframe>            
+                    <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSdUMsI4UYh4MYPyh9G1aYoCOi_lQnxCplJ_pcLOAjVAB8r5lw/viewform?embedded=true" width="640" height="2180" frameborder="0" marginheight="0" marginwidth="0">Cargando…</iframe>            
                 </div>
             </div>
         </div>

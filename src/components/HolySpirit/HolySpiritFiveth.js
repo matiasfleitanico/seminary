@@ -189,32 +189,32 @@ export  default function Identidad() {
     return (
         <div style={main}>
             <div style={sidebar}>
-            <a style={box} href="/vinonuevo/1">
+            <a style={box} href="/espiritusanto/1">
                     <div style={button_pressed}>
                         <span style={span_2} class="material-symbols-outlined"> home </span> 
                     </div>
                 </a>
-                <a style={box} href="/vinonuevo/2">
+                <a style={box} href="/espiritusanto/2">
                     <div style={button_pressed}>
                         <span style={span_2} class="material-symbols-outlined"> picture_as_pdf </span> 
                     </div>
                 </a>
-                <a style={box} href="/vinonuevo/3">
+                <a style={box} href="/espiritusanto/3">
                     <div style={button_pressed}>
                         <span style={span_1} class="material-symbols-outlined"> task </span> 
                     </div>
                 </a>
-                <a style={box} href="/vinonuevo/4">
+                <a style={box} href="/espiritusanto/4">
                     <div style={button_pressed}>
                         <span style={span_1} class="material-symbols-outlined"> auto_videocam </span> 
                     </div>
                 </a>
-                <a style={box} href="/vinonuevo/5">
+                <a style={box} href="/espiritusanto/5">
                     <div style={button_selected}>
                         <span style={span} class="material-symbols-outlined"> auto_videocam </span> 
                     </div>
                 </a>   
-                <a style={box} href="/vinonuevo/6">
+                <a style={box} href="/espiritusanto/6">
                     <div style={button}>
                         <span style={span_1} class="material-symbols-outlined"> preliminary </span> 
                     </div>
@@ -223,7 +223,7 @@ export  default function Identidad() {
             <div>
                 <div style={customStyle}>
                     <h1>Videoclase II</h1>
-                    <iframe width="1280" height="720" src="https://www.youtube.com/embed/Vso67uwCc5M" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>            
+                    <iframe width="1280" height="720" src="https://www.youtube.com/embed/cLrPSAt6g-w" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>         
                 </div>
             </div>
         </div>

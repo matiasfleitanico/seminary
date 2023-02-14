@@ -189,32 +189,32 @@ export  default function Identidad() {
     return (
         <div style={main}>
             <div style={sidebar}>
-                <a style={box} href="/vinonuevo/1">
+                <a style={box} href="/espiritusanto/1">
                     <div style={button_pressed}>
                         <span style={span_2} class="material-symbols-outlined"> home </span> 
                     </div>
                 </a>
-                <a style={box} href="/vinonuevo/2">
+                <a style={box} href="/espiritusanto/2">
                     <div style={button_selected}>
                         <span style={span} class="material-symbols-outlined"> picture_as_pdf </span> 
                     </div>
                 </a>
-                <a style={box} href="/vinonuevo/3">
+                <a style={box} href="/espiritusanto/3">
                     <div style={button}>
                         <span style={span_1} class="material-symbols-outlined"> task </span> 
                     </div>
                 </a>
-                <a style={box} href="/vinonuevo/4">
+                <a style={box} href="/espiritusanto/4">
                     <div style={button}>
                         <span style={span_1} class="material-symbols-outlined"> auto_videocam </span> 
                     </div>
                 </a>
-                <a style={box} href="/vinonuevo/5">
+                <a style={box} href="/espiritusanto/5">
                     <div style={button}>
                         <span style={span_1} class="material-symbols-outlined"> auto_videocam </span> 
                     </div>
                 </a>   
-                <a style={box} href="/vinonuevo/6">
+                <a style={box} href="/espiritusanto/6">
                     <div style={button}>
                         <span style={span_1} class="material-symbols-outlined"> preliminary </span> 
                     </div>
@@ -230,15 +230,19 @@ export  default function Identidad() {
                 <b>Presiona la imagen corespondiente </b>
                 </p>
                 <div style={content}>
-                    <a style={boxes} href="https://drive.google.com/file/d/1xhd88-dQd8EVxLUUA9qW5pHl2NGsgMgf/view" download>            
+                    <a style={boxes} href="https://drive.google.com/file/d/1X8bchIKi-yvrwdqikpVxZSV_8ebLAJLD/view" download>            
                         <h2>Módulo 1</h2>
                         <img style={img} src={"https://i.imgur.com/cJ4UvSR.jpg"}></img>
                     </a>
-                    <a style={boxes} href="https://drive.google.com/file/d/1xPX4DaUrXh9MBnBhDBQalY2gILX5g1IV/view" download>            
+                    <a style={boxes} href="https://drive.google.com/file/d/1IjyQSpcXAjo_2h8mQVrpuP5hBpm9WidB/view" download>            
                         <h2>Módulo 2</h2>
                         <img style={img} src={"https://i.imgur.com/SwPdQqO.jpg"}></img>
                     </a>
                 </div>
+                <h2>Lecturas complementarias</h2>
+        <a style={boxes} href="https://drive.google.com/file/d/1U6dCYhYw87zEnRtkkEz2I4Ch1YI7VybJ/view" download>            
+                <h2>Buenos dias, Espíritu Santo</h2>
+        </a>
             </div>
         </div>
     </div>
