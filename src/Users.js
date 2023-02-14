@@ -6,7 +6,7 @@ export const usuario = {
     },
     {
       email: "excelenciafull@gmail.com",
-      access: [0, 1],
+      access: [0, 1, 2],
     },
     {
       email: "papas@gmail.com",
@@ -22,7 +22,7 @@ export const usuario = {
     },
     {
       email: "seminariopoderdedios@gmail.com",
-      access: [0, 1],
+      access: [0, 1, 2],
     },
     {
       email: "jonasdavidalarcon@gmail.com",
