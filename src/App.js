@@ -31,6 +31,13 @@ import SpiritWarfareFourth from "./components/SpiritWarfare/SpiritWarfareFourth"
 import SpiritWarfareFiveth from "./components/SpiritWarfare/SpiritWarfareFiveth"; 
 import SpiritWarfareSixth from "./components/SpiritWarfare/SpiritWarfareSixth"; 
 
+import HermeneuticsOne from "./components/Hermeneutics/HermeneuticsOne";
+import HermeneuticsTwo from "./components/Hermeneutics/HermeneuticsTwo";
+import HermeneuticsThree from "./components/Hermeneutics/HermeneuticsThree";
+import HermeneuticsFourth from "./components/Hermeneutics/HermeneuticsFourth"; 
+import HermeneuticsFiveth from "./components/Hermeneutics/HermeneuticsFiveth"; 
+
+
 import { AuthProvider } from "./context/authContext"
 
 
@@ -143,6 +150,30 @@ function App() {
           <Route path="/oracionyguerra/6" element={
           <ProtectedRoute>
             <SpiritWarfareSixth/>
+          </ProtectedRoute>} />
+
+
+
+
+          <Route path="/hermeneutica/1" element={
+          <ProtectedRoute>
+            <HermeneuticsOne/>
+          </ProtectedRoute>} />
+          <Route path="/hermeneutica/2" element={
+          <ProtectedRoute>
+            <HermeneuticsTwo/>
+          </ProtectedRoute>} />
+          <Route path="/hermeneutica/3" element={
+          <ProtectedRoute>
+            <HermeneuticsThree/>
+          </ProtectedRoute>} />
+          <Route path="/hermeneutica/4" element={
+          <ProtectedRoute>
+            <HermeneuticsFourth/>
+          </ProtectedRoute>} />
+          <Route path="/hermeneutica/5" element={
+          <ProtectedRoute>
+            <HermeneuticsFiveth/>
           </ProtectedRoute>} />
 
 

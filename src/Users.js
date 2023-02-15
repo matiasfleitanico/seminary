@@ -38,7 +38,7 @@ export const usuario = {
     },
     {
       email: "ezekielfleita10@gmail.com",
-      access: [0, 1, 2, 3],
+      access: [0, 1, 2, 3, 4],
     },
     {
       email: "nattloisa26@gmail.com",
@@ -81,6 +81,14 @@ export const usuario = {
         "El campo de instrucción espiritual y las claves para ser un guerrero eficaz. Cómo buscar la protección y el poder de Dios en la lucha por edificar su reino, en la evangelización y en el desafío de vencer al hombre fuerte...",
       link: "https://i.imgur.com/cHpN87M.jpg",
       path: "oracionyguerra/1",
+    },
+    {
+      id: 4,
+      title: "Hermenéutica y las NTICX",
+      description:
+        "Las actitudes, principios, métodos y reglas para resolver los problemas que surgen al leer e interpretar la Biblia. Y, una actualización completísima en el uso de los recursos de las nuevas tecnologías y la conectividad para el manejo...",
+      link: "https://i.imgur.com/ahRywSU.jpg",
+      path: "hermeneutica/1",
     },
   ],
 };
