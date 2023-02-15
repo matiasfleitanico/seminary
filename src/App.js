@@ -23,6 +23,14 @@ import HolySpiritThree from "./components/HolySpirit/HolySpiritThree";
 import HolySpiritFourth from "./components/HolySpirit/HolySpiritFourth"; 
 import HolySpiritFiveth from "./components/HolySpirit/HolySpiritFiveth"; 
 import HolySpiritSixth from "./components/HolySpirit/HolySpiritSixth"; 
+
+import SpiritWarfareOne from "./components/SpiritWarfare/SpiritWarfareOne";
+import SpiritWarfareTwo from "./components/SpiritWarfare/SpiritWarfareTwo";
+import SpiritWarfareThree from "./components/SpiritWarfare/SpiritWarfareThree";
+import SpiritWarfareFourth from "./components/SpiritWarfare/SpiritWarfareFourth"; 
+import SpiritWarfareFiveth from "./components/SpiritWarfare/SpiritWarfareFiveth"; 
+import SpiritWarfareSixth from "./components/SpiritWarfare/SpiritWarfareSixth"; 
+
 import { AuthProvider } from "./context/authContext"
 
 
@@ -109,6 +117,34 @@ function App() {
           <ProtectedRoute>
             <HolySpiritSixth/>
           </ProtectedRoute>} />
+
+
+ 
+          <Route path="/oracionyguerra/1" element={
+          <ProtectedRoute>
+            <SpiritWarfareOne/>
+          </ProtectedRoute>} />
+          <Route path="/oracionyguerra/2" element={
+          <ProtectedRoute>
+            <SpiritWarfareTwo/>
+          </ProtectedRoute>} />
+          <Route path="/oracionyguerra/3" element={
+          <ProtectedRoute>
+            <SpiritWarfareThree/>
+          </ProtectedRoute>} />
+          <Route path="/oracionyguerra/4" element={
+          <ProtectedRoute>
+            <SpiritWarfareFourth/>
+          </ProtectedRoute>} />
+          <Route path="/oracionyguerra/5" element={
+          <ProtectedRoute>
+            <SpiritWarfareFiveth/>
+          </ProtectedRoute>} />
+          <Route path="/oracionyguerra/6" element={
+          <ProtectedRoute>
+            <SpiritWarfareSixth/>
+          </ProtectedRoute>} />
+
 
 
         <Route path="/vino-nuevo" element={

@@ -38,7 +38,7 @@ export const usuario = {
     },
     {
       email: "ezekielfleita10@gmail.com",
-      access: [0, 1, 2],
+      access: [0, 1, 2, 3],
     },
     {
       email: "nattloisa26@gmail.com",
@@ -73,6 +73,14 @@ export const usuario = {
         "La doctrina de la naturaleza de la persona del Espíritu Santo como Espíritu de Cristo, Espíritu Consolador y Espíritu de la Promesa. Las tres fases del ciclo de impartición en el NT...  ",
       link: "https://i.imgur.com/nY33V0x.jpg",
       path: "espiritusanto/1",
+    },
+    {
+      id: 3,
+      title: "La oración y la guerra espiritual",
+      description:
+        "El campo de instrucción espiritual y las claves para ser un guerrero eficaz. Cómo buscar la protección y el poder de Dios en la lucha por edificar su reino, en la evangelización y en el desafío de vencer al hombre fuerte...",
+      link: "https://i.imgur.com/cHpN87M.jpg",
+      path: "oracionyguerra/1",
     },
   ],
 };
