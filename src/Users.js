@@ -1,6 +1,9 @@
 export const usuario = {
   alumnos: [
     {
+
+      /* ADMINS */
+
       email: "matiasfleitanico@gmail.com",
       access: [0, 1, 2],
     },
@@ -17,13 +20,18 @@ export const usuario = {
       access: [0],
     },
     {
-      email: "nels.espinoza@gmail.com",
-      access: [0, 1],
-    },
-    {
       email: "seminariopoderdedios@gmail.com",
       access: [0, 1, 2],
     },
+    {
+      email: "ezekielfleita10@gmail.com",
+      access: [0, 1, 2, 3, 4, 5],
+    },
+
+
+    /* Mat 1 */
+
+   
     {
       email: "jonasdavidalarcon@gmail.com",
       access: [0],
@@ -37,16 +45,19 @@ export const usuario = {
       access: [0],
     },
     {
-      email: "ezekielfleita10@gmail.com",
-      access: [0, 1, 2, 3, 4],
-    },
-    {
       email: "nattloisa26@gmail.com",
       access: [0],
     },
     {
       email: "mai.quintanaaaa@gmail.com",
       access: [0],
+    },
+
+    /* Mat 1 & 2 */
+
+    {
+      email: "nels.espinoza@gmail.com",
+      access: [0, 1],
     },
   ],
   materias: [
@@ -86,9 +97,18 @@ export const usuario = {
       id: 4,
       title: "Hermenéutica y las NTICX",
       description:
-        "Las actitudes, principios, métodos y reglas para resolver los problemas que surgen al leer e interpretar la Biblia. Y, una actualización completísima en el uso de los recursos de las nuevas tecnologías y la conectividad para el manejo...",
+        "Las actitudes, principios, métodos y reglas para resolver los problemas que surgen al leer e interpretar la Biblia. Y, una actualización completísima en el uso de los recursos de las nuevas tecnologías...",
       link: "https://i.imgur.com/ahRywSU.jpg",
       path: "hermeneutica/1",
+    },
+
+    {
+      id: 5,
+      title: "Evangelios sinópticos y cristología",
+      description:
+        "Un recorrido desde la relación de similitud y diferencia, entre Mateo, Marcos y Lucas, analizando el aporte particular que cada uno suma a la PERSPECTIVA general de todo el relato en su conjunto... ",
+      link: "https://i.imgur.com/xo3a4gD.jpg",
+      path: "evangeliossinopticos/1",
     },
   ],
 };

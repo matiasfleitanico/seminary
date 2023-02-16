@@ -37,6 +37,16 @@ import HermeneuticsThree from "./components/Hermeneutics/HermeneuticsThree";
 import HermeneuticsFourth from "./components/Hermeneutics/HermeneuticsFourth"; 
 import HermeneuticsFiveth from "./components/Hermeneutics/HermeneuticsFiveth"; 
 
+import SynopticOne from "./components/Synoptic/SynopticOne";
+import SynopticTwo from "./components/Synoptic/SynopticTwo";
+import SynopticThree from "./components/Synoptic/SynopticThree";
+import SynopticFourth from "./components/Synoptic/SynopticFourth"; 
+import SynopticFiveth from "./components/Synoptic/SynopticFiveth"; 
+import SynopticSixth from "./components/Synoptic/SynopticSixth"; 
+import SynopticSeven from "./components/Synoptic/SynopticSeven"; 
+import SynopticEight from "./components/Synoptic/SynopticEight"; 
+
+
 
 import { AuthProvider } from "./context/authContext"
 
@@ -176,6 +186,40 @@ function App() {
             <HermeneuticsFiveth/>
           </ProtectedRoute>} />
 
+
+
+          <Route path="/evangeliossinopticos/1" element={
+          <ProtectedRoute>
+            <SynopticOne/>
+          </ProtectedRoute>} />
+          <Route path="/evangeliossinopticos/2" element={
+          <ProtectedRoute>
+            <SynopticTwo/>
+          </ProtectedRoute>} />
+          <Route path="/evangeliossinopticos/3" element={
+          <ProtectedRoute>
+            <SynopticThree/>
+          </ProtectedRoute>} />
+          <Route path="/evangeliossinopticos/4" element={
+          <ProtectedRoute>
+            <SynopticFourth/>
+          </ProtectedRoute>} />
+          <Route path="/evangeliossinopticos/5" element={
+          <ProtectedRoute>
+            <SynopticFiveth/>
+          </ProtectedRoute>} />
+          <Route path="/evangeliossinopticos/6" element={
+          <ProtectedRoute>
+            <SynopticSixth/>
+          </ProtectedRoute>} />
+          <Route path="/evangeliossinopticos/7" element={
+          <ProtectedRoute>
+            <SynopticSeven/>
+          </ProtectedRoute>} />
+          <Route path="/evangeliossinopticos/8" element={
+          <ProtectedRoute>
+            <SynopticEight/>
+          </ProtectedRoute>} />
 
 
         <Route path="/vino-nuevo" element={
