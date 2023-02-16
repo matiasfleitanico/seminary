@@ -59,6 +59,19 @@ export const usuario = {
       email: "nels.espinoza@gmail.com",
       access: [0, 1],
     },
+
+    /* Mat 6 */
+
+    {
+      email: "leoolivera153@gmail.com",
+      access: [5],
+    },
+    {
+      email: "petyt1967@gmail.com",
+      access: [5],
+    },
+
+
   ],
   materias: [
     {
