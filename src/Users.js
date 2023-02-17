@@ -25,7 +25,7 @@ export const usuario = {
     },
     {
       email: "ezekielfleita10@gmail.com",
-      access: [0, 1, 2, 3, 4, 5],
+      access: [0, 1, 2, 3, 4, 5, 6],
     },
 
 
@@ -127,5 +127,15 @@ export const usuario = {
       link: "https://i.imgur.com/xo3a4gD.jpg",
       path: "evangeliossinopticos/1",
     },
+
+    {
+      id: 6,
+      title: "Escatología con Daniel y Apocalipsis",
+      description:
+        "La revelación de los secretos celestiales de lo que es y de lo que ha de venir, según el principio de los múltiples niveles, juntos y ordenados en secuencia cronológica, desde la trompeta de Dios...  ",
+      link: "https://i.imgur.com/QnceYOn.png",
+      path: "escatologia/1",
+    },
+
   ],
 };

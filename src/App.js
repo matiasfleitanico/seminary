@@ -47,6 +47,15 @@ import SynopticSeven from "./components/Synoptic/SynopticSeven";
 import SynopticEight from "./components/Synoptic/SynopticEight"; 
 
 
+import EschatologyOne from "./components/Eschatology/EschatologyOne";
+import EschatologyTwo from "./components/Eschatology/EschatologyTwo";
+import EschatologyThree from "./components/Eschatology/EschatologyThree";
+import EschatologyFourth from "./components/Eschatology/EschatologyFourth"; 
+import EschatologyFiveth from "./components/Eschatology/EschatologyFiveth"; 
+import EschatologySixth from "./components/Eschatology/EschatologySixth"; 
+import EschatologySeven from "./components/Eschatology/EschatologySeven"; 
+
+
 
 import { AuthProvider } from "./context/authContext"
 
@@ -219,6 +228,36 @@ function App() {
           <Route path="/evangeliossinopticos/8" element={
           <ProtectedRoute>
             <SynopticEight/>
+          </ProtectedRoute>} />
+
+
+          <Route path="/escatologia/1" element={
+          <ProtectedRoute>
+            <EschatologyOne/>
+          </ProtectedRoute>} />
+          <Route path="/escatologia/2" element={
+          <ProtectedRoute>
+            <EschatologyTwo/>
+          </ProtectedRoute>} />
+          <Route path="/escatologia/3" element={
+          <ProtectedRoute>
+            <EschatologyThree/>
+          </ProtectedRoute>} />
+          <Route path="/escatologia/4" element={
+          <ProtectedRoute>
+            <EschatologyFourth/>
+          </ProtectedRoute>} />
+          <Route path="/escatologia/5" element={
+          <ProtectedRoute>
+            <EschatologyFiveth/>
+          </ProtectedRoute>} />
+          <Route path="/escatologia/6" element={
+          <ProtectedRoute>
+            <EschatologySixth/>
+          </ProtectedRoute>} />
+          <Route path="/escatologia/7" element={
+          <ProtectedRoute>
+            <EschatologySeven/>
           </ProtectedRoute>} />
 
 
