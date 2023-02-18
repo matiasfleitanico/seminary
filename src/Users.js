@@ -21,7 +21,7 @@ export const usuario = {
     },
     {
       email: "seminariopoderdedios@gmail.com",
-      access: [0, 1, 2, 3, 4, 5],
+      access: [0, 1, 2, 3, 4, 5, 6],
     },
     {
       email: "ezekielfleita10@gmail.com",
@@ -75,6 +75,12 @@ export const usuario = {
       access: [5],
     },
 
+    /* Mat 7 */
+
+    {
+      email: "santiagoleonardo777@gmail.com",
+      access: [6],
+    },
 
   ],
   materias: [
