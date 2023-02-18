@@ -55,7 +55,7 @@ export  default function Identidad() {
         gridGap: "30px",
         backgroundColor: "white",
         width: "auto",
-        height: "1000px",
+        height: "800px",
         margin: "15px",
         justifySelf: "center",
         alignSelf: "center",
@@ -88,7 +88,7 @@ export  default function Identidad() {
         maxHeight: "300px",
         objectFit: "cover"
     }
-    var box = {
+    var boxes = {
         backgroundColor: "#EAE8E8",
         borderRadius: "12px",
         boxShadow: "0px 4px 4px rgba(0, 0, 0, 0.25)",
@@ -103,7 +103,8 @@ export  default function Identidad() {
         display: "grid",
         gridTemplateColumns: "1fr 1fr",
         alignItems: "center",
-        justifyItems: "center"
+        justifyItems: "center",
+        gridGap: "5px"
     }
 
     var box = {
@@ -113,6 +114,21 @@ export  default function Identidad() {
         alignItems: "center",
         justifyItems: "center",
         textAlign: "center"
+    }
+    var button_pressed = {
+        display: "grid",
+        alignItems: "center",
+        justifyItems: "center",
+        gridTemplateColumns: "1fr",
+        gridGap: "30px",
+        backgroundColor: "#545454",
+        width: "100px",
+        height: "100px",
+        margin: "15px",
+        justifySelf: "center",
+        alignSelf: "center",
+        borderRadius: "10px",
+        boxShadow: "rgba(0, 0, 0, 0.35) 0px 5px 15px",
     }
     var button_selected = {
         display: "grid",
@@ -152,8 +168,9 @@ export  default function Identidad() {
         fontSize : "xxx-large",
         color: "#333333"
     }
-    var box = {
-        textDecoration: "none",
+    var span_2 = {
+        fontSize : "xxx-large",
+        color: "#828282"
     }
 
     function connectSubject(a){
@@ -172,66 +189,42 @@ export  default function Identidad() {
     return (
         <div style={main}>
             <div style={sidebar}>
-                <a style={box} href="/vinonuevo/1">
-                    <div style={button_selected}>
-                        <span style={span} class="material-symbols-outlined"> home </span> 
+                <a style={box} href="/hermeneutica/1">
+                    <div style={button_pressed}>
+                        <span style={span_2} class="material-symbols-outlined"> home </span> 
                     </div>
                 </a>
-                <a style={box} href="/vinonuevo/2">
-                    <div style={button}>
-                        <span style={span_1} class="material-symbols-outlined"> picture_as_pdf </span> 
+                <a style={box} href="/hermeneutica/2">
+                    <div style={button_pressed}>
+                        <span style={span_2} class="material-symbols-outlined"> picture_as_pdf </span> 
                     </div>
                 </a>
-                <a style={box} href="/vinonuevo/3">
-                    <div style={button}>
+                <a style={box} href="/hermeneutica/3">
+                    <div style={button_pressed}>
                         <span style={span_1} class="material-symbols-outlined"> task </span> 
                     </div>
                 </a>
-                <a style={box} href="/vinonuevo/4">
-                    <div style={button}>
+                <a style={box} href="/hermeneutica/4">
+                    <div style={button_pressed}>
                         <span style={span_1} class="material-symbols-outlined"> auto_videocam </span> 
                     </div>
                 </a>
-                <a style={box} href="/vinonuevo/5">
-                    <div style={button}>
-                        <span style={span_1} class="material-symbols-outlined"> auto_videocam </span> 
-                    </div>
-                </a>   
-                <a style={box} href="/vinonuevo/6">
-                    <div style={button}>
+                <a style={box} href="/hermeneutica/5">
+                    <div style={button_pressed}>
                         <span style={span_1} class="material-symbols-outlined"> preliminary </span> 
                     </div>
                 </a>   
             </div>
             <div>
-            <div style={customStyle_1}>
-                <img style={img_1} src={"https://i.imgur.com/QoeAo7L.jpg"}></img>
-                <h1>Vino Nuevo en Odres Nuevos</h1>
-                <p style={center}> El vino nuevo como metáfora de lo que el nuevo pacto hace en el corazón del hombre y cómo su nueva doctrina forma discípulos justificados, sin velo, libres y competentes.
-                 La esencia de la copa del nuevo pacto en relación con la ley y la gracia y los beneficios sobre la iglesia de hoy que va hacia la gloria.  <br /> <br /> <br /> POLÍTICA DE PRIVACIDAD Todo el
-            material del SEMINARIO PODER DE DIOS que se da en cada materia es
-            exclusivo para los alumnos regulares: que cursan, que son guiados
-            por el profesor para estudiar el material y luego ser evaluados. Que
-            los Módulos, los libros, las lecturas, tareas, reflexiones, apuntes
-            y toda producción es para uso exclusivamente personal. NO
-            COMPARTIR!! <br /> <br />
-            BIBLIAS. SUGERIMOS LAS VERSIONES: Reina Valera 1960. La Nueva
-            Traducción Viviente. Reina Valera con Números Strong. King James
-            Versión con Strong. <br/> <br/> MATERIALES DE ESTUDIO que deben tener: un
-            cuaderno para tomar apuntes. Lapiceras. Teléfono, Notebook, Tableta
-            o Pc, conexión a Internet. <br/> Los materiales están en formato digital
-            PDF. Por lo tanto, deben tener un programa o aplicación para leer
-            los archivos. <br/> Si no tienen, pueden descargar gratuitamente en Play
-            Store:  <br/>
-            <a href="https://play.google.com/store/apps/details?id=com.pdfreader.pdfeditor.pdfreadeforandroid.pdfeditorforandroidfree">
-              CLICK ACÁ
-            </a>{" "} <br></br>
-            Sugerimos, también, instalar en android la aplicación gratuita
-            MyBible. La podés encontrar en Play Store:{" "} <br></br>
-            <a href="https://play.google.com/store/apps/details?id=ua.mybible">
-                CLICK ACÁ
-            </a>{" "}</p>
-            </div>
+                <div style={customStyle}>
+                    <h1>Examen Final</h1>
+                    <p style={center}>
+                    EXAMEN: TENIENDO EN CUENTA los módulos, la video-clase (diagramas y apuntes),  <br />
+                    indicar la respuesta correcta!! <br />
+                    <b>IMPORTANTE: sólo se permite enviar el examen una sola vez una sola vez.</b>
+                    </p>
+                    <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSeSuYzl9saz8q9Ynarxh5eMm6AzRqwtusWzihPiOvD-2ceVhQ/viewform?embedded=true" width="640" height="3326" frameborder="0" marginheight="0" marginwidth="0">Cargando…</iframe>
+                </div>
             </div>
         </div>
     );
