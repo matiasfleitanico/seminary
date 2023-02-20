@@ -3,11 +3,12 @@ import Home from "./components/Home";
 import Login from "./components/Login";
 import ProtectedRoute from "./components/ProtectedRoute";
 import Register from "./components/Register";
+
 import IdentityOne from "./components/Identity/IdentityOne";
 import IdentityTwo from "./components/Identity/IdentityTwo";
 import IdentityThree from "./components/Identity/IdentityThree";
 import IdentityFourth from "./components/Identity/IdentityFourth"; 
-import IdentityFiveth from "./components/Identity/IdentityFiveth"; 
+import IdentityFiveth from "./components/Identity/IdentityFiveth";
 
 import NewWineOne from "./components/NewWine/NewWineOne";
 import NewWineTwo from "./components/NewWine/NewWineTwo";
@@ -15,6 +16,7 @@ import NewWineThree from "./components/NewWine/NewWineThree";
 import NewWineFourth from "./components/NewWine/NewWineFourth"; 
 import NewWineFiveth from "./components/NewWine/NewWineFiveth"; 
 import NewWineSixth from "./components/NewWine/NewWineSixth"; 
+
 import NewWine from "./components/NewWinBase";
 
 import HolySpiritOne from "./components/HolySpirit/HolySpiritOne";
@@ -72,28 +74,34 @@ function App() {
         <Route path="/login" element={<Login/>} />
         <Route path="/register" element={<Register/>} />
 
-
+/*Identidad */
         <Route path="/identidad/1" element={
           <ProtectedRoute>
             <IdentityOne/>
           </ProtectedRoute>} />
-          <Route path="/identidad/2" element={
+
+        <Route path="/identidad/2" element={
           <ProtectedRoute>
             <IdentityTwo/>
           </ProtectedRoute>} />
-          <Route path="/identidad/3" element={
+
+        <Route path="/identidad/3" element={
           <ProtectedRoute>
             <IdentityThree/>
           </ProtectedRoute>} />
-          <Route path="/identidad/4" element={
+
+        <Route path="/identidad/4" element={
           <ProtectedRoute>
             <IdentityFourth/>
           </ProtectedRoute>} />
-          <Route path="/identidad/5" element={
+
+        <Route path="/identidad/5" element={
           <ProtectedRoute>
             <IdentityFiveth/>
           </ProtectedRoute>} />
 
+
+/* Vino Nuevo */
           <Route path="/vinonuevo/1" element={
           <ProtectedRoute>
             <NewWineOne/>

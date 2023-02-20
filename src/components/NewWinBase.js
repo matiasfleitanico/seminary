@@ -116,7 +116,8 @@ El vino nuevo como metáfora de lo que el nuevo pacto hace en el corazón del ho
                 <h1>Tarea</h1>
                 <p style={center}>TAREA: Luego de leer los MÓDULOS I y II, responder el siguiente cuestionario. <br />
                 <b>IMPORTANTE: sólo se permite enviarla una sola vez.</b> </p>
-                    <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSeLs3FmfOsH9FKZXqdzvc2V6TPOqNeaPSHSLw5Mt1EQDJLgdw/viewform?embedded=true" width="640" height="2088" frameborder="0" marginheight="0" marginwidth="0">Cargando…</iframe>            </div>
+                <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSeLs3FmfOsH9FKZXqdzvc2V6TPOqNeaPSHSLw5Mt1EQDJLgdw/viewform?embedded=true" width="640" height="2088" frameborder="0" marginheight="0" marginwidth="0">Cargando…</iframe>            
+            </div>
             <div style={customStyle}>
                 <h1>Videoclase I</h1>
                 <iframe width="1280" height="720" src="https://www.youtube.com/embed/N2a-F9346so" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>            
@@ -124,7 +125,7 @@ El vino nuevo como metáfora de lo que el nuevo pacto hace en el corazón del ho
             <div style={customStyle}>
                 <h1>Videoclase II</h1>
                 <iframe width="1280" height="720" src="https://www.youtube.com/embed/Vso67uwCc5M" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>            
-                </div>
+            </div>
             <div style={customStyle}>
                 <h1>Examen Final</h1>
                 <p style={center}> <br />
