@@ -134,32 +134,34 @@ console.log(user)
     }
 
     
-    if(user.email === "matiasfleitanico@gmail.com" || "ezekielfleita@gmail.com" || "seminariopoderdedios@gmail.com" || "fleita.ariana@gmail.com") return(
-        <div style={customStyle}>
-            <h1>Hola {user.displayName || user.email}, usted es Administrador</h1>
-            <button style={button} onClick={HandleLogout}>Salir</button>
-            <div style={bigbox}>
-                {count}
-            </div>
-            <div>
-                <a href="/admin">PANEL DE ADMINISTRADOR</a>
-            </div>
-        </div>
-    )
-        return (
-            <div style={customStyle}>
-                <div style={header}>
-                    <h4 style={name_tittle}>{user.displayName || user.email}</h4>
-                    <button style={button} onClick={HandleLogout}>Cerrar Sesión</button>
+    if(user.email === "matiasfleitanico@gmail.com" || user.email === "ezekielfleita10@gmail.com" || user.email === "seminariopoderdedios@gmail.com" ||  user.email === "fleita.ariana@gmail.com") {
+        return(
+                <div style={customStyle}>
+                    <h1>Hola {user.displayName || user.email}, usted es Administrador</h1>
+                    <button style={button} onClick={HandleLogout}>Salir</button>
+                    <div style={bigbox}>
+                        {count}
+                    </div>
+                    <div>
+                        <a href="/admin">PANEL DE ADMINISTRADOR</a>
+                    </div>
                 </div>
-                <div>            
-                    <h1>Seminario Poder de Dios</h1>
-                    <h3>Materias</h3>
-                </div>
-                <div style={bigbox}>
-                    {count}
-                </div>
-            </div>
-        );
-
-  }
+            )   
+        } else {
+                return (
+                    <div style={customStyle}>
+                        <div style={header}>
+                            <h4 style={name_tittle}>{user.displayName || user.email}</h4>
+                            <button style={button} onClick={HandleLogout}>Cerrar Sesión</button>
+                        </div>
+                        <div>            
+                            <h1>Seminario Poder de Dios</h1>
+                            <h3>Materias</h3>
+                        </div>
+                        <div style={bigbox}>
+                            {count}
+                        </div>
+                    </div>
+                );
+            }
+          }
