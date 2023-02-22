@@ -12,22 +12,10 @@ export default function App() {
     const {logout, loading, user} = useAuth();
     const navigate = useNavigate();
     var datas;
-    var listItems;
     
 console.log(user)
     const [count, setCount] = React.useState(<h1></h1>);
       
-    function delayAddOne() {
-        setCount(datas["access"].map((number) =>
-                <a href={usuario.materias[number].path} style={box}>
-                    <h2>{usuario.materias[number].title}</h2>
-                    <img style={img} src={usuario.materias[number].link}></img>
-                    <p>{usuario.materias[number].description}</p>
-                </a>
-            ));
-        console.log("AAAAAA", datas);
-    }
-
 
     async function getData(url = '', data = {}) {
         // Default options are marked with *
@@ -46,11 +34,15 @@ console.log(user)
       getData('https://tecno-museo-default-rtdb.firebaseio.com/seminary/'+ user.uid + ".json?auth=" + user.accessToken)
         .then((data) => {
           datas = data // JSON data parsed by `data.json()` call
-          if(counter === 2) {
-            delayAddOne()
-            console.log("BASTAAA", counter)
+          if(counter <= 2) {
+            setCount(datas["access"].map((number) =>
+                <a href={usuario.materias[number].path} style={box}>
+                    <h2>{usuario.materias[number].title}</h2>
+                    <img style={img} src={usuario.materias[number].link}></img>
+                    <p>{usuario.materias[number].description}</p>
+                </a>
+            ));
           }
-          console.log(datas)
         })
     var bigbox;
     const HandleLogout = async () => {
