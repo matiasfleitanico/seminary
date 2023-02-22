@@ -3,6 +3,10 @@ import Home from "./components/Home";
 import Login from "./components/Login";
 import ProtectedRoute from "./components/ProtectedRoute";
 import Register from "./components/Register";
+import Settings from "./components/Settings"
+import Account from "./components/Account"
+import Admin from "./components/Admin"
+import Search from "./components/Search";
 
 import IdentityOne from "./components/Identity/IdentityOne";
 import IdentityTwo from "./components/Identity/IdentityTwo";
@@ -73,6 +77,22 @@ function App() {
           } />
         <Route path="/login" element={<Login/>} />
         <Route path="/register" element={<Register/>} />
+        <Route path="/configuracion" element={
+          <ProtectedRoute>
+            <Settings/>
+          </ProtectedRoute>} />
+          <Route path="/cuenta" element={
+          <ProtectedRoute>
+            <Account/>
+          </ProtectedRoute>} />
+          <Route path="/admin" element={
+          <ProtectedRoute>
+            <Admin/>
+          </ProtectedRoute>} />
+          <Route path="/buscar" element={
+          <ProtectedRoute>
+            <Search/>
+          </ProtectedRoute>} />
 
 /*Identidad */
         <Route path="/identidad/1" element={

@@ -1,7 +1,8 @@
+import { useState } from "react";
 import { useRef } from "react";
-import { useAuth } from "../../context/authContext";
+import { useAuth } from "../context/authContext";
 import { useNavigate } from "react-router-dom";
-import { usuario } from "../../Users";
+import { usuario } from "../Users";
 import React from "react";
 import { AiFillHome, AiOutlineSearch, AiFillSetting } from "react-icons/ai";
 import { RiAccountCircleFill } from "react-icons/ri";
@@ -10,7 +11,6 @@ export default function Identidad() {
   const { user } = useAuth();
   const windowSize = useRef([window.innerWidth, window.innerHeight]);
   const navigate = useNavigate();
-
   var user_id;
   var main = {};
   var sidebar_2 = {};
@@ -19,55 +19,13 @@ export default function Identidad() {
   var sidebar = {};
   var button_selected = {};
   var button = {};
-  var button_pressed = {};
-  var datas;
-  var counter;
-
-  async function getData(url = "", data = {}) {
-    // Default options are marked with *
-    const response = await fetch(url, {
-      method: "GET", // *GET, POST, PUT, DELETE, etc.
-      mode: "cors", // no-cors, *cors, same-origin
-      cache: "no-cache", // *default, no-cache, reload, force-cache, only-if-cached
-      credentials: "same-origin", // include, *same-origin, omit
-      redirect: "follow", // manual, *follow, error
-      referrerPolicy: "no-referrer", // no-referrer, *no-referrer-when-downgrade, origin, origin-when-cross-origin, same-origin, strict-origin, strict-origin-when-cross-origin, unsafe-url
-    });
-    counter = counter + 1;
-    return response.json(); // parses JSON response into native JavaScript objects
-  }
-
-  getData(
-    "https://tecno-museo-default-rtdb.firebaseio.com/seminary/" +
-      user.uid +
-      ".json?auth=" +
-      user.accessToken
-  ).then((data) => {
-    datas = data; // JSON data parsed by `data.json()` call
-    console.log(datas);
-    loopOn();
-  });
-
-  function loopOn() {
-    for (let i = 0; i < datas.access.length; i++) {
-      if (datas.access[i] === 0) {
-        connectSubject(user_id);
-        console.log("You have access requested");
-        break;
-      } else {
-        setTimeout(() => {
-          navigate("/");
-        }, 300);
-        console.log("You don't have access requested");
-      }
-    }
-  }
 
   if (windowSize.current[0] < 900) {
     main = {
       display: "grid",
-      gridTemplateRows: "auto 80% auto",
+      gridTemplateRows: "90% auto",
       padding: "10px",
+      margin: "200px 0 0"
     };
     sidebar_2 = {
       backgroundColor: "#8C32FF",
@@ -121,20 +79,6 @@ export default function Identidad() {
       borderRadius: "10px",
       boxShadow: "rgba(0, 0, 0, 0.35) 0px 5px 15px",
     };
-    button_pressed = {
-        display: "grid",
-        alignItems: "center",
-        justifyItems: "center",
-        gridTemplateColumns: "1fr",
-        gridGap: "30px",
-        backgroundColor: "#656565",
-        width: "100%",
-        height: "45px",
-        justifySelf: "center",
-        alignSelf: "center",
-        borderRadius: "10px",
-        boxShadow: "rgba(0, 0, 0, 0.35) 0px 5px 15px",
-      };
     button = {
       display: "grid",
       alignItems: "center",
@@ -152,7 +96,7 @@ export default function Identidad() {
   } else {
     main = {
       display: "grid",
-      gridTemplateColumns: "20% 71% 7%",
+      gridTemplateColumns: "auto 7%",
       padding: "10px",
       gridGap: "1%",
     };
@@ -164,7 +108,7 @@ export default function Identidad() {
       display: "grid",
       gridTemplateRows: "1fr 1fr 1fr 1fr",
       alignItems: "center",
-      maxHeight: "800px"
+      height: "800px",
     };
     span_1 = {
       color: "black",
@@ -205,20 +149,6 @@ export default function Identidad() {
       borderRadius: "10px",
       boxShadow: "rgba(0, 0, 0, 0.35) 0px 5px 15px",
     };
-    button_pressed = {
-        display: "grid",
-        alignItems: "center",
-        justifyItems: "center",
-        gridTemplateColumns: "1fr",
-        gridGap: "30px",
-        backgroundColor: "#656565",
-        width: "100%",
-        height: "100px",
-        justifySelf: "center",
-        alignSelf: "center",
-        borderRadius: "10px",
-        boxShadow: "rgba(0, 0, 0, 0.35) 0px 5px 15px",
-      };
     button = {
       display: "grid",
       alignItems: "center",
@@ -243,8 +173,8 @@ export default function Identidad() {
     padding: "15px",
     gridGap: "30px",
     backgroundColor: "white",
-    width: "auto",
-    height: "100%",
+    width: "90%",
+    height: "auto",
     margin: "15px 0",
     justifySelf: "center",
     alignSelf: "center",
@@ -260,9 +190,9 @@ export default function Identidad() {
     padding: "15px",
     gridGap: "30px",
     backgroundColor: "white",
-    width: "auto",
+    width: "90%",
     height: "auto",
-    margin: "15px 0",
+    margin: "15px",
     justifySelf: "center",
     alignSelf: "center",
     borderRadius: "10px",
@@ -279,7 +209,7 @@ export default function Identidad() {
     maxHeight: "300px",
     objectFit: "cover",
   };
-  var boxes = {
+  var box = {
     backgroundColor: "#EAE8E8",
     borderRadius: "12px",
     boxShadow: "0px 4px 4px rgba(0, 0, 0, 0.25)",
@@ -310,103 +240,141 @@ export default function Identidad() {
     color: "black",
     margin: "0",
   };
-  var span_2 = {
-    color: "grey",
-    margin: "0",
-  }
   var box = {
     textDecoration: "none",
     width: "100%",
   };
 
   function connectSubject(a) {
+    let hasSubject = true;
     for (let i = 0; i <= usuario.alumnos.length; i++) {
       console.log("You are?");
       if (usuario.alumnos[a].access[i] === 0) {
+        hasSubject = true;
         break;
       } else if (i === usuario.alumnos.length) {
+        hasSubject = false;
         navigate("/");
       }
     }
   }
   return (
     <div style={main}>
-      <div style={sidebar}>
-        <a style={box} href="/identidad/1">
-          <div style={button_pressed}>
-            <h2 style={span_2}>Introducción</h2>
-          </div>
-        </a>
-        <a style={box} href="/identidad/2">
-          <div style={button_selected}>
-            <h2 style={span}>Módulos</h2>
-          </div>
-        </a>
-        <a style={box} href="/identidad/3">
-          <div style={button}>
-            <h2 style={span_1}>Tarea</h2>
-          </div>
-        </a>
-        <a style={box} href="/identidad/4">
-          <div style={button}>
-            <h2 style={span_1}>Video-Clase</h2>
-          </div>
-        </a>
-        <a style={box} href="/identidad/5">
-          <div style={button}>
-            <h2 style={span_1}>Examen</h2>
-          </div>
-        </a>
-      </div>
-      <div style={customStyle_1}>
-        <h1>Módulos</h1>
-        <p style={center}>
-          Lee los módulos antes de continuar con la tarea. <br />
-          Es importante que te encuentres registrado con tu Gmail para poder
-          acceder a los módulos.
-          <br />
-          <b>Presiona la imagen corespondiente </b>
-        </p>
-        <div style={content}>
-          <a
-            style={boxes}
-            href="https://drive.google.com/file/d/1RTAWXIuU4_C0agP5xZ4kKtJWLRfBDJWz/view"
-            download
-          >
-            <h2>Módulo 1</h2>
-            <img style={img} src={"https://i.imgur.com/cJ4UvSR.jpg"}></img>
-          </a>
-          <a
-            style={boxes}
-            href="https://drive.google.com/file/d/1FEDvzUT7GctKb4MUxdQw3MAqFyu2MZHl/view"
-            download
-          >
-            <h2>Módulo 2</h2>
-            <img style={img} src={"https://i.imgur.com/SwPdQqO.jpg"}></img>
-          </a>
+      <div style={customStyle}>
+        <h1>Preguntas frecuentes</h1>
+        <div style={customStyle_1}>
+          <h3>¿Qué validez tiene el diploma?</h3>
+          <p>
+            Los diplomas con las certificaciones extendidas por el Seminario
+            Poder de Dios poseen el aval de la firma N° 11.431, inscripta en el
+            Registro Nacional de Culto de la Nación Argentina, lo que implica el
+            reconocimiento para ejercer como ministro religioso. Los diplomas se
+            extienden para “vocaciones religiosas”.
+          </p>
         </div>
-        <h2>Lecturas complementarias</h2>
-        <a
-          style={boxes}
-          href="https://drive.google.com/file/d/1v7e9492nT5jqD_imZ-lmact378crEuSz/view"
-          download
-        >
-          <h2>Biografía de Esdras</h2>
-        </a>
-        <a
-          style={boxes}
-          href="https://drive.google.com/file/d/17YhlvszxB3Dy2PQ8HBzXvbS3A2FLzZU3/view"
-          download
-        >
-          <h2>Significado de CONSAGRAR</h2>
-        </a>
-        <a
-          style={boxes}
-          href="https://drive.google.com/file/d/1qOxuLv7tymtwme5FAAZI1Pqu2l6AxBHa/view"
-          download
-        >
-          <h2>Caracteríticas del Líder</h2>
-        </a>
+        <div style={customStyle_1}>
+          <h3>¿Cuál es la Misión del Seminario?</h3>
+          <p>
+            Capacitar a obreros para un nuevo avivamiento, equipándolos con
+            efectivos recursos fundamentados en la Palabra de Dios para que, con
+            vidas transformadas y con el fuego del Espíritu Santo, afecten a su
+            Nación y sean protagonistas de la cosecha de los últimos tiempos.
+          </p>
+        </div>
+        <div style={customStyle_1}>
+          <h3>¿Cuál es la Visión del Seminario? </h3>
+          <p>
+            Propiciar en nuestra nación un cambio de paradigma en el perfil del
+            ministro llamado por Dios para el servicio, resaltando las
+            cualidades de integridad y santidad en su carácter cristiano de
+            obrero como principal requisito. Impulsar la oración, la Palabra, la
+            guía del Espíritu Santo y la demostración de poder como fundamento
+            del servicio que garantice el éxito de la gran comisión.
+          </p>
+        </div>
+        <div style={customStyle_1}>
+          <h3>¿Cuál es la Objetivo del Seminario? </h3>
+          <p>
+            En este seminario las materias están diseñadas para proveer al
+            obrero de hoy, una guía para un entrenamiento práctico sobre la base
+            de los fundamentos bíblicos sólidos, fortaleciéndole en su carácter
+            y a la vez, creciendo en el conocimiento y el poder de la palabra
+            viva de Dios.
+          </p>
+        </div>
+        <div style={customStyle_1}>
+          <h3>¿Cuál es la Modalidad de estudio?</h3>
+          <p>
+            100% ON LINE en una combinación eficiente de diferentes métodos de
+            impartición, modelos de enseñanza y estilos de aprendizaje, en línea
+            desde casa o cualquier lugar.
+          </p>
+        </div>
+        <div style={customStyle_1}>
+          <h3>¿Qué Material didáctico facilita el Seminario?</h3>
+          <p>
+            El Seminario SPDD da material de estudio (módulos, libros, textos,
+            videos, audios, imágenes) en FORMATO DIGITAL.
+          </p>
+        </div>
+        <div style={customStyle_1}>
+          <h3>¿Cuáles son los requisitos para el ingreso?</h3>
+          <p>
+            1. Completar debidamente la Solicitud de Ingreso.<br></br>
+            2. Entregar una foto digital.<br></br>
+            3. Abonar el valor de la Matrícula (una sola vez por año).<br></br>
+            4. Demostrar poseer suficiente Experiencia de Vida y Ministerio que
+            le permitan estudiar en forma acelerada. <br></br>
+            5. Sujetarse a la decisión de Dirección sobre las equivalencias
+            solicitadas por estudios previos en otras instituciones educativas.{" "}
+            <br></br>
+            6. Enviar todos sus Certificados de estudio previos (copia).
+            <br></br>
+            7. Aceptar que todos los Títulos y Diplomas son para “vocaciones
+            religiosas”.<br></br>
+            8. Aval (autorización) pastoral, si corresponde.
+          </p>
+        </div>
+        <div style={customStyle_1}>
+          <h3>¿Cuáles son los requisitos para aprobar las materias?</h3>
+          <p>
+            - 80 % de trabajos prácticos aprobados.<br></br>- 100 % en los
+            informes de lecturas.<br></br>- Examen escrito: se aprueba con 4
+            (cuatro).
+          </p>
+        </div>
+        <div style={customStyle_1}>
+          <h3>¿Qué es la secuencia curricular?</h3>
+          <p>
+            La secuencia curricular provee al estudiante el orden en que deben
+            matricular las materias, a través de su carrera académica de forma
+            tal que pueda obtener el título en un tiempo razonable. Este
+            programa se debe al grado de conexión e interrelación que poseen los
+            conocimientos de cada Materia. En consecuencia, el SEMINARIO PODER
+            DE DIOS expresa la propuesta de cursada ideal, teniendo en cuenta el
+            orden de las materias y el tiempo para hacerla. Sin embargo, nuestra
+            metodología asincrónica, 100 por ciento en línea, permite que cada
+            alumno avance a su tiempo, adelantando este ofrecimiento o
+            demorándolo.
+          </p>
+        </div>
+        <div style={customStyle_1}>
+          <h3>¿Quiénes son los fundadores?</h3>
+          <p>
+            ALICIA Y MARIO FLEITA, ambos Comunicadores sociales, periodistas,
+            profesores, autores y pastores principales de la Iglesia Poder de
+            dios Argentina.
+          </p>
+        </div>
+        <div style={customStyle_1}>
+          <h3>¿Quién es el director del SPDD?</h3>
+          <p>
+            MARIO NÉSTOR FLEITA, Licenciado en la Enseñanza de la lengua y la
+            Literatura. Profesor. Teólogo. Comunicador Social con
+            especialización en Periodismo. Pastor principal y fundador de la
+            Iglesia Poder de Dios Argentina.
+          </p>
+        </div>
       </div>
       <div style={sidebar_2}>
         <a style={span_side_2} href="/">

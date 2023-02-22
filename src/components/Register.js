@@ -1,9 +1,12 @@
+import { useRef } from "react";
 import { useState } from "react";
 import { useAuth } from "../context/authContext";
 import { useNavigate } from "react-router-dom";
 
 export  default function Register() {
+    const windowSize = useRef([window.innerWidth, window.innerHeight]);
     const [user, setUser] = useState({
+        displayName: "",
         email: "",
         password: ""
     });
@@ -11,13 +14,57 @@ export  default function Register() {
     const navigate = useNavigate();
     const [error, setError] = useState()
 
+    var form;
+    var signUpStyle;
+    if (windowSize.current[0] < 900) {
+        form = {
+            display: "grid",
+            alignItems: "start",
+            justifyItems: "center",
+            gridTemplateColumns: "1fr",
+            gridGap: "20px",
+            width: "100%"
+        }
+        signUpStyle = {
+            display: "grid",
+            alignItems: "center",
+            justifyItems: "center",
+            gridTemplateColumns: "1fr",
+            padding: "45px",
+            borderRadius: "39px",
+            margin: "5%",
+            gridGap: "30px",
+            backgroundColor: "white"
+        }
+    } else {
+        form = {
+            display: "grid",
+            alignItems: "start",
+            justifyItems: "center",
+            gridTemplateColumns: "1fr",
+            gridGap: "20px",
+            width: "100%"
+        }
+        signUpStyle = {
+            display: "grid",
+            alignItems: "center",
+            justifyItems: "center",
+            gridTemplateColumns: "1fr",
+            padding: "45px",
+            borderRadius: "39px",
+            margin: "10% 25%",
+            gridGap: "30px",
+            backgroundColor: "white"
+        }
+    }
+
     const handleChange = ({target: {name, value}}) => {
         setUser({...user, [name]: value})
     }
     const handleSubmit = async e => {
         e.preventDefault()
         try {
-            await signUp(user.email, user.password)
+            await signUp(user.email, user.password, user.displayName)
             navigate("/")
             setError("")
         } catch (error) {
@@ -40,26 +87,6 @@ export  default function Register() {
         borderRadius: "5px",
         height: "39px",
         padding: "0 10px"
-    }
-
-    const form = {
-        display: "grid",
-        alignItems: "start",
-        justifyItems: "center",
-        gridTemplateColumns: "1fr",
-        gridGap: "20px",
-        width: "100%"
-    }
-    const signUpStyle = {
-        display: "grid",
-        alignItems: "center",
-        justifyItems: "center",
-        gridTemplateColumns: "1fr",
-        padding: "45px",
-        borderRadius: "39px",
-        margin: "25%",
-        gridGap: "30px",
-        backgroundColor: "white"
     }
     const button = {
         backgroundColor : "#333333",
@@ -91,7 +118,8 @@ export  default function Register() {
             <h1>Registrarse</h1>
             {error && <p>{error}</p>}
             <form style={form} onSubmit={handleSubmit}>
-                <input style={input} type="emai" name="email" placeholder="mariana@gmail.com" onChange={handleChange}/>
+                <input style={input} type="text" name="displayName" placeholder="Nombre y Apellido" onChange={handleChange}/>
+                <input style={input} type="email" name="email" placeholder="mariana@gmail.com" onChange={handleChange}/>
                 <input style={input} type="password" name="password" placeholder="******" onChange={handleChange}/>
                 <button style={button} >Registrarse</button>
             </form>

@@ -16,7 +16,7 @@ export const useAuth = () => {
 
 
 export function AuthProvider ({children}) {
-    const signUp = (email, password) => createUserWithEmailAndPassword(auth, email, password)
+    const signUp = (email, password, displayName) => createUserWithEmailAndPassword(auth, email, password, displayName)
     const login = (email, password) => signInWithEmailAndPassword(auth, email, password)
     const logout = () => signOut(auth);
     const [user, setUser] = useState(null);
