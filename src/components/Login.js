@@ -1,8 +1,10 @@
+import { useRef } from "react";
 import { useState } from "react";
 import { useAuth } from "../context/authContext";
 import { useNavigate } from "react-router-dom";
 
 export  default function Login() {
+    const windowSize = useRef([window.innerWidth, window.innerHeight]);
     const [user, setUser] = useState({
         email: "",
         password: ""
@@ -13,6 +15,49 @@ export  default function Login() {
 
     const handleChange = ({target: {name, value}}) => {
         setUser({...user, [name]: value})
+    }
+    var form;
+    var loginStyle;
+    if (windowSize.current[0] < 900) {
+        form = {
+            display: "grid",
+            alignItems: "start",
+            justifyItems: "center",
+            gridTemplateColumns: "1fr",
+            gridGap: "20px",
+            width: "100%"
+        }
+        loginStyle = {
+            display: "grid",
+            alignItems: "center",
+            justifyItems: "center",
+            gridTemplateColumns: "1fr",
+            padding: "45px",
+            borderRadius: "39px",
+            margin: "5%",
+            gridGap: "30px",
+            backgroundColor: "white"
+        }
+    } else {
+        form = {
+            display: "grid",
+            alignItems: "start",
+            justifyItems: "center",
+            gridTemplateColumns: "1fr",
+            gridGap: "20px",
+            width: "100%"
+        }
+        loginStyle = {
+            display: "grid",
+            alignItems: "center",
+            justifyItems: "center",
+            gridTemplateColumns: "1fr",
+            padding: "45px",
+            borderRadius: "39px",
+            margin: "10% 25%",
+            gridGap: "30px",
+            backgroundColor: "white"
+        }
     }
     const handleSubmit = async e => {
         e.preventDefault()
@@ -48,25 +93,8 @@ export  default function Login() {
         padding: "0 10px"
     }
 
-    const form = {
-        display: "grid",
-        alignItems: "start",
-        justifyItems: "center",
-        gridTemplateColumns: "1fr",
-        gridGap: "20px",
-        width: "100%"
-    }
-    const loginStyle = {
-        display: "grid",
-        alignItems: "center",
-        justifyItems: "center",
-        gridTemplateColumns: "1fr",
-        padding: "45px",
-        borderRadius: "39px",
-        margin: "25%",
-        gridGap: "30px",
-        backgroundColor: "white"
-    }
+
+
     const button = {
         backgroundColor : "#333333",
         padding: "5px",
