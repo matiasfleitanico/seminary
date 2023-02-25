@@ -57,6 +57,10 @@ export const usuario = {
       access: [0],
     },
     {
+      email: "leaneze93@gmail.com",
+      access: [0],
+    },
+    {
       email: "walterliva1@gmail.com",
       access: [0],
     },
@@ -76,6 +80,10 @@ export const usuario = {
     },
     {
       email: "petyt1967@gmail.com",
+      access: [5],
+    },
+    {
+      email: "beleen.morales.nadia@gmail.com",
       access: [5],
     },
     {
