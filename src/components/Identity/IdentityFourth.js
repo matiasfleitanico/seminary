@@ -337,27 +337,27 @@ export default function Identidad() {
   return (
     <div style={main}>
       <div style={sidebar}>
-        <a style={box} href="/identidad/1">
+        <a style={box} href="/vinonuevo/1">
           <div style={button_pressed}>
             <h2 style={span_2}>Introducción</h2>
           </div>
         </a>
-        <a style={box} href="/identidad/2">
+        <a style={box} href="/vinonuevo/2">
           <div style={button_pressed}>
             <h2 style={span_2}>Módulos</h2>
           </div>
         </a>
-        <a style={box} href="/identidad/3">
+        <a style={box} href="/vinonuevo/3">
           <div style={button_pressed}>
             <h2 style={span_2}>Tarea</h2>
           </div>
         </a>
-        <a style={box} href="/identidad/4">
+        <a style={box} href="/vinonuevo/4">
           <div style={button_selected}>
             <h2 style={span}>Video-Clase</h2>
           </div>
         </a>
-        <a style={box} href="/identidad/5">
+        <a style={box} href="/vinonuevo/5">
           <div style={button}>
             <h2 style={span_1}>Examen</h2>
           </div>
