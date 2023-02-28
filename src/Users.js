@@ -72,6 +72,13 @@ export const usuario = {
       access: [0, 1],
     },
 
+    /* Mat 5 */
+
+    {
+      email: "solange.melany.alvarez@gmail.com",
+      access: [4],
+    },
+
     /* Mat 6 */
 
     {
