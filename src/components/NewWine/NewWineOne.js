@@ -50,7 +50,7 @@ export default function Identidad() {
   function loopOn() {
     for (let i = 0; i < datas.access.length; i++) {  
       /* el próximo número sería el ID de la materia */
-      if (datas.access[i] === 0) {
+      if (datas.access[i] === 1) {
         connectSubject(user_id);
         console.log("You have access requested");
         break;
