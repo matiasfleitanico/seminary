@@ -114,6 +114,10 @@ export const usuario = {
       email: "spaciuk.tamara@gmail.com",
       access: [5],
     },
+    {
+      email: "bremm.arias@gmail.com",
+      access: [5],
+    },
 
     /* Mat 7 */
 
