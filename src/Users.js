@@ -29,7 +29,7 @@ export const usuario = {
     },
     {
       email: "ezekielfleita10@gmail.com",
-      access: [0, 1, 2, 3, 4, 5, 6],
+      access: [0, 1, 2, 3, 4, 5, 6, 7],
     },
 
 
@@ -185,6 +185,15 @@ export const usuario = {
         "La revelación de los secretos celestiales de lo que es y de lo que ha de venir, según el principio de los múltiples niveles, juntos y ordenados en secuencia cronológica, desde la trompeta de Dios...  ",
       link: "https://i.imgur.com/QnceYOn.png",
       path: "escatologia/1",
+    },
+
+    {
+      id: 7,
+      title: "Salud",
+      description:
+        "La revelación de los secretos celestiales de lo que es y de lo que ha de venir, según el principio de los múltiples niveles, juntos y ordenados en secuencia cronológica, desde la trompeta de Dios...  ",
+      link: "https://i.imgur.com/QnceYOn.png",
+      path: "salud/1",
     },
 
   ],

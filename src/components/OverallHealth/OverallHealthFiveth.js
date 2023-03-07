@@ -49,23 +49,19 @@ export default function Identidad() {
   });
 
   function loopOn() {
-    /* el próximo número sería el ID de la materia */
-   let ids = 1
-       for (let i = 0; i < datas.access.length; i++) {  
-         if(datas.access[i] < ids){
-         console.log("This is not your subject")
-         } else if (datas.access[i] === ids) {
-           connectSubject(user_id);
-           console.log("You have access requested");
-           break;
-         } else {
-           setTimeout(() => {
-             navigate("/");
-           }, 300);
-           console.log("You don't have access requested");
-         }
-       }
-     }
+    for (let i = 0; i < datas.access.length; i++) {
+      if (datas.access[i] === 0) {
+        connectSubject(user_id);
+        console.log("You have access requested");
+        break;
+      } else {
+        setTimeout(() => {
+          navigate("/");
+        }, 300);
+        console.log("You don't have access requested");
+      }
+    }
+  }
 
   if (windowSize.current[0] < 900) {
     main = {
@@ -267,7 +263,7 @@ export default function Identidad() {
     backgroundColor: "white",
     width: "95%",
     height: "auto",
-    margin: "15px 0 200px",
+    margin: "15px 0",
     justifySelf: "center",
     alignSelf: "center",
     borderRadius: "10px",
@@ -323,10 +319,6 @@ export default function Identidad() {
     textDecoration: "none",
     width: "100%",
   };
-  var iframe = {
-    width: "100%",
-    height: "28em",
-  };
 
   function connectSubject(a) {
     for (let i = 0; i <= usuario.alumnos.length; i++) {
@@ -341,55 +333,59 @@ export default function Identidad() {
   return (
     <div style={main}>
       <div style={sidebar}>
-        <a style={box} href="/vinonuevo/1">
+        <a style={box} href="/identidad/1">
           <div style={button_pressed}>
             <h2 style={span_2}>Introducción</h2>
           </div>
         </a>
-        <a style={box} href="/vinonuevo/2">
+        <a style={box} href="/identidad/2">
           <div style={button_pressed}>
             <h2 style={span_2}>Módulos</h2>
           </div>
         </a>
-        <a style={box} href="/vinonuevo/3">
+        <a style={box} href="/identidad/3">
           <div style={button_pressed}>
             <h2 style={span_2}>Tarea</h2>
           </div>
         </a>
-        <a style={box} href="/vinonuevo/4">
+        <a style={box} href="/identidad/4">
           <div style={button_pressed}>
-            <h2 style={span}>Video-Clase I</h2>
+            <h2 style={span_2}>Video-Clase</h2>
           </div>
         </a>
-        <a style={box} href="/vinonuevo/5">
+        <a style={box} href="/identidad/5">
           <div style={button_selected}>
-            <h2 style={span_1}>Video-Clase II</h2>
-          </div>
-        </a>
-        <a style={box} href="/vinonuevo/6">
-          <div style={button}>
-            <h2 style={span_1}>Examen</h2>
+            <h2 style={span}>Examen</h2>
           </div>
         </a>
       </div>
       <div style={customStyle_1}>
-        <h1>Videoclase II</h1>
+        <h1>Examen Final</h1>
+        <p style={center}>
+          EXAMEN: TENIENDO EN CUENTA los módulos, la video-clase (diagramas y
+          apuntes), <br />
+          indicar la respuesta correcta!! <br />
+          <b>
+            IMPORTANTE: sólo se permite enviar el examen una sola vez una sola
+            vez.
+          </b>
+        </p>
         <iframe
-          style={iframe}
-          width="1280"
-          height="720"
-          src="https://www.youtube.com/embed/Vso67uwCc5M"
-          title="YouTube video player"
+          src="https://docs.google.com/forms/d/e/1FAIpQLSeQaRFzeHYF5bWnw2G1iTkst6mj0liZtkPEuQMtbmeAiUn7jw/viewform?embedded=true"
+          width="340"
+          height="7139"
           frameborder="0"
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-          allowfullscreen
-        ></iframe>
+          marginheight="0"
+          marginwidth="0"
+        >
+          Cargando…
+        </iframe>
       </div>
       <div style={sidebar_2}>
         <a style={span_side_2} href="/">
           <AiFillHome />
         </a>
-        <a style={span_side_2} href="/buscar">  
+        <a style={span_side_2} href="/buscar">
           <AiOutlineSearch />
         </a>
         <a style={span_side_2} href="/cuenta">

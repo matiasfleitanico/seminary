@@ -49,19 +49,23 @@ export default function Identidad() {
   });
 
   function loopOn() {
-    for (let i = 0; i < datas.access.length; i++) {
-      if (datas.access[i] === 1) {
-        connectSubject(user_id);
-        console.log("You have access requested");
-        break;
-      } else {
-        setTimeout(() => {
-          navigate("/");
-        }, 300);
-        console.log("You don't have access requested");
-      }
-    }
-  }
+    /* el próximo número sería el ID de la materia */
+   let ids = 1
+       for (let i = 0; i < datas.access.length; i++) {  
+         if(datas.access[i] < ids){
+         console.log("This is not your subject")
+         } else if (datas.access[i] === ids) {
+           connectSubject(user_id);
+           console.log("You have access requested");
+           break;
+         } else {
+           setTimeout(() => {
+             navigate("/");
+           }, 300);
+           console.log("You don't have access requested");
+         }
+       }
+     }
 
   if (windowSize.current[0] < 900) {
     main = {

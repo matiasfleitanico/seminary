@@ -59,7 +59,25 @@ import EschatologyThree from "./components/Eschatology/EschatologyThree";
 import EschatologyFourth from "./components/Eschatology/EschatologyFourth"; 
 import EschatologyFiveth from "./components/Eschatology/EschatologyFiveth"; 
 import EschatologySixth from "./components/Eschatology/EschatologySixth"; 
-import EschatologySeven from "./components/Eschatology/EschatologySeven"; 
+import EschatologySeven from "./components/Eschatology/EschatologySeven";  
+
+
+import OverallHealthOne from "./components/OverallHealth/OverallHealthOne";
+import OverallHealthTwo from "./components/OverallHealth/OverallHealthTwo";
+import OverallHealthThree from "./components/OverallHealth/OverallHealthThree";
+import OverallHealthFourth from "./components/OverallHealth/OverallHealthFourth"; 
+import OverallHealthFiveth from "./components/OverallHealth/OverallHealthFiveth";
+
+
+// import RevivalOne from "./components/Revival/RevivalOne";
+// import RevivalTwo from "./components/Revival/RevivalTwo";
+// import RevivalThree from "./components/Revival/RevivalThree";
+// import RevivalFourth from "./components/Revival/RevivalFourth"; 
+// import RevivalFiveth from "./components/Revival/RevivalFiveth"; 
+// import RevivalSixth from "./components/Revival/RevivalSixth"; 
+// import RevivalSeven from "./components/Revival/RevivalSeven"; 
+// import RevivalEight from "./components/Revival/RevivalEight"; 
+
 
 
 
@@ -94,7 +112,8 @@ function App() {
             <Search/>
           </ProtectedRoute>} />
 
-/*Identidad */
+  /*Identidad */
+
         <Route path="/identidad/1" element={
           <ProtectedRoute>
             <IdentityOne/>
@@ -256,7 +275,7 @@ function App() {
           <Route path="/evangeliossinopticos/8" element={
           <ProtectedRoute>
             <SynopticEight/>
-          </ProtectedRoute>} />
+          </ProtectedRoute>} /> 
 
 
           <Route path="/escatologia/1" element={
@@ -286,7 +305,69 @@ function App() {
           <Route path="/escatologia/7" element={
           <ProtectedRoute>
             <EschatologySeven/>
+          </ProtectedRoute>} /> 
+
+
+
+          {/* <Route path="/avivamiento/1" element={
+          <ProtectedRoute>
+            <RevivalOne/>
           </ProtectedRoute>} />
+          <Route path="/avivamiento/2" element={
+          <ProtectedRoute>
+            <RevivalTwo/>
+          </ProtectedRoute>} />
+          <Route path="/avivamiento/3" element={
+          <ProtectedRoute>
+            <RevivalThree/>
+          </ProtectedRoute>} />
+          <Route path="/avivamiento/4" element={
+          <ProtectedRoute>
+            <RevivalFourth/>
+          </ProtectedRoute>} />
+          <Route path="/avivamiento/5" element={
+          <ProtectedRoute>
+            <RevivalFiveth/>
+          </ProtectedRoute>} />
+          <Route path="/avivamiento/6" element={
+          <ProtectedRoute>
+            <RevivalSixth/>
+          </ProtectedRoute>} />
+          <Route path="/avivamiento/7" element={
+          <ProtectedRoute>
+            <RevivalSeven/>
+          </ProtectedRoute>} />
+          <Route path="/avivamiento/8" element={
+          <ProtectedRoute>
+            <RevivalEight/>
+          </ProtectedRoute>} />  */}
+
+
+      <Route path="/salud/1" element={
+          <ProtectedRoute>
+            <OverallHealthOne/>
+          </ProtectedRoute>} />
+
+        <Route path="/salud/2" element={
+          <ProtectedRoute>
+            <OverallHealthTwo/>
+          </ProtectedRoute>} />
+
+        <Route path="/salud/3" element={
+          <ProtectedRoute>
+            <OverallHealthThree/>
+          </ProtectedRoute>} />
+
+        <Route path="/salud/4" element={
+          <ProtectedRoute>
+            <OverallHealthFourth/>
+          </ProtectedRoute>} />
+
+        <Route path="/salud/5" element={
+          <ProtectedRoute>
+            <OverallHealthFiveth/>
+          </ProtectedRoute>} />
+          
 
 
         <Route path="/vino-nuevo" element={

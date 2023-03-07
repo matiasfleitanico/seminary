@@ -49,23 +49,19 @@ export default function Identidad() {
   });
 
   function loopOn() {
-    /* el próximo número sería el ID de la materia */
-   let ids = 1
-       for (let i = 0; i < datas.access.length; i++) {  
-         if(datas.access[i] < ids){
-         console.log("This is not your subject")
-         } else if (datas.access[i] === ids) {
-           connectSubject(user_id);
-           console.log("You have access requested");
-           break;
-         } else {
-           setTimeout(() => {
-             navigate("/");
-           }, 300);
-           console.log("You don't have access requested");
-         }
-       }
-     }
+    for (let i = 0; i < datas.access.length; i++) {
+      if (datas.access[i] === 0) {
+        connectSubject(user_id);
+        console.log("You have access requested");
+        break;
+      } else {
+        setTimeout(() => {
+          navigate("/");
+        }, 300);
+        console.log("You don't have access requested");
+      }
+    }
+  }
 
   if (windowSize.current[0] < 900) {
     main = {
@@ -126,19 +122,19 @@ export default function Identidad() {
       boxShadow: "rgba(0, 0, 0, 0.35) 0px 5px 15px",
     };
     button_pressed = {
-      display: "grid",
-      alignItems: "center",
-      justifyItems: "center",
-      gridTemplateColumns: "1fr",
-      gridGap: "30px",
-      backgroundColor: "#656565",
-      width: "100%",
-      height: "45px",
-      justifySelf: "center",
-      alignSelf: "center",
-      borderRadius: "10px",
-      boxShadow: "rgba(0, 0, 0, 0.35) 0px 5px 15px",
-    };
+        display: "grid",
+        alignItems: "center",
+        justifyItems: "center",
+        gridTemplateColumns: "1fr",
+        gridGap: "30px",
+        backgroundColor: "#656565",
+        width: "100%",
+        height: "45px",
+        justifySelf: "center",
+        alignSelf: "center",
+        borderRadius: "10px",
+        boxShadow: "rgba(0, 0, 0, 0.35) 0px 5px 15px",
+      };
     button = {
       display: "grid",
       alignItems: "center",
@@ -158,8 +154,7 @@ export default function Identidad() {
       display: "grid",
       gridTemplateColumns: "20% 71% 7%",
       padding: "10px",
-      gridGap: "5px",
-      width: "100%",
+      gridGap: "1%",
     };
     sidebar_2 = {
       backgroundColor: "#8C32FF",
@@ -169,7 +164,7 @@ export default function Identidad() {
       display: "grid",
       gridTemplateRows: "1fr 1fr 1fr 1fr",
       alignItems: "center",
-      maxHeight: "800px",
+      maxHeight: "800px"
     };
     span_1 = {
       color: "black",
@@ -211,19 +206,19 @@ export default function Identidad() {
       boxShadow: "rgba(0, 0, 0, 0.35) 0px 5px 15px",
     };
     button_pressed = {
-      display: "grid",
-      alignItems: "center",
-      justifyItems: "center",
-      gridTemplateColumns: "1fr",
-      gridGap: "30px",
-      backgroundColor: "#656565",
-      width: "100%",
-      height: "100px",
-      justifySelf: "center",
-      alignSelf: "center",
-      borderRadius: "10px",
-      boxShadow: "rgba(0, 0, 0, 0.35) 0px 5px 15px",
-    };
+        display: "grid",
+        alignItems: "center",
+        justifyItems: "center",
+        gridTemplateColumns: "1fr",
+        gridGap: "30px",
+        backgroundColor: "#656565",
+        width: "100%",
+        height: "100px",
+        justifySelf: "center",
+        alignSelf: "center",
+        borderRadius: "10px",
+        boxShadow: "rgba(0, 0, 0, 0.35) 0px 5px 15px",
+      };
     button = {
       display: "grid",
       alignItems: "center",
@@ -265,9 +260,9 @@ export default function Identidad() {
     padding: "15px",
     gridGap: "30px",
     backgroundColor: "white",
-    width: "95%",
+    width: "auto",
     height: "auto",
-    margin: "15px 0 200px",
+    margin: "15px 0",
     justifySelf: "center",
     alignSelf: "center",
     borderRadius: "10px",
@@ -318,14 +313,10 @@ export default function Identidad() {
   var span_2 = {
     color: "grey",
     margin: "0",
-  };
+  }
   var box = {
     textDecoration: "none",
     width: "100%",
-  };
-  var iframe = {
-    width: "100%",
-    height: "28em",
   };
 
   function connectSubject(a) {
@@ -341,55 +332,87 @@ export default function Identidad() {
   return (
     <div style={main}>
       <div style={sidebar}>
-        <a style={box} href="/vinonuevo/1">
+        <a style={box} href="/identidad/1">
           <div style={button_pressed}>
             <h2 style={span_2}>Introducción</h2>
           </div>
         </a>
-        <a style={box} href="/vinonuevo/2">
-          <div style={button_pressed}>
-            <h2 style={span_2}>Módulos</h2>
-          </div>
-        </a>
-        <a style={box} href="/vinonuevo/3">
-          <div style={button_pressed}>
-            <h2 style={span_2}>Tarea</h2>
-          </div>
-        </a>
-        <a style={box} href="/vinonuevo/4">
-          <div style={button_pressed}>
-            <h2 style={span}>Video-Clase I</h2>
-          </div>
-        </a>
-        <a style={box} href="/vinonuevo/5">
+        <a style={box} href="/identidad/2">
           <div style={button_selected}>
-            <h2 style={span_1}>Video-Clase II</h2>
+            <h2 style={span}>Módulos</h2>
           </div>
         </a>
-        <a style={box} href="/vinonuevo/6">
+        <a style={box} href="/identidad/3">
+          <div style={button}>
+            <h2 style={span_1}>Tarea</h2>
+          </div>
+        </a>
+        <a style={box} href="/identidad/4">
+          <div style={button}>
+            <h2 style={span_1}>Video-Clase</h2>
+          </div>
+        </a>
+        <a style={box} href="/identidad/5">
           <div style={button}>
             <h2 style={span_1}>Examen</h2>
           </div>
         </a>
       </div>
       <div style={customStyle_1}>
-        <h1>Videoclase II</h1>
-        <iframe
-          style={iframe}
-          width="1280"
-          height="720"
-          src="https://www.youtube.com/embed/Vso67uwCc5M"
-          title="YouTube video player"
-          frameborder="0"
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-          allowfullscreen
-        ></iframe>
+        <h1>Módulos</h1>
+        <p style={center}>
+          Lee los módulos antes de continuar con la tarea. <br />
+          Es importante que te encuentres registrado con tu Gmail para poder
+          acceder a los módulos.
+          <br />
+          <b>Presiona la imagen corespondiente </b>
+        </p>
+        <div style={content}>
+          <a
+            style={boxes}
+            href="https://drive.google.com/file/d/1RTAWXIuU4_C0agP5xZ4kKtJWLRfBDJWz/view"
+            download
+          >
+            <h2>Módulo 1</h2>
+            <img style={img} src={"https://i.imgur.com/cJ4UvSR.jpg"}></img>
+          </a>
+          <a
+            style={boxes}
+            href="https://drive.google.com/file/d/1FEDvzUT7GctKb4MUxdQw3MAqFyu2MZHl/view"
+            download
+          >
+            <h2>Módulo 2</h2>
+            <img style={img} src={"https://i.imgur.com/SwPdQqO.jpg"}></img>
+          </a>
+        </div>
+        <h2>Lecturas complementarias</h2>
+        <a
+          style={boxes}
+          href="https://drive.google.com/file/d/1v7e9492nT5jqD_imZ-lmact378crEuSz/view"
+          download
+        >
+          <h2>Biografía de Esdras</h2>
+        </a>
+        <a
+          style={boxes}
+          href="https://drive.google.com/file/d/17YhlvszxB3Dy2PQ8HBzXvbS3A2FLzZU3/view"
+          download
+        >
+          <h2>Significado de CONSAGRAR</h2>
+        </a>
+        <a
+          style={boxes}
+          href="https://drive.google.com/file/d/1qOxuLv7tymtwme5FAAZI1Pqu2l6AxBHa/view"
+          download
+        >
+          <h2>Caracteríticas del Líder</h2>
+        </a>
       </div>
       <div style={sidebar_2}>
         <a style={span_side_2} href="/">
           <AiFillHome />
         </a>
-        <a style={span_side_2} href="/buscar">  
+        <a style={span_side_2} href="/buscar">
           <AiOutlineSearch />
         </a>
         <a style={span_side_2} href="/cuenta">

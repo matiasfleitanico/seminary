@@ -1,3 +1,4 @@
+
 import { useRef } from "react";
 import { useAuth } from "../../context/authContext";
 import { useNavigate } from "react-router-dom";
@@ -49,23 +50,19 @@ export default function Identidad() {
   });
 
   function loopOn() {
-    /* el próximo número sería el ID de la materia */
-   let ids = 1
-       for (let i = 0; i < datas.access.length; i++) {  
-         if(datas.access[i] < ids){
-         console.log("This is not your subject")
-         } else if (datas.access[i] === ids) {
-           connectSubject(user_id);
-           console.log("You have access requested");
-           break;
-         } else {
-           setTimeout(() => {
-             navigate("/");
-           }, 300);
-           console.log("You don't have access requested");
-         }
-       }
-     }
+    for (let i = 0; i < datas.access.length; i++) {
+      if (datas.access[i] === 0) {
+        connectSubject(user_id);
+        console.log("You have access requested");
+        break;
+      } else {
+        setTimeout(() => {
+          navigate("/");
+        }, 300);
+        console.log("You don't have access requested");
+      }
+    }
+  }
 
   if (windowSize.current[0] < 900) {
     main = {
@@ -126,19 +123,19 @@ export default function Identidad() {
       boxShadow: "rgba(0, 0, 0, 0.35) 0px 5px 15px",
     };
     button_pressed = {
-      display: "grid",
-      alignItems: "center",
-      justifyItems: "center",
-      gridTemplateColumns: "1fr",
-      gridGap: "30px",
-      backgroundColor: "#656565",
-      width: "100%",
-      height: "45px",
-      justifySelf: "center",
-      alignSelf: "center",
-      borderRadius: "10px",
-      boxShadow: "rgba(0, 0, 0, 0.35) 0px 5px 15px",
-    };
+        display: "grid",
+        alignItems: "center",
+        justifyItems: "center",
+        gridTemplateColumns: "1fr",
+        gridGap: "30px",
+        backgroundColor: "#656565",
+        width: "100%",
+        height: "45px",
+        justifySelf: "center",
+        alignSelf: "center",
+        borderRadius: "10px",
+        boxShadow: "rgba(0, 0, 0, 0.35) 0px 5px 15px",
+      };
     button = {
       display: "grid",
       alignItems: "center",
@@ -159,7 +156,7 @@ export default function Identidad() {
       gridTemplateColumns: "20% 71% 7%",
       padding: "10px",
       gridGap: "5px",
-      width: "100%",
+      width: "100%"
     };
     sidebar_2 = {
       backgroundColor: "#8C32FF",
@@ -169,7 +166,7 @@ export default function Identidad() {
       display: "grid",
       gridTemplateRows: "1fr 1fr 1fr 1fr",
       alignItems: "center",
-      maxHeight: "800px",
+      maxHeight: "800px"
     };
     span_1 = {
       color: "black",
@@ -211,19 +208,19 @@ export default function Identidad() {
       boxShadow: "rgba(0, 0, 0, 0.35) 0px 5px 15px",
     };
     button_pressed = {
-      display: "grid",
-      alignItems: "center",
-      justifyItems: "center",
-      gridTemplateColumns: "1fr",
-      gridGap: "30px",
-      backgroundColor: "#656565",
-      width: "100%",
-      height: "100px",
-      justifySelf: "center",
-      alignSelf: "center",
-      borderRadius: "10px",
-      boxShadow: "rgba(0, 0, 0, 0.35) 0px 5px 15px",
-    };
+        display: "grid",
+        alignItems: "center",
+        justifyItems: "center",
+        gridTemplateColumns: "1fr",
+        gridGap: "30px",
+        backgroundColor: "#656565",
+        width: "100%",
+        height: "100px",
+        justifySelf: "center",
+        alignSelf: "center",
+        borderRadius: "10px",
+        boxShadow: "rgba(0, 0, 0, 0.35) 0px 5px 15px",
+      };
     button = {
       display: "grid",
       alignItems: "center",
@@ -267,7 +264,7 @@ export default function Identidad() {
     backgroundColor: "white",
     width: "95%",
     height: "auto",
-    margin: "15px 0 200px",
+    margin: "15px 0",
     justifySelf: "center",
     alignSelf: "center",
     borderRadius: "10px",
@@ -318,14 +315,10 @@ export default function Identidad() {
   var span_2 = {
     color: "grey",
     margin: "0",
-  };
+  }
   var box = {
     textDecoration: "none",
     width: "100%",
-  };
-  var iframe = {
-    width: "100%",
-    height: "28em",
   };
 
   function connectSubject(a) {
@@ -341,55 +334,57 @@ export default function Identidad() {
   return (
     <div style={main}>
       <div style={sidebar}>
-        <a style={box} href="/vinonuevo/1">
+        <a style={box} href="/identidad/1">
           <div style={button_pressed}>
             <h2 style={span_2}>Introducción</h2>
           </div>
         </a>
-        <a style={box} href="/vinonuevo/2">
+        <a style={box} href="/identidad/2">
           <div style={button_pressed}>
             <h2 style={span_2}>Módulos</h2>
           </div>
         </a>
-        <a style={box} href="/vinonuevo/3">
-          <div style={button_pressed}>
-            <h2 style={span_2}>Tarea</h2>
-          </div>
-        </a>
-        <a style={box} href="/vinonuevo/4">
-          <div style={button_pressed}>
-            <h2 style={span}>Video-Clase I</h2>
-          </div>
-        </a>
-        <a style={box} href="/vinonuevo/5">
+        <a style={box} href="/identidad/3">
           <div style={button_selected}>
-            <h2 style={span_1}>Video-Clase II</h2>
+            <h2 style={span}>Tarea</h2>
           </div>
         </a>
-        <a style={box} href="/vinonuevo/6">
+        <a style={box} href="/identidad/4">
+          <div style={button}>
+            <h2 style={span_1}>Video-Clase</h2>
+          </div>
+        </a>
+        <a style={box} href="/identidad/5">
           <div style={button}>
             <h2 style={span_1}>Examen</h2>
           </div>
         </a>
       </div>
       <div style={customStyle_1}>
-        <h1>Videoclase II</h1>
-        <iframe
-          style={iframe}
-          width="1280"
-          height="720"
-          src="https://www.youtube.com/embed/Vso67uwCc5M"
-          title="YouTube video player"
-          frameborder="0"
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-          allowfullscreen
-        ></iframe>
-      </div>
+          <h1>Tarea</h1>
+          <p style={center}>
+            TAREA: Luego de leer los MÓDULOS I y II - PDF”, la “Biografía de
+            ESDRAS – PDF”, <br />
+            el “Significado de la palabra CONSAGRAR” y las “Características del
+            líder cristiano” responder el siguiente cuestionario. <br />
+            <b>IMPORTANTE: sólo se permite enviarla una sola vez.</b>{" "}
+          </p>
+          <iframe
+            src="https://docs.google.com/forms/d/e/1FAIpQLSdw7z44T3Zjf5ewFadzhC7Co8CemsFGMtHwiBSA2dPd_haujw/viewform?embedded=true"
+            width="340"
+            height="1376"
+            frameborder="0"
+            marginheight="0"
+            marginwidth="0"
+          >
+            Cargando…
+          </iframe>
+        </div>
       <div style={sidebar_2}>
         <a style={span_side_2} href="/">
           <AiFillHome />
         </a>
-        <a style={span_side_2} href="/buscar">  
+        <a style={span_side_2} href="/buscar">
           <AiOutlineSearch />
         </a>
         <a style={span_side_2} href="/cuenta">

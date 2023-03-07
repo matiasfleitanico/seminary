@@ -49,23 +49,19 @@ export default function Identidad() {
   });
 
   function loopOn() {
-    /* el próximo número sería el ID de la materia */
-   let ids = 1
-       for (let i = 0; i < datas.access.length; i++) {  
-         if(datas.access[i] < ids){
-         console.log("This is not your subject")
-         } else if (datas.access[i] === ids) {
-           connectSubject(user_id);
-           console.log("You have access requested");
-           break;
-         } else {
-           setTimeout(() => {
-             navigate("/");
-           }, 300);
-           console.log("You don't have access requested");
-         }
-       }
-     }
+    for (let i = 0; i < datas.access.length; i++) {
+      if (datas.access[i] === 0) {
+        connectSubject(user_id);
+        console.log("You have access requested");
+        break;
+      } else {
+        setTimeout(() => {
+          navigate("/");
+        }, 300);
+        console.log("You don't have access requested");
+      }
+    }
+  }
 
   if (windowSize.current[0] < 900) {
     main = {
@@ -325,8 +321,8 @@ export default function Identidad() {
   };
   var iframe = {
     width: "100%",
-    height: "28em",
-  };
+    height: "28em"
+  }
 
   function connectSubject(a) {
     for (let i = 0; i <= usuario.alumnos.length; i++) {
@@ -357,39 +353,34 @@ export default function Identidad() {
           </div>
         </a>
         <a style={box} href="/vinonuevo/4">
-          <div style={button_pressed}>
-            <h2 style={span}>Video-Clase I</h2>
+          <div style={button_selected}>
+            <h2 style={span}>Video-Clase</h2>
           </div>
         </a>
         <a style={box} href="/vinonuevo/5">
-          <div style={button_selected}>
-            <h2 style={span_1}>Video-Clase II</h2>
-          </div>
-        </a>
-        <a style={box} href="/vinonuevo/6">
           <div style={button}>
             <h2 style={span_1}>Examen</h2>
           </div>
         </a>
       </div>
       <div style={customStyle_1}>
-        <h1>Videoclase II</h1>
+        <h1>Videoclase</h1>
         <iframe
-          style={iframe}
-          width="1280"
-          height="720"
-          src="https://www.youtube.com/embed/Vso67uwCc5M"
-          title="YouTube video player"
-          frameborder="0"
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-          allowfullscreen
-        ></iframe>
+            style={iframe}
+            width="1280"
+            height="720"
+            src="https://www.youtube.com/embed/8QqtcQYSJtk"
+            title="YouTube video player"
+            frameborder="0"
+            allow="autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture;"
+            autoplay={1}
+            ></iframe>
       </div>
       <div style={sidebar_2}>
         <a style={span_side_2} href="/">
           <AiFillHome />
         </a>
-        <a style={span_side_2} href="/buscar">  
+        <a style={span_side_2} href="/buscar">
           <AiOutlineSearch />
         </a>
         <a style={span_side_2} href="/cuenta">
