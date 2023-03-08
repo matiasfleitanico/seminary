@@ -25,7 +25,7 @@ export const usuario = {
     },
     {
       email: "seminariopoderdedios@gmail.com",
-      access: [0, 1, 2, 3, 4, 5, 6],
+      access: [0, 1, 2, 3, 4, 5, 6, 7],
     },
     {
       email: "ezekielfleita10@gmail.com",
@@ -189,10 +189,10 @@ export const usuario = {
 
     {
       id: 7,
-      title: "Salud",
+      title: "Salud física, emocional y espiritual",
       description:
         "La revelación de los secretos celestiales de lo que es y de lo que ha de venir, según el principio de los múltiples niveles, juntos y ordenados en secuencia cronológica, desde la trompeta de Dios...  ",
-      link: "https://i.imgur.com/QnceYOn.png",
+      link: "https://i.imgur.com/s1GtA7X.jpg",
       path: "salud/1",
     },
 

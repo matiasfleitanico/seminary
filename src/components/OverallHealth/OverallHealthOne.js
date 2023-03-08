@@ -48,7 +48,7 @@ export default function Identidad() {
   });
 
   function loopOn() {
-    for (let i = 0; i < datas.access.length; i++) {  
+    for (let i = 0; i < datas.access.length; i++) {
       /* el próximo número sería el ID de la materia */
       if (datas.access[i] === 0) {
         connectSubject(user_id);
@@ -150,7 +150,7 @@ export default function Identidad() {
       display: "grid",
       gridTemplateRows: "1fr 1fr 1fr 1fr",
       alignItems: "center",
-      maxHeight: "800px"
+      maxHeight: "800px",
     };
     span_1 = {
       color: "black",
@@ -328,19 +328,19 @@ export default function Identidad() {
       </div>
       <div>
         <div style={customStyle_1}>
-          <img style={img_1} src={"https://i.imgur.com/QoeAo7L.jpg"}></img>
-          <h1>Identidad y Genética del Avivamiento</h1>
+          <img style={img_1} src={"https://i.imgur.com/s1GtA7X.jpg"}></img>
+          <h1>Salud física, emocional y espiritual</h1>
           <p style={center}>
-            El origen de nuestra identidad y la lucha contra Satanás y el pecado
-            que intentan distorsionarla. Los principios del ADN espiritual que
-            Esdras, Nehemías y otros hombres del AT usaron para originar los
-            grandes avivamientos escriturales. La Biblia y Jesús como modelos
-            únicos de lo que somos, lo que tenemos, lo que podemos ser
-            (propósito); y a dónde vamos (destino) <br /> <br /> <br /> POLÍTICA
-            DE PRIVACIDAD Todo el material del SEMINARIO PODER DE DIOS que se da
-            en cada materia es exclusivo para los alumnos regulares: que cursan,
-            que son guiados por el profesor para estudiar el material y luego
-            ser evaluados. Que los Módulos, los libros, las lecturas, tareas,
+            Examina los fundamentos de la salud mental, emocional, física y
+            espiritual, analizando el trasfondo de la sanidad preventiva física
+            y el teológico, para converger en 44 principios prácticos de la
+            salud integral, tomados directamente de la Biblia ¡Tendrás una guía
+            completa para realizar mejoras en tu salud global, según los
+            parámetros escriturales! <br /> <br /> <br /> POLÍTICA DE PRIVACIDAD
+            Todo el material del SEMINARIO PODER DE DIOS que se da en cada
+            materia es exclusivo para los alumnos regulares: que cursan, que son
+            guiados por el profesor para estudiar el material y luego ser
+            evaluados. Que los Módulos, los libros, las lecturas, tareas,
             reflexiones, apuntes y toda producción es para uso exclusivamente
             personal. NO COMPARTIR!! <br /> <br />
             BIBLIAS. SUGERIMOS LAS VERSIONES: Reina Valera 1960. La Nueva

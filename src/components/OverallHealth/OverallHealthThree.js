@@ -334,27 +334,27 @@ export default function Identidad() {
   return (
     <div style={main}>
       <div style={sidebar}>
-        <a style={box} href="/identidad/1">
+        <a style={box} href="/salud/1">
           <div style={button_pressed}>
             <h2 style={span_2}>Introducción</h2>
           </div>
         </a>
-        <a style={box} href="/identidad/2">
+        <a style={box} href="/salud/2">
           <div style={button_pressed}>
             <h2 style={span_2}>Módulos</h2>
           </div>
         </a>
-        <a style={box} href="/identidad/3">
+        <a style={box} href="/salud/3">
           <div style={button_selected}>
             <h2 style={span}>Tarea</h2>
           </div>
         </a>
-        <a style={box} href="/identidad/4">
+        <a style={box} href="/salud/4">
           <div style={button}>
             <h2 style={span_1}>Video-Clase</h2>
           </div>
         </a>
-        <a style={box} href="/identidad/5">
+        <a style={box} href="/salud/5">
           <div style={button}>
             <h2 style={span_1}>Examen</h2>
           </div>
@@ -370,7 +370,7 @@ export default function Identidad() {
             <b>IMPORTANTE: sólo se permite enviarla una sola vez.</b>{" "}
           </p>
           <iframe
-            src="https://docs.google.com/forms/d/e/1FAIpQLSdw7z44T3Zjf5ewFadzhC7Co8CemsFGMtHwiBSA2dPd_haujw/viewform?embedded=true"
+            src="https://docs.google.com/forms/d/e/1FAIpQLSdUMsI4UYh4MYPyh9G1aYoCOi_lQnxCplJ_pcLOAjVAB8r5lw/viewform?embedded=true"
             width="340"
             height="1376"
             frameborder="0"

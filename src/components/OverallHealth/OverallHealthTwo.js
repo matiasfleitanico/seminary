@@ -332,27 +332,27 @@ export default function Identidad() {
   return (
     <div style={main}>
       <div style={sidebar}>
-        <a style={box} href="/identidad/1">
+        <a style={box} href="/salud/1">
           <div style={button_pressed}>
             <h2 style={span_2}>Introducción</h2>
           </div>
         </a>
-        <a style={box} href="/identidad/2">
+        <a style={box} href="/salud/2">
           <div style={button_selected}>
             <h2 style={span}>Módulos</h2>
           </div>
         </a>
-        <a style={box} href="/identidad/3">
+        <a style={box} href="/salud/3">
           <div style={button}>
             <h2 style={span_1}>Tarea</h2>
           </div>
         </a>
-        <a style={box} href="/identidad/4">
+        <a style={box} href="/salud/4">
           <div style={button}>
             <h2 style={span_1}>Video-Clase</h2>
           </div>
         </a>
-        <a style={box} href="/identidad/5">
+        <a style={box} href="/salud/5">
           <div style={button}>
             <h2 style={span_1}>Examen</h2>
           </div>
@@ -370,7 +370,7 @@ export default function Identidad() {
         <div style={content}>
           <a
             style={boxes}
-            href="https://drive.google.com/file/d/1RTAWXIuU4_C0agP5xZ4kKtJWLRfBDJWz/view"
+            href="https://drive.google.com/file/d/15pxtxwgP9vDr-bfQRLO9YPdz4W_4kLmR/view"
             download
           >
             <h2>Módulo 1</h2>
@@ -378,34 +378,29 @@ export default function Identidad() {
           </a>
           <a
             style={boxes}
-            href="https://drive.google.com/file/d/1FEDvzUT7GctKb4MUxdQw3MAqFyu2MZHl/view"
+            href="https://drive.google.com/file/d/1dHPerBUJUTizcgCaj2EZL9m_jXRAA6Ts/view"
             download
           >
             <h2>Módulo 2</h2>
             <img style={img} src={"https://i.imgur.com/SwPdQqO.jpg"}></img>
           </a>
         </div>
+
         <h2>Lecturas complementarias</h2>
         <a
           style={boxes}
-          href="https://drive.google.com/file/d/1v7e9492nT5jqD_imZ-lmact378crEuSz/view"
+          href="https://drive.google.com/file/d/1RtTuSiFqTD0uDBKsuJqj1jimFIh2Djcf/view"
           download
         >
-          <h2>Biografía de Esdras</h2>
+          <h2>Animales de consumo limpios e inmundos</h2>
         </a>
+    
         <a
           style={boxes}
-          href="https://drive.google.com/file/d/17YhlvszxB3Dy2PQ8HBzXvbS3A2FLzZU3/view"
+          href="https://drive.google.com/file/d/1hRDC_lTaL8-zXCVmUsQfFzOb_zHr9E8l/view"
           download
         >
-          <h2>Significado de CONSAGRAR</h2>
-        </a>
-        <a
-          style={boxes}
-          href="https://drive.google.com/file/d/1qOxuLv7tymtwme5FAAZI1Pqu2l6AxBHa/view"
-          download
-        >
-          <h2>Caracteríticas del Líder</h2>
+          <h2>SALUD, ENFERMEDAD Y CURACIÓN - DICCIONARIO NELSON</h2>
         </a>
       </div>
       <div style={sidebar_2}>

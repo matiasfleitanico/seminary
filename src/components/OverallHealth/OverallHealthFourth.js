@@ -337,39 +337,40 @@ export default function Identidad() {
   return (
     <div style={main}>
       <div style={sidebar}>
-        <a style={box} href="/vinonuevo/1">
+        <a style={box} href="/salud/1">
           <div style={button_pressed}>
             <h2 style={span_2}>Introducción</h2>
           </div>
         </a>
-        <a style={box} href="/vinonuevo/2">
+        <a style={box} href="/salud/2">
           <div style={button_pressed}>
             <h2 style={span_2}>Módulos</h2>
           </div>
         </a>
-        <a style={box} href="/vinonuevo/3">
+        <a style={box} href="/salud/3">
           <div style={button_pressed}>
             <h2 style={span_2}>Tarea</h2>
           </div>
         </a>
-        <a style={box} href="/vinonuevo/4">
+        <a style={box} href="/salud/4">
           <div style={button_selected}>
             <h2 style={span}>Video-Clase</h2>
           </div>
         </a>
-        <a style={box} href="/vinonuevo/5">
+        <a style={box} href="/salud/5">
           <div style={button}>
             <h2 style={span_1}>Examen</h2>
           </div>
         </a>
       </div>
       <div style={customStyle_1}>
+        
         <h1>Videoclase</h1>
         <iframe
             style={iframe}
             width="1280"
             height="720"
-            src="https://www.youtube.com/embed/8QqtcQYSJtk"
+            src="https://www.youtube.com/embed/Uis_w3F6OL4"
             title="YouTube video player"
             frameborder="0"
             allow="autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture;"
