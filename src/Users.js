@@ -48,7 +48,11 @@ export const usuario = {
     {
       email: "mai.quintanaaaa@gmail.com",
       access: [0],
-    },
+    }, 
+    {
+      email: "geezma95@gmail.com",
+      access: [0],
+    }, 
     {
       email: "leaneze93@gmail.com",
       access: [0],
