@@ -25,11 +25,11 @@ export const usuario = {
     },
     {
       email: "seminariopoderdedios@gmail.com",
-      access: [0, 1, 2, 3, 4, 5, 6, 7],
+      access: [0, 1, 2, 3, 4, 5, 6, 7, 8],
     },
     {
       email: "ezekielfleita10@gmail.com",
-      access: [0, 1, 2, 3, 4, 5, 6, 7],
+      access: [0, 1, 2, 3, 4, 5, 6, 7, 8],
     },
 
 
@@ -198,6 +198,15 @@ export const usuario = {
         "La revelación de los secretos celestiales de lo que es y de lo que ha de venir, según el principio de los múltiples niveles, juntos y ordenados en secuencia cronológica, desde la trompeta de Dios...  ",
       link: "https://i.imgur.com/s1GtA7X.jpg",
       path: "salud/1",
+    },
+
+    {
+      id: 8,
+      title: "Seminario de Avivamiento I",
+      description:
+        "La revelación de los secretos celestiales de lo que es y de lo que ha de venir, según el principio de los múltiples niveles, juntos y ordenados en secuencia cronológica, desde la trompeta de Dios...  ",
+      link: "https://i.imgur.com/yNqP7cS.jpg",
+      path: "avivamiento/1",
     },
 
   ],

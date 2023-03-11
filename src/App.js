@@ -69,14 +69,14 @@ import OverallHealthFourth from "./components/OverallHealth/OverallHealthFourth"
 import OverallHealthFiveth from "./components/OverallHealth/OverallHealthFiveth";
 
 
-// import RevivalOne from "./components/Revival/RevivalOne";
-// import RevivalTwo from "./components/Revival/RevivalTwo";
-// import RevivalThree from "./components/Revival/RevivalThree";
-// import RevivalFourth from "./components/Revival/RevivalFourth"; 
-// import RevivalFiveth from "./components/Revival/RevivalFiveth"; 
-// import RevivalSixth from "./components/Revival/RevivalSixth"; 
-// import RevivalSeven from "./components/Revival/RevivalSeven"; 
-// import RevivalEight from "./components/Revival/RevivalEight"; 
+import RevivalOne from "./components/Revival/RevivalOne";
+import RevivalTwo from "./components/Revival/RevivalTwo";
+import RevivalThree from "./components/Revival/RevivalThree";
+import RevivalFourth from "./components/Revival/RevivalFourth"; 
+import RevivalFiveth from "./components/Revival/RevivalFiveth"; 
+import RevivalSixth from "./components/Revival/RevivalSixth"; 
+import RevivalSeven from "./components/Revival/RevivalSeven"; 
+import RevivalEight from "./components/Revival/RevivalEight"; 
 
 
 
@@ -141,6 +141,7 @@ function App() {
 
 
 /* Vino Nuevo */
+
           <Route path="/vinonuevo/1" element={
           <ProtectedRoute>
             <NewWineOne/>
@@ -309,7 +310,35 @@ function App() {
 
 
 
-          {/* <Route path="/avivamiento/1" element={
+      <Route path="/salud/1" element={
+          <ProtectedRoute>
+            <OverallHealthOne/>
+          </ProtectedRoute>} />
+
+        <Route path="/salud/2" element={
+          <ProtectedRoute>
+            <OverallHealthTwo/>
+          </ProtectedRoute>} />
+
+        <Route path="/salud/3" element={
+          <ProtectedRoute>
+            <OverallHealthThree/>
+          </ProtectedRoute>} />
+
+        <Route path="/salud/4" element={
+          <ProtectedRoute>
+            <OverallHealthFourth/>
+          </ProtectedRoute>} />
+
+        <Route path="/salud/5" element={
+          <ProtectedRoute>
+            <OverallHealthFiveth/>
+          </ProtectedRoute>} />
+          
+
+
+
+           <Route path="/avivamiento/1" element={
           <ProtectedRoute>
             <RevivalOne/>
           </ProtectedRoute>} />
@@ -340,34 +369,7 @@ function App() {
           <Route path="/avivamiento/8" element={
           <ProtectedRoute>
             <RevivalEight/>
-          </ProtectedRoute>} />  */}
-
-
-      <Route path="/salud/1" element={
-          <ProtectedRoute>
-            <OverallHealthOne/>
-          </ProtectedRoute>} />
-
-        <Route path="/salud/2" element={
-          <ProtectedRoute>
-            <OverallHealthTwo/>
-          </ProtectedRoute>} />
-
-        <Route path="/salud/3" element={
-          <ProtectedRoute>
-            <OverallHealthThree/>
-          </ProtectedRoute>} />
-
-        <Route path="/salud/4" element={
-          <ProtectedRoute>
-            <OverallHealthFourth/>
-          </ProtectedRoute>} />
-
-        <Route path="/salud/5" element={
-          <ProtectedRoute>
-            <OverallHealthFiveth/>
-          </ProtectedRoute>} />
-          
+          </ProtectedRoute>} /> 
 
 
         <Route path="/vino-nuevo" element={

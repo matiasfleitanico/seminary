@@ -19,6 +19,7 @@ export default function Identidad() {
   var sidebar = {};
   var button_selected = {};
   var button = {};
+  var button_pressed = {};
   var datas;
   var counter;
 
@@ -49,22 +50,22 @@ export default function Identidad() {
 
   function loopOn() {
     /* el próximo número sería el ID de la materia */
-    let ids = 1;
-    for (let i = 0; i < datas.access.length; i++) {
-      if (datas.access[i] < ids) {
-        console.log("This is not your subject");
-      } else if (datas.access[i] === ids) {
-        connectSubject(user_id);
-        console.log("You have access requested");
-        break;
-      } else {
-        setTimeout(() => {
-          navigate("/");
-        }, 300);
-        console.log("You don't have access requested");
-      }
-    }
-  }
+   let ids = 1
+       for (let i = 0; i < datas.access.length; i++) {  
+         if(datas.access[i] < ids){
+         console.log("This is not your subject")
+         } else if (datas.access[i] === ids) {
+           connectSubject(user_id);
+           console.log("You have access requested");
+           break;
+         } else {
+           setTimeout(() => {
+             navigate("/");
+           }, 300);
+           console.log("You don't have access requested");
+         }
+       }
+     }
 
   if (windowSize.current[0] < 900) {
     main = {
@@ -124,6 +125,20 @@ export default function Identidad() {
       borderRadius: "10px",
       boxShadow: "rgba(0, 0, 0, 0.35) 0px 5px 15px",
     };
+    button_pressed = {
+      display: "grid",
+      alignItems: "center",
+      justifyItems: "center",
+      gridTemplateColumns: "1fr",
+      gridGap: "30px",
+      backgroundColor: "#656565",
+      width: "100%",
+      height: "45px",
+      justifySelf: "center",
+      alignSelf: "center",
+      borderRadius: "10px",
+      boxShadow: "rgba(0, 0, 0, 0.35) 0px 5px 15px",
+    };
     button = {
       display: "grid",
       alignItems: "center",
@@ -143,7 +158,8 @@ export default function Identidad() {
       display: "grid",
       gridTemplateColumns: "20% 71% 7%",
       padding: "10px",
-      gridGap: "1%",
+      gridGap: "5px",
+      width: "100%",
     };
     sidebar_2 = {
       backgroundColor: "#8C32FF",
@@ -194,6 +210,20 @@ export default function Identidad() {
       borderRadius: "10px",
       boxShadow: "rgba(0, 0, 0, 0.35) 0px 5px 15px",
     };
+    button_pressed = {
+      display: "grid",
+      alignItems: "center",
+      justifyItems: "center",
+      gridTemplateColumns: "1fr",
+      gridGap: "30px",
+      backgroundColor: "#656565",
+      width: "100%",
+      height: "100px",
+      justifySelf: "center",
+      alignSelf: "center",
+      borderRadius: "10px",
+      boxShadow: "rgba(0, 0, 0, 0.35) 0px 5px 15px",
+    };
     button = {
       display: "grid",
       alignItems: "center",
@@ -220,7 +250,7 @@ export default function Identidad() {
     backgroundColor: "white",
     width: "auto",
     height: "100%",
-    margin: "15px",
+    margin: "15px 0",
     justifySelf: "center",
     alignSelf: "center",
     borderRadius: "10px",
@@ -235,9 +265,9 @@ export default function Identidad() {
     padding: "15px",
     gridGap: "30px",
     backgroundColor: "white",
-    width: "auto",
+    width: "95%",
     height: "auto",
-    margin: "15px 0",
+    margin: "15px 0 200px",
     justifySelf: "center",
     alignSelf: "center",
     borderRadius: "10px",
@@ -254,7 +284,7 @@ export default function Identidad() {
     maxHeight: "300px",
     objectFit: "cover",
   };
-  var box = {
+  var boxes = {
     backgroundColor: "#EAE8E8",
     borderRadius: "12px",
     boxShadow: "0px 4px 4px rgba(0, 0, 0, 0.25)",
@@ -285,9 +315,17 @@ export default function Identidad() {
     color: "black",
     margin: "0",
   };
+  var span_2 = {
+    color: "grey",
+    margin: "0",
+  };
   var box = {
     textDecoration: "none",
     width: "100%",
+  };
+  var iframe = {
+    width: "100%",
+    height: "28em",
   };
 
   function connectSubject(a) {
@@ -304,32 +342,32 @@ export default function Identidad() {
     <div style={main}>
       <div style={sidebar}>
         <a style={box} href="/avivamiento/1">
-          <div style={button_selected}>
+          <div style={button_pressed}>
             <h2 style={span}>Introducción</h2>
           </div>
         </a>
         <a style={box} href="/avivamiento/2">
-          <div style={button}>
+          <div style={button_pressed}>
             <h2 style={span_1}>Módulos</h2>
           </div>
         </a>
         <a style={box} href="/avivamiento/3">
-          <div style={button}>
+          <div style={button_pressed}>
             <h2 style={span_1}>Tarea 1</h2>
           </div>
         </a>
         <a style={box} href="/avivamiento/4">
-          <div style={button}>
+          <div style={button_pressed}>
             <h2 style={span_1}>Tarea 2</h2>
           </div>
         </a>
         <a style={box} href="/avivamiento/5">
-          <div style={button}>
+          <div style={button_pressed}>
             <h2 style={span_1}>Video-Clase 1 - 2</h2>
           </div>
         </a>
         <a style={box} href="/avivamiento/6">
-          <div style={button}>
+          <div style={button_selected}>
             <h2 style={span_1}>Video-Clase 3 - 4</h2>
           </div>
         </a>
@@ -344,50 +382,37 @@ export default function Identidad() {
           </div>
         </a>
       </div>
-      <div>
-        <div style={customStyle_1}>
-          <img style={img_1} src={"https://i.imgur.com/QoeAo7L.jpg"}></img>
-          <h1>Seminario de Avivamiento I</h1>
-          <p style={center}>
-            Consolida, amplia, profundiza, discute, integra y generaliza la
-            nomenclatura completa de los poderes que operan al más alto nivel
-            mencionados en Efesios 6 y otros pasajes. Cómo estos moldean el modo
-            de pensar y las acciones de un pueblo, y cómo encumbran a ciertos
-            espíritus a una posición de dominio o señorío. ¿Cómo se lograron los
-            avivamientos, cuántos duran y qué los mantienen? Análisis de la
-            tecnología espiritual que Pablo utilizó en Atenas, Corinto y Efeso.{" "}
-            <br /> <br /> <br /> POLÍTICA DE PRIVACIDAD Todo el material del
-            SEMINARIO PODER DE DIOS que se da en cada materia es exclusivo para
-            los alumnos regulares: que cursan, que son guiados por el profesor
-            para estudiar el material y luego ser evaluados. Que los Módulos,
-            los libros, las lecturas, tareas, reflexiones, apuntes y toda
-            producción es para uso exclusivamente personal. NO COMPARTIR!!{" "}
-            <br /> <br />
-            BIBLIAS. SUGERIMOS LAS VERSIONES: Reina Valera 1960. La Nueva
-            Traducción Viviente. Reina Valera con Números Strong. King James
-            Versión con Strong. <br /> <br /> MATERIALES DE ESTUDIO que deben
-            tener: un cuaderno para tomar apuntes. Lapiceras. Teléfono,
-            Notebook, Tableta o Pc, conexión a Internet. <br /> Los materiales
-            están en formato digital PDF. Por lo tanto, deben tener un programa
-            o aplicación para leer los archivos. <br /> Si no tienen, pueden
-            descargar gratuitamente en Play Store: <br />
-            <a href="https://play.google.com/store/apps/details?id=com.pdfreader.pdfeditor.pdfreadeforandroid.pdfeditorforandroidfree">
-              CLICK ACÁ
-            </a>{" "}
-            <br></br>
-            Sugerimos, también, instalar en android la aplicación gratuita
-            MyBible. La podés encontrar en Play Store: <br></br>
-            <a href="https://play.google.com/store/apps/details?id=ua.mybible">
-              CLICK ACÁ
-            </a>{" "}
-          </p>
-        </div>
+      <div style={customStyle_1}>
+        <h1>Videoclase 3/6</h1>
+        <iframe
+          style={iframe}
+          width="1280"
+          height="720"
+          src="https://www.youtube.com/embed/K4M7kGEuiFk"
+          title="YouTube video player"
+          frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          allowfullscreen
+        ></iframe>
+
+        <h1>Videoclase 4/6</h1>
+        <iframe
+          style={iframe}
+          width="1280"
+          height="720"
+          src="https://www.youtube.com/embed/cE3ng4_I-c8"
+          title="YouTube video player"
+          frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          allowfullscreen
+        ></iframe>
       </div>
+      
       <div style={sidebar_2}>
         <a style={span_side_2} href="/">
           <AiFillHome />
         </a>
-        <a style={span_side_2} href="/buscar">
+        <a style={span_side_2} href="/buscar">  
           <AiOutlineSearch />
         </a>
         <a style={span_side_2} href="/cuenta">
