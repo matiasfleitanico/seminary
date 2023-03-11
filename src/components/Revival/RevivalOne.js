@@ -349,7 +349,7 @@ export default function Identidad() {
           <img style={img_1} src={"https://i.imgur.com/QoeAo7L.jpg"}></img>
           <h1>Seminario de Avivamiento I</h1>
           <p style={center}>
-            Consolida, amplia, profundiza, discute, integra y generaliza la
+            Consolida, amplía, profundiza, discute, integra y generaliza la
             nomenclatura completa de los poderes que operan al más alto nivel
             mencionados en Efesios 6 y otros pasajes. Cómo estos moldean el modo
             de pensar y las acciones de un pueblo, y cómo encumbran a ciertos

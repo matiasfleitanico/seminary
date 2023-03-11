@@ -195,7 +195,7 @@ export const usuario = {
       id: 7,
       title: "Salud física, emocional y espiritual",
       description:
-        "La revelación de los secretos celestiales de lo que es y de lo que ha de venir, según el principio de los múltiples niveles, juntos y ordenados en secuencia cronológica, desde la trompeta de Dios...  ",
+        "Examina los fundamentos de la salud mental, emocional, física y espiritual, analizando el trasfondo de la sanidad preventiva física y el teológico, para converger en 44 principios prácticos...  ",
       link: "https://i.imgur.com/s1GtA7X.jpg",
       path: "salud/1",
     },
@@ -204,7 +204,7 @@ export const usuario = {
       id: 8,
       title: "Seminario de Avivamiento I",
       description:
-        "La revelación de los secretos celestiales de lo que es y de lo que ha de venir, según el principio de los múltiples niveles, juntos y ordenados en secuencia cronológica, desde la trompeta de Dios...  ",
+        "Consolida, amplía, profundiza, discute, integra y generaliza la nomenclatura completa de los poderes que operan al más alto nivel mencionados en Efesios 6 y otros pasajes....  ",
       link: "https://i.imgur.com/yNqP7cS.jpg",
       path: "avivamiento/1",
     },
