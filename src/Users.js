@@ -130,6 +130,18 @@ export const usuario = {
       access: [6],
     },
 
+
+    /* Mat 8 */
+    {
+      email: "ostrizmarta@gmail.com",
+      access: [8],
+    },
+    {
+      email: "gaston.rodriguez.gmr@gmail.com",
+      access: [8],
+    },
+
+
   ],
   materias: [
     {
