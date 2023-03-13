@@ -73,9 +73,13 @@ export const usuario = {
       email: "gabrielvgarcia02@gmail.com",
       access: [0, 1],
     },
+    
+
+
+    /* Mat 1 - 3 */
     {
       email: "nels.espinoza@gmail.com",
-      access: [0, 1],
+      access: [0, 1, 2],
     },
 
 
