@@ -375,7 +375,7 @@ export default function Identidad() {
                 <b>Presiona la imagen corespondiente </b>
                 </p>
                 <div style={content}>
-                    <a style={boxes} href="https://drive.google.com/file/d/1xhd88-dQd8EVxLUUA9qW5pHl2NGsgMgf/view" download>            
+                    <a style={boxes} href="https://drive.google.com/file/d/1mTNM9vdmewiXhPl8h4704mpCVq10BriK/view" download>            
                         <h2>Módulo 1</h2>
                         <img style={img} src={"https://i.imgur.com/cJ4UvSR.jpg"}></img>
                     </a>
