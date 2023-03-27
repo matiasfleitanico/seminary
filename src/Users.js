@@ -62,6 +62,10 @@ export const usuario = {
       email: "walterliva1@gmail.com",
       access: [0],
     },
+    {
+      email: "abrilvallejos407@gmail.com",
+      access: [0],
+    },
 
     /* Mat 1 & 2 */
 
@@ -96,13 +100,23 @@ export const usuario = {
       access: [1],
     },
 
+    /* Mat 3 */ 
+
+    {
+      email: "elivallejos8376.ev@gmail.com",
+      access: [2],
+    },
+
     /* Mat 5 */
 
     {
       email: "solange.melany.alvarez@gmail.com",
       access: [4],
     },
-
+    {
+      email: "joseruiz7683.jr@gmail.com",
+      access: [4],
+    },
     /* Mat 6 */
 
     {
