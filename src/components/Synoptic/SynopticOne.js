@@ -49,7 +49,7 @@ export default function Identidad() {
 
   function loopOn() {
     /* el próximo número sería el ID de la materia */
-    let ids = 2;
+    let ids = 5;
     for (let i = 0; i < datas.access.length; i++) {
       if (datas.access[i] < ids) {
         console.log("This is not your subject");
