@@ -48,9 +48,12 @@ export default function Identidad() {
   });
 
   function loopOn() {
-    for (let i = 0; i < datas.access.length; i++) {  
-      /* el próximo número sería el ID de la materia */
-      if (datas.access[i] === 0) {
+    /* el próximo número sería el ID de la materia */
+    let ids = 4;
+    for (let i = 0; i < datas.access.length; i++) {
+      if (datas.access[i] < ids) {
+        console.log("This is not your subject");
+      } else if (datas.access[i] === ids) {
         connectSubject(user_id);
         console.log("You have access requested");
         break;
