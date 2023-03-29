@@ -131,14 +131,7 @@ export const usuario = {
       email: "beleen.morales.nadia@gmail.com",
       access: [5],
     },
-    {
-      email: "enzostriz@gmail.com",
-      access: [5],
-    },
-    {
-      email: "karen.gise.flores@gmail.com",
-      access: [5],
-    },
+   
     {
       email: "spaciuk.tamara@gmail.com",
       access: [5],
@@ -148,12 +141,25 @@ export const usuario = {
       access: [5],
     },
 
+    /* Mat 6 y 7 */
+
+    {
+      email: "enzostriz@gmail.com",
+      access: [5, 6],
+    },
+    {
+      email: "karen.gise.flores@gmail.com",
+      access: [5, 6],
+    },
+
     /* Mat 7 */
 
     {
       email: "santiagoleonardo777@gmail.com",
       access: [6],
     },
+
+
 
 
     /* Mat 8 */
