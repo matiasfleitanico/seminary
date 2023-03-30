@@ -337,7 +337,7 @@ export default function Identidad() {
       <div>
       <div style={customStyle_1}>
                 <img style={img_1} src={"https://i.imgur.com/QoeAo7L.jpg"}></img>
-                <h1>Vino Nuevo en Odres Nuevos</h1>
+                <h1>La persona del Espíritu Santo</h1>
                 <p style={center}> El vino nuevo como metáfora de lo que el nuevo pacto hace en el corazón del hombre y cómo su nueva doctrina forma discípulos justificados, sin velo, libres y competentes.
                  La esencia de la copa del nuevo pacto en relación con la ley y la gracia y los beneficios sobre la iglesia de hoy que va hacia la gloria.  <br /> <br /> <br /> POLÍTICA DE PRIVACIDAD Todo el
             material del SEMINARIO PODER DE DIOS que se da en cada materia es
