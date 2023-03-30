@@ -338,8 +338,7 @@ export default function Identidad() {
       <div style={customStyle_1}>
                 <img style={img_1} src={"https://i.imgur.com/QoeAo7L.jpg"}></img>
                 <h1>La persona del Espíritu Santo</h1>
-                <p style={center}> El vino nuevo como metáfora de lo que el nuevo pacto hace en el corazón del hombre y cómo su nueva doctrina forma discípulos justificados, sin velo, libres y competentes.
-                 La esencia de la copa del nuevo pacto en relación con la ley y la gracia y los beneficios sobre la iglesia de hoy que va hacia la gloria.  <br /> <br /> <br /> POLÍTICA DE PRIVACIDAD Todo el
+                <p style={center}> La doctrina de la naturaleza de la persona del Espíritu Santo como Espíritu de Cristo, Espíritu Consolador y Espíritu de la Promesa. Las tres fases del ciclo de impartición en el NT. Efectos de su regeneración, pero también el de su ausencia. El ciclo de los tiempos y las tres personas de la Trinidad. El Pentecostés, la unción y el derramamiento. El Espíritu como administrador total de la Iglesia.   <br /> <br /> <br /> POLÍTICA DE PRIVACIDAD Todo el
             material del SEMINARIO PODER DE DIOS que se da en cada materia es
             exclusivo para los alumnos regulares: que cursan, que son guiados
             por el profesor para estudiar el material y luego ser evaluados. Que
