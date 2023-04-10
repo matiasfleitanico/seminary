@@ -1,33 +1,214 @@
-import { useState } from "react";
+import { useRef } from "react";
 import { useAuth } from "../../context/authContext";
 import { useNavigate } from "react-router-dom";
 import { usuario } from "../../Users";
 import React from "react";
+import { AiFillHome, AiOutlineSearch, AiFillSetting } from "react-icons/ai";
+import { RiAccountCircleFill } from "react-icons/ri";
 
 export default function Identidad() {
   const { user } = useAuth();
+  const windowSize = useRef([window.innerWidth, window.innerHeight]);
   const navigate = useNavigate();
-  var user_id;
 
-  var main = {
-    display: "grid",
-    gridTemplateColumns: "15% 85%",
-  };
-  var sidebar = {
-    display: "grid",
-    alignItems: "center",
-    justifyItems: "center",
-    gridTemplateColumns: "1fr",
-    padding: "15px",
-    gridGap: "30px",
-    width: "100px",
-    height: "800px",
-    margin: "15px",
-    justifySelf: "center",
-    alignSelf: "start",
-    borderRadius: "10px",
-    boxShadow: "rgba(0, 0, 0, 0.35) 0px 5px 15px",
-  };
+  var user_id;
+  var main = {};
+  var sidebar_2 = {};
+  var span_1 = {};
+  var span_side_2 = {};
+  var sidebar = {};
+  var button_selected = {};
+  var button = {};
+  var datas;
+  var counter;
+
+  async function getData(url = "", data = {}) {
+    // Default options are marked with *
+    const response = await fetch(url, {
+      method: "GET", // *GET, POST, PUT, DELETE, etc.
+      mode: "cors", // no-cors, *cors, same-origin
+      cache: "no-cache", // *default, no-cache, reload, force-cache, only-if-cached
+      credentials: "same-origin", // include, *same-origin, omit
+      redirect: "follow", // manual, *follow, error
+      referrerPolicy: "no-referrer", // no-referrer, *no-referrer-when-downgrade, origin, origin-when-cross-origin, same-origin, strict-origin, strict-origin-when-cross-origin, unsafe-url
+    });
+    counter = counter + 1;
+    return response.json(); // parses JSON response into native JavaScript objects
+  }
+
+  getData(
+    "https://tecno-museo-default-rtdb.firebaseio.com/seminary/" +
+      user.uid +
+      ".json?auth=" +
+      user.accessToken
+  ).then((data) => {
+    datas = data; // JSON data parsed by `data.json()` call
+    console.log(datas);
+    loopOn();
+  });
+
+  function loopOn() {
+    /* el próximo número sería el ID de la materia */
+    let ids = 8;
+    for (let i = 0; i < datas.access.length; i++) {
+      if (datas.access[i] < ids) {
+        console.log("This is not your subject");
+      } else if (datas.access[i] === ids) {
+        connectSubject(user_id);
+        console.log("You have access requested");
+        break;
+      } else {
+        setTimeout(() => {
+          navigate("/");
+        }, 300);
+        console.log("You don't have access requested");
+      }
+    }
+  }
+
+  if (windowSize.current[0] < 900) {
+    main = {
+      display: "grid",
+      gridTemplateRows: "auto 80% auto",
+      padding: "10px",
+    };
+    sidebar_2 = {
+      backgroundColor: "#8C32FF",
+      width: "100%",
+      margin: "15px 0",
+      display: "grid",
+      gridTemplateColumns: "1fr 1fr 1fr 1fr",
+      alignItems: "center",
+      position: "fixed",
+      bottom: "-15px",
+      left: "0",
+      height: "4%",
+    };
+    span_1 = {
+      color: "black",
+      margin: "0",
+      fontSize: "small",
+    };
+    span_side_2 = {
+      color: "white",
+      fontSize: "1rem",
+      textAlign: "center",
+      textDecoration: "none",
+      textJustify: "inter-word",
+      alignItems: "center",
+    };
+    sidebar = {
+      display: "grid",
+      alignItems: "center",
+      justifyItems: "center",
+      gridTemplateColumns: "1fr",
+      gridGap: "15px",
+      width: "100%",
+      height: "auto",
+      margin: "15px",
+      justifySelf: "center",
+      alignSelf: "start",
+      borderRadius: "10px",
+    };
+    button_selected = {
+      display: "grid",
+      alignItems: "center",
+      justifyItems: "center",
+      gridTemplateColumns: "1fr",
+      gridGap: "30px",
+      backgroundColor: "#333333",
+      width: "100%",
+      height: "45px",
+      justifySelf: "center",
+      alignSelf: "center",
+      borderRadius: "10px",
+      boxShadow: "rgba(0, 0, 0, 0.35) 0px 5px 15px",
+    };
+    button = {
+      display: "grid",
+      alignItems: "center",
+      justifyItems: "center",
+      gridTemplateColumns: "1fr",
+      gridGap: "30px",
+      backgroundColor: "white",
+      width: "100%",
+      height: "45px",
+      justifySelf: "center",
+      alignSelf: "center",
+      borderRadius: "10px",
+      boxShadow: "rgba(0, 0, 0, 0.35) 0px 5px 15px",
+    };
+  } else {
+    main = {
+      display: "grid",
+      gridTemplateColumns: "20% 71% 7%",
+      padding: "10px",
+      gridGap: "1%",
+    };
+    sidebar_2 = {
+      backgroundColor: "#8C32FF",
+      width: "100%",
+      borderRadius: "10px",
+      margin: "15px 0",
+      display: "grid",
+      gridTemplateRows: "1fr 1fr 1fr 1fr",
+      alignItems: "center",
+      maxHeight: "800px",
+    };
+    span_1 = {
+      color: "black",
+      margin: "0",
+    };
+    span_side_2 = {
+      color: "white",
+      fontSize: "2rem",
+      textAlign: "center",
+      textDecoration: "none",
+      textJustify: "inter-word",
+      alignItems: "center",
+    };
+    sidebar = {
+      display: "grid",
+      alignItems: "center",
+      justifyItems: "center",
+      gridTemplateColumns: "1fr",
+      gridGap: "15px",
+      width: "100%",
+      height: "auto",
+      margin: "15px",
+      justifySelf: "center",
+      alignSelf: "start",
+      borderRadius: "10px",
+    };
+    button_selected = {
+      display: "grid",
+      alignItems: "center",
+      justifyItems: "center",
+      gridTemplateColumns: "1fr",
+      gridGap: "30px",
+      backgroundColor: "#333333",
+      width: "100%",
+      height: "100px",
+      justifySelf: "center",
+      alignSelf: "center",
+      borderRadius: "10px",
+      boxShadow: "rgba(0, 0, 0, 0.35) 0px 5px 15px",
+    };
+    button = {
+      display: "grid",
+      alignItems: "center",
+      justifyItems: "center",
+      gridTemplateColumns: "1fr",
+      gridGap: "30px",
+      backgroundColor: "white",
+      width: "100%",
+      height: "100px",
+      justifySelf: "center",
+      alignSelf: "center",
+      borderRadius: "10px",
+      boxShadow: "rgba(0, 0, 0, 0.35) 0px 5px 15px",
+    };
+  }
 
   const customStyle = {
     display: "grid",
@@ -55,29 +236,14 @@ export default function Identidad() {
     gridGap: "30px",
     backgroundColor: "white",
     width: "auto",
-    height: "1000px",
-    margin: "15px",
+    height: "auto",
+    margin: "15px 0",
     justifySelf: "center",
     alignSelf: "center",
     borderRadius: "10px",
     boxShadow: "rgba(0, 0, 0, 0.35) 0px 5px 15px",
   };
 
-  for (let i = 0; i < usuario.alumnos.length; i++) {
-    if (user.email) {
-      if (user.email === usuario.alumnos[i].email) {
-        user_id = i;
-        connectSubject(user_id);
-        console.log("You have access requested");
-        break;
-      } else if (i === usuario.alumnos.length - 1) {
-        setTimeout(() => {
-          navigate("/");
-        }, 300);
-        console.log("You don't have access requested");
-      }
-    }
-  }
   var img = {
     borderRadius: "8px",
     width: "100%",
@@ -105,66 +271,31 @@ export default function Identidad() {
     alignItems: "center",
     justifyItems: "center",
   };
-
-  var box = {
-    textDecoration: "none",
-  };
   var center = {
     alignItems: "center",
     justifyItems: "center",
     textAlign: "center",
   };
-  var button_selected = {
-    display: "grid",
-    alignItems: "center",
-    justifyItems: "center",
-    gridTemplateColumns: "1fr",
-    gridGap: "30px",
-    backgroundColor: "#333333",
-    width: "100px",
-    height: "100px",
-    margin: "15px",
-    justifySelf: "center",
-    alignSelf: "center",
-    borderRadius: "10px",
-    boxShadow: "rgba(0, 0, 0, 0.35) 0px 5px 15px",
-  };
-  var button = {
-    display: "grid",
-    alignItems: "center",
-    justifyItems: "center",
-    gridTemplateColumns: "1fr",
-    gridGap: "30px",
-    backgroundColor: "white",
-    width: "100px",
-    height: "100px",
-    margin: "15px",
-    justifySelf: "center",
-    alignSelf: "center",
-    borderRadius: "10px",
-    boxShadow: "rgba(0, 0, 0, 0.35) 0px 5px 15px",
-  };
+
   var span = {
-    fontSize: "xxx-large",
     color: "white",
+    margin: "0",
   };
   var span_1 = {
-    fontSize: "xxx-large",
-    color: "#333333",
+    color: "black",
+    margin: "0",
   };
   var box = {
     textDecoration: "none",
+    width: "100%",
   };
 
   function connectSubject(a) {
-    let hasSubject = true;
     for (let i = 0; i <= usuario.alumnos.length; i++) {
       console.log("You are?");
       if (usuario.alumnos[a].access[i] === 0) {
-        hasSubject = true;
         break;
       } else if (i === usuario.alumnos.length) {
-        hasSubject = false;
         navigate("/");
       }
     }
@@ -174,58 +305,37 @@ export default function Identidad() {
       <div style={sidebar}>
         <a style={box} href="/escatologia/1">
           <div style={button_selected}>
-            <span style={span} class="material-symbols-outlined">
-              {" "}
-              home{" "}
-            </span>
+            <h2 style={span}>Introducción</h2>
           </div>
         </a>
         <a style={box} href="/escatologia/2">
           <div style={button}>
-            <span style={span_1} class="material-symbols-outlined">
-              {" "}
-              picture_as_pdf{" "}
-            </span>
+            <h2 style={span_1}>Módulos</h2>
           </div>
         </a>
         <a style={box} href="/escatologia/3">
           <div style={button}>
-            <span style={span_1} class="material-symbols-outlined">
-              {" "}
-              task{" "}
-            </span>
+            <h2 style={span_1}>Tarea 1</h2>
           </div>
         </a>
         <a style={box} href="/escatologia/4">
           <div style={button}>
-            <span style={span_1} class="material-symbols-outlined">
-              {" "}
-              task{" "}
-            </span>
+            <h2 style={span_1}>Tarea 2</h2>
           </div>
         </a>
         <a style={box} href="/escatologia/5">
           <div style={button}>
-            <span style={span_1} class="material-symbols-outlined">
-              {" "}
-              task{" "}
-            </span>
+            <h2 style={span_1}>Tarea 3</h2>
           </div>
         </a>
         <a style={box} href="/escatologia/6">
           <div style={button}>
-            <span style={span_1} class="material-symbols-outlined">
-              {" "}
-              auto_videocam{" "}
-            </span>
+            <h2 style={span_1}>Video-Clases</h2>
           </div>
         </a>
         <a style={box} href="/escatologia/7">
           <div style={button}>
-            <span style={span_1} class="material-symbols-outlined">
-              {" "}
-              preliminary{" "}
-            </span>
+            <h2 style={span_1}>Examen</h2>
           </div>
         </a>
       </div>
@@ -234,7 +344,7 @@ export default function Identidad() {
           <img style={img_1} src={"https://i.imgur.com/QoeAo7L.jpg"}></img>
           <h1>Escatología con Daniel y Apocalipsis</h1>
           <p style={center}>
-          La revelación de los secretos celestiales de lo que es y de lo que ha de venir, según el principio de los múltiples niveles, juntos y ordenados en secuencia cronológica, desde la trompeta de Dios hasta cielos nuevos y tierra nueva. El significado de literatura apocalíptica y sus abundantes símbolos e imágenes, desde la perspectiva de Daniel y el Apocalipsis. Se aborda cada profecía, capítulo por capítulo, identificando lo que fue sellado y lo que se ha sido descubierto por Jesucristo y 25 revelaciones sobresalientes sobre Él. {" "}
+          La revelación de los secretos celestiales de lo que es y de lo que ha de venir, según el principio de los múltiples niveles, juntos y ordenados en secuencia cronológica, desde la trompeta de Dios hasta cielos nuevos y tierra nueva. El significado de literatura apocalíptica y sus abundantes símbolos e imágenes, desde la perspectiva de Daniel y el Apocalipsis. Se aborda cada profecía, capítulo por capítulo, identificando lo que fue sellado y lo que se ha sido descubierto por Jesucristo y 25 revelaciones sobresalientes sobre Él.{" "}
             <br /> <br /> <br /> POLÍTICA DE PRIVACIDAD Todo el material del
             SEMINARIO PODER DE DIOS que se da en cada materia es exclusivo para
             los alumnos regulares: que cursan, que son guiados por el profesor
@@ -261,6 +371,20 @@ export default function Identidad() {
             </a>{" "}
           </p>
         </div>
+      </div>
+      <div style={sidebar_2}>
+        <a style={span_side_2} href="/">
+          <AiFillHome />
+        </a>
+        <a style={span_side_2} href="/buscar">
+          <AiOutlineSearch />
+        </a>
+        <a style={span_side_2} href="/cuenta">
+          <RiAccountCircleFill />
+        </a>
+        <a style={span_side_2} href="/configuracion">
+          <AiFillSetting />
+        </a>
       </div>
     </div>
   );
