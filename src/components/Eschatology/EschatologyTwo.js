@@ -384,7 +384,7 @@
                         <h2>Módulo 1</h2>
                         <img style={img} src={"https://i.imgur.com/cJ4UvSR.jpg"}></img>
                     </a>
-                    <a style={boxes} href="https://drive.google.com/file/d/1OZU_vkOP2S57QWUsNyO4soW_DsAsNn9c/view" download>            
+                    <a style={boxes} href="https://drive.google.com/file/d/1OZU_vkOP2S57QWUsNyO4soW_DsAsNn9c/view " download>            
                         <h2>Módulo 2</h2>
                         <img style={img} src={"https://i.imgur.com/SwPdQqO.jpg"}></img>
                     </a>
