@@ -80,6 +80,14 @@ import RevivalEight from "./components/Revival/RevivalEight";
 
 
 
+import FundamentsOne from "./components/Fundaments/FundamentsOne";
+import FundamentsTwo from "./components/Fundaments/FundamentsTwo";
+import FundamentsThree from "./components/Fundaments/FundamentsThree";
+import FundamentsFourth from "./components/Fundaments/FundamentsFourth"; 
+import FundamentsFiveth from "./components/Fundaments/FundamentsFiveth"; 
+
+
+
 
 import { AuthProvider } from "./context/authContext"
 
@@ -140,7 +148,7 @@ function App() {
           </ProtectedRoute>} />
 
 
-/* Vino Nuevo */
+/* Vino Nuevo */ 
 
           <Route path="/vinonuevo/1" element={
           <ProtectedRoute>
@@ -370,6 +378,28 @@ function App() {
           <ProtectedRoute>
             <RevivalEight/>
           </ProtectedRoute>} /> 
+
+
+          <Route path="/fundamentos/1" element={
+          <ProtectedRoute>
+            <FundamentsOne/>
+          </ProtectedRoute>} />
+          <Route path="/fundamentos/2" element={
+          <ProtectedRoute>
+            <FundamentsTwo/>
+          </ProtectedRoute>} />
+          <Route path="/fundamentos/3" element={
+          <ProtectedRoute>
+            <FundamentsThree/>
+          </ProtectedRoute>} />
+          <Route path="/fundamentos/4" element={
+          <ProtectedRoute>
+            <FundamentsFourth/>
+          </ProtectedRoute>} />
+          <Route path="/fundamentos/5" element={
+          <ProtectedRoute>
+            <FundamentsFiveth/>
+          </ProtectedRoute>} />
 
 
         <Route path="/vino-nuevo" element={
