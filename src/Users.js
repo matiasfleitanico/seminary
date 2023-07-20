@@ -256,7 +256,7 @@ export const usuario = {
       id: 9,
       title: "Fundamentos de las Doctrinas Cristianas",
       description:
-        "CLos motivos principales para responder a interrogantes como: ¿Existe Dios? ¿Quién es Dios? ¿Hay un solo Dios en tres personas? ¿Quién es Jesucristo? ....  ",
+        "Los motivos principales para responder a interrogantes como: ¿Existe Dios? ¿Quién es Dios? ¿Hay un solo Dios en tres personas? ¿Quién es Jesucristo? ....  ",
       link: "https://i.imgur.com/kK54SwP.jpg",
       path: "fundamentos/1",
     },
