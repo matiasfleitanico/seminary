@@ -263,6 +263,11 @@ export  default function Identidad() {
         textDecoration: "none",
         width: "100%"
     }
+    var img = {
+        textDecoration: "none",
+        width: "70%",
+        padding: "0 15%"
+    }
 
     function connectSubject(a){
         let hasSubject = true;
@@ -282,6 +287,7 @@ export  default function Identidad() {
             <div style={customStyle_1}>
                 <h3>Mi cuenta</h3>
                 <h4>Mi email: {user.email} </h4>
+                <img style={img} src="https://i.imgur.com/8edTNyh.png" alt="Coding Beauty logo"></img>
             </div>
             <div style={sidebar_2}>
                 <a style={span_side_2} href="/">

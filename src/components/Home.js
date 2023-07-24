@@ -159,9 +159,10 @@ console.log(user)
                             <h3>Materias</h3>
                         </div>
                         <div style={bigbox}>
-                            {count}
+                            Este espacio se encuentra en mantenimiento hasta el día miércoles 25 de Julio
                         </div>
                     </div>
                 );
             }
           }
+        
