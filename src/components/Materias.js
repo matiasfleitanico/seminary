@@ -3,7 +3,7 @@ import { useAuth } from "../context/authContext";
 import { useNavigate } from "react-router-dom";
 import { usuario } from "../Users";
 import React from "react";
-import { AiFillHome, AiOutlineSearch, AiFillSetting } from "react-icons/ai";
+import { AiFillHome, AiOutlineSearch, AiFillSetting, AiFillBook } from "react-icons/ai";
 import { RiAccountCircleFill } from "react-icons/ri";
 var counter = 0;
 
@@ -369,10 +369,13 @@ export default function App() {
         </div>
 
         <div style={sidebar_2}>
-          <a style={span_side_2} href="/">
+        <a style={span_side_2} href="/">
             <AiFillHome />
           </a>
-          <a style={span_side_2} href="/buscar">
+          <a style={span_side_2} href="/materias">
+            <AiFillBook />
+          </a>
+          <a style={span_side_2} href="/foro">
             <AiOutlineSearch />
           </a>
           <a style={span_side_2} href="/cuenta">
@@ -381,16 +384,7 @@ export default function App() {
           <a style={span_side_2} href="/configuracion">
             <AiFillSetting />
           </a>
-          <a style={span_side_2} href="/configuracion">
-            <AiFillSetting />
-          </a>
         </div>
-        <button style={button} onClick={HandleLogout}>
-          Salir
-        </button>
-        <h1>Hola {user.displayName || user.email}, usted es Administrador</h1>
-
-        <a href="/admin">PANEL DE ADMINISTRADOR</a>
       </div>
     );
   } else {

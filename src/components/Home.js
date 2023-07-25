@@ -562,19 +562,47 @@ let dividente = {
   } else {
     return (
       <div style={customStyle}>
-        <div style={header}>
-          <h4 style={name_tittle}>{user.displayName || user.email}</h4>
-          <button style={button} onClick={HandleLogout}>
-            Cerrar Sesión
-          </button>
+        <div style={divisor}>
+          <div style={whitebox}>
+            <h2>Mis Cursos</h2>
+            <div style={bigbox}>{count}</div>
+            <a style={a} href="/materias">
+              <div style={buttonMore}>Ver todo</div>
+            </a>
+          </div>
+          <div style={blackbox}>
+              <div>
+              <Pie data={data} />            
+            </div>
+          </div>
+          <div style={whitebox}>
+            <h2>Foro de Alumnos</h2>
+            {forum}
+          </div>
+          <div style={blackbox}>
+            <div style={whitebox_2}>
+            Notificaciones
+            {noti}
+            </div>
+          </div>
         </div>
-        <div>
-          <h1>Seminario Poder de Dios</h1>
-          <h3>Materias</h3>
-        </div>
-        <div style={bigbox}>
-          Este espacio se encuentra en mantenimiento hasta el día miércoles 25
-          de Julio
+
+        <div style={sidebar_2}>
+        <a style={span_side_2} href="/">
+            <AiFillHome />
+          </a>
+          <a style={span_side_2} href="/materias">
+            <AiFillBook />
+          </a>
+          <a style={span_side_2} href="/foro">
+            <AiOutlineSearch />
+          </a>
+          <a style={span_side_2} href="/cuenta">
+            <RiAccountCircleFill />
+          </a>
+          <a style={span_side_2} href="/configuracion">
+            <AiFillSetting />
+          </a>
         </div>
       </div>
     );
