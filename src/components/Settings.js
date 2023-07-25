@@ -4,7 +4,7 @@ import { useAuth } from "../context/authContext";
 import { useNavigate } from "react-router-dom";
 import { usuario } from "../Users";
 import React from "react";
-import { AiFillHome, AiOutlineSearch, AiFillSetting } from "react-icons/ai";
+import { AiFillHome, AiOutlineSearch, AiFillSetting, AiFillBook } from "react-icons/ai";
 import { RiAccountCircleFill } from "react-icons/ri";
 
 export default function Identidad() {
@@ -377,18 +377,21 @@ export default function Identidad() {
         </div>
       </div>
       <div style={sidebar_2}>
-        <a style={span_side_2} href="/">
-          <AiFillHome />
-        </a>
-        <a style={span_side_2} href="/buscar">
-          <AiOutlineSearch />
-        </a>
-        <a style={span_side_2} href="/cuenta">
-          <RiAccountCircleFill />
-        </a>
-        <a style={span_side_2} href="/configuracion">
-          <AiFillSetting />
-        </a>
+      <a style={span_side_2} href="/">
+            <AiFillHome />
+          </a>
+          <a style={span_side_2} href="/materias">
+            <AiFillBook />
+          </a>
+          <a style={span_side_2} href="/foro">
+            <AiOutlineSearch />
+          </a>
+          <a style={span_side_2} href="/cuenta">
+            <RiAccountCircleFill />
+          </a>
+          <a style={span_side_2} href="/configuracion">
+            <AiFillSetting />
+          </a>
       </div>
     </div>
   );
