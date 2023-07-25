@@ -2,17 +2,12 @@ import { useRef } from "react";
 import { useAuth } from "../context/authContext";
 import { useNavigate } from "react-router-dom";
 import { usuario } from "../Users";
-import { Chart as ChartJS, ArcElement, Tooltip, Legend } from 'chart.js';
-import { Pie } from 'react-chartjs-2';
-import { AiFillHome, AiOutlineSearch, AiFillSetting, AiFillBook } from "react-icons/ai";
+import React from "react";
+import { AiFillHome, AiOutlineSearch, AiFillSetting } from "react-icons/ai";
 import { RiAccountCircleFill } from "react-icons/ri";
-import React from 'react';
 var counter = 0;
 
-ChartJS.register(ArcElement, Tooltip, Legend);
-
 export default function App() {
-
   var main = {};
   var sidebar_2 = {};
   var span_1 = {};
@@ -25,37 +20,10 @@ export default function App() {
   const { logout, loading, user } = useAuth();
   const navigate = useNavigate();
   var datas;
-  var datasForum;
   var courses;
-  var forumes;
-  var notis;
-
-  const [count, setCount] = React.useState(<div className="lds-dual-ring"></div>);
-  const [forum, setForum] = React.useState(<div className="lds-dual-ring"></div>);
-  const [noti, setNoti] = React.useState(<div className="lds-dual-ring"></div>);
-  const [mat, setMat] = React.useState(5);
-
-  let data = {
-    labels: ['Materias hechas', 'Materias faltantes'],
-    datasets: [
-      {
-        label: 'Materias',
-        data: [mat, 20 - mat ],
-        backgroundColor: [
-          'rgba(140,150,255,1)',
-          'rgb(140,50,255,1)'
-        ],
-        spacing: 1,
-        borderWidth: 0,
-        offset: 29,
-        hoverBorderWidth:10,
-        weight: 3
-      },
-    ],
-  };
 
   console.log(user);
-
+  const [count, setCount] = React.useState(<h1></h1>);
 
   async function getData(url = "", data = {}) {
     // Default options are marked with *
@@ -93,24 +61,10 @@ export default function App() {
         user.accessToken
     ).then((data) => {
       courses = data;
-      setMat(courses.length)
-      let aleatorio1 = courses[Math.floor(Math.random() * courses.length)];
-      let aleatorio2 =
-        courses[Math.floor(Math.random() * courses.length)] === aleatorio1
-          ? courses[Math.floor(Math.random() * courses.length)]
-          : courses[Math.floor(Math.random() * courses.length)];
-      let aleatorio3 =
-        courses[Math.floor(Math.random() * courses.length)] === aleatorio1
-          ? courses[Math.floor(Math.random() * courses.length)]
-          : courses[Math.floor(Math.random() * courses.length)];
-      let courses_random = [aleatorio1, aleatorio2, aleatorio3]
-      console.log(courses_random);
       console.log(courses); // JSON data parsed by `data.json()` call
       setTimeout(() => {
-        getForum();
-        getNotifications(username);
         setCount(
-          courses_random.map((number) => (
+          courses.map((number) => (
             <a href={usuario.materias[number].path} style={box}>
               <img style={img} src={usuario.materias[number].link}></img>
               <h2>{usuario.materias[number].title}</h2>
@@ -120,50 +74,8 @@ export default function App() {
       }, 700);
     });
   }
-
-
-
-  function getForum() {
-    getData(
-      "https://tecno-museo-default-rtdb.firebaseio.com/seminary/forum.json?auth=" +
-        user.accessToken
-    ).then((data) => {
-      forumes = data;
-     
-      console.log(forumes); // JSON data parsed by `data.json()` call
-      setTimeout(() => {
-        setForum(() => (
-            <a href={"foro"} style={bigbox_3}>
-              <h2>{forumes[forumes.length-1]["title"]}</h2>
-              <p>{forumes[forumes.length-1]["content"]}</p>
-            </a>
-          ))
-      }, 200);
-    });
-  }
-
-  function getNotifications(username) {
-    getData(
-      "https://tecno-museo-default-rtdb.firebaseio.com/seminary/access/" + username + "/notification.json?auth=" +
-        user.accessToken
-    ).then((data) => {
-      notis = data;
-
-      console.log("asdasdweneisniefn " + notis); // JSON data parsed by `data.json()` call
-      setTimeout(() => {
-        setNoti(() => (
-            <a href={notis[0]["link"]}>
-              <h2>{notis[0]["title"]}</h2>
-              <p>{notis[0]["description"]}</p>
-            </a>
-          ))
-      }, 200);
-    });
-  }
-
   var whitebox;
   var bigbox;
-  var blackbox;
   const HandleLogout = async () => {
     await logout();
     navigate("/login");
@@ -178,20 +90,11 @@ export default function App() {
     whitebox = {
       display: "grid",
       gridTemplateColumns: "repeat(1, 1fr)",
+      padding: "10px",
       width: "100%",
       backgroundColor: "white",
       borderRadius: "10px",
-      margin: "40px 0",
-      boxShadow: "rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px",
-    };
-    blackbox = {
-      display: "grid",
-      gridTemplateColumns: "repeat(1, 1fr)",
-      width: "100%",
-      backgroundColor: "#2f2f2f",
-      borderRadius: "10px",
-      padding: "0 0 25px",
-      boxShadow: "rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px",
+      margin: "40px 0"
     };
   } else {
     bigbox = {
@@ -203,28 +106,22 @@ export default function App() {
     whitebox = {
       display: "grid",
       gridTemplateColumns: "repeat(1, 1fr)",
+      padding: "10px",
       width: "100%",
       backgroundColor: "white",
       borderRadius: "10px",
-      padding: "0 10px 25px",
-      boxShadow: "rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px",
-    };
-    blackbox = {
-      display: "grid",
-      gridTemplateColumns: "repeat(1, 1fr)",
-      width: "100%",
-      backgroundColor: "#2f2f2f",
-      borderRadius: "10px",
-      boxShadow: "rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px",
+      margin: "40px 0"
     };
   }
+
   const customStyle = {
     display: "grid",
     alignItems: "center",
     justifyItems: "center",
-    gridTemplateColumns: "85% 15%",
+    gridTemplateColumns: "80% 20%",
     gridTemplateRows: "1fr",
     padding: "15px",
+    gridGap: "30px",
     width: "auto",
     height: "auto",
     margin: "15px 0",
@@ -281,7 +178,6 @@ export default function App() {
     borderRadius: "8px",
     width: "100%",
   };
-
 
   if (windowSize.current[0] < 900) {
     main = {
@@ -456,57 +352,7 @@ export default function App() {
       boxShadow: "rgba(0, 0, 0, 0.35) 0px 5px 15px",
     };
   }
-  let bigbox_3 = {
-    backgroundColor: "#EAE8E8",
-    borderRadius: "10px",
-    textDecoration: "none",
-    color: "black",
-    margin: "0 40px"
-  };
-let a = {
-    textDecoration: "none",
-    backgroundColor: "#333333",
-    color: "white",
-    borderRadius: "10px",
-    height: "40px",
-    width: "100px",
-    display:"grid",
-    alignSelf: "end",
-    justifySelf: "end",
-    margin: "0 0 25px"
-}
-let whitebox_2 = {
-  display: "grid",
-  alignSelf:"flex-end",
-  backgroundColor: "white",
-  borderRadius: "10px",
-  height:"70%",
-  boxShadow: "rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px",
-}
-let divisor = {
-    display: "grid",
-    alignSelf: "center",
-    justifySelf: "center",
-    textAlign: "center",
-    textJustify: "center",
-    gridTemplateColumns: "70% 30%",
-    gridGap: "35px"
-}
-let buttonMore = {
-    display: "grid",
-    alignSelf: "center",
-    justifySelf: "center",
-    textAlign: "center",
-    textJustify: "center"
-}
-let dividente = {
-  display: "grid",
-  alignSelf: "center",
-  justifySelf: "center",
-  textAlign: "center",
-  textJustify: "center",
-  gridTemplateColumns: "1fr 1fr"
-}
+
   if (
     user.email === "matiasfleitanico@gmail.com" ||
     user.email === "ezekielfleita10@gmail.com" ||
@@ -515,39 +361,18 @@ let dividente = {
   ) {
     return (
       <div style={customStyle}>
-        <div style={divisor}>
+        <div>
           <div style={whitebox}>
             <h2>Mis Cursos</h2>
             <div style={bigbox}>{count}</div>
-            <a style={a} href="/materias">
-              <div style={buttonMore}>Ver todo</div>
-            </a>
-          </div>
-          <div style={blackbox}>
-              <div>
-              <Pie data={data} />            
-            </div>
-          </div>
-          <div style={whitebox}>
-            <h2>Foro de Alumnos</h2>
-            {forum}
-          </div>
-          <div style={blackbox}>
-            <div style={whitebox_2}>
-            Notificaciones
-            {noti}
-            </div>
           </div>
         </div>
 
         <div style={sidebar_2}>
-        <a style={span_side_2} href="/">
+          <a style={span_side_2} href="/">
             <AiFillHome />
           </a>
-          <a style={span_side_2} href="/materias">
-            <AiFillBook />
-          </a>
-          <a style={span_side_2} href="/foro">
+          <a style={span_side_2} href="/buscar">
             <AiOutlineSearch />
           </a>
           <a style={span_side_2} href="/cuenta">
@@ -556,7 +381,16 @@ let dividente = {
           <a style={span_side_2} href="/configuracion">
             <AiFillSetting />
           </a>
+          <a style={span_side_2} href="/configuracion">
+            <AiFillSetting />
+          </a>
         </div>
+        <button style={button} onClick={HandleLogout}>
+          Salir
+        </button>
+        <h1>Hola {user.displayName || user.email}, usted es Administrador</h1>
+
+        <a href="/admin">PANEL DE ADMINISTRADOR</a>
       </div>
     );
   } else {

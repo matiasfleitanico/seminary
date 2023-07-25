@@ -12,7 +12,7 @@ export default function App() {
   const navigate = useNavigate();
   var datas;
   var listItems;
-  const [Uid, setUid] = useState("")
+  const [Uid, setUid] = useState("");
 
   const [newUser, setNewUser] = useState({
     email: "",
@@ -21,29 +21,27 @@ export default function App() {
     academyic_table: [],
   });
 
-  const handleChangeForUid = ({target: {value}}) => {
-    setUid(value)
-  }
+  const handleChangeForUid = ({ target: { value } }) => {
+    setUid(value);
+  };
   const handleChange_1 = ({ target: { name, value } }) => {
-    if(value === "on") {
-        setNewUser({ ...newUser, access: newUser.access.concat(parseInt(name))});
-        
+    if (value === "on") {
+      setNewUser({ ...newUser, access: newUser.access.concat(parseInt(name)) });
     } else {
-        for(let i = 0; i < newUser.access.length; i++){
-            if(i === name){
-                let newArr = newUser.filter(newUs => newUs != i);
-                setNewUser(...newUser, newArr)
-            }
+      for (let i = 0; i < newUser.access.length; i++) {
+        if (i === name) {
+          let newArr = newUser.filter((newUs) => newUs != i);
+          setNewUser(...newUser, newArr);
         }
+      }
     }
-    setTimeout(()=> {
-        console.log(newUser)
-    }, 300)
-
+    setTimeout(() => {
+      console.log(newUser);
+    }, 300);
   };
   const handleChange = ({ target: { name, value } }) => {
     setNewUser({ ...newUser, [name]: value });
-    console.log(newUser)
+    console.log(newUser);
   };
   let form = {};
 
@@ -66,11 +64,13 @@ export default function App() {
   }
 
   function submitData(e) {
-    e.preventDefault() 
+    e.preventDefault();
     postData(
-      "https://tecno-museo-default-rtdb.firebaseio.com/seminary/" + Uid + ".json?auth=" +
+      "https://tecno-museo-default-rtdb.firebaseio.com/seminary/" +
+        Uid +
+        ".json?auth=" +
         user.accessToken,
-        newUser
+      newUser
     ).then((data) => {
       datas = data; // JSON data parsed by `data.json()` call
     });
@@ -110,16 +110,20 @@ export default function App() {
     return response.json(); // parses JSON response into native JavaScript objects
   }
 
-  //getData(
-  //  "https://tecno-museo-default-rtdb.firebaseio.com/seminary.json?auth=" +
-  //    user.accessToken
-  //).then((data) => {
-  //  datas = data; // JSON data parsed by `data.json()` call
-  //  if (counter === 2) {
-  //    delayAddOne();
-  //  }
-  //  console.log(datas, "sdfkseop", emails[0].email);
-  //});
+  getData(
+    "https://tecno-museo-default-rtdb.firebaseio.com/seminary/back-data.json?auth=" +
+      user.accessToken
+  ).then((data) => {
+    datas = data; // JSON data parsed by `data.json()` call
+    setCount(()=>{
+      setCount(
+      <div style={box}>
+          <h2>hola</h2>
+          <p>estamos trabajando para mejorar las listas de administradores</p>
+      </div>
+      );
+    })
+  });
 
   const HandleLogout = async () => {
     await logout();
@@ -231,94 +235,7 @@ export default function App() {
         <h1>Panel de Administración</h1>
         <h3>Alumnos</h3>
       </div>
-      <form onSubmit={submitData}>
-      <label for="fname">UID:</label>
-        <input
-          type="text"
-          name="uid"
-          placeholder="UID"
-          onChange={handleChangeForUid}
-        />
-        <br />
-        <label for="fname">Email:</label>
-        <input
-          type="text"
-          name="email"
-          placeholder="email"
-          onChange={handleChange}
-        />
-        <br />
-        <label for="fname">Credencial:</label>
-        <input
-          type="text"
-          name="credential"
-          placeholder="credential"
-          onChange={handleChange}
-        />
-        <label for="fname">@gmail.com</label>
-        <br />
-        <input type="checkbox" id="fname" name="0" onChange={handleChange_1} />
-        <label for="fname">Materia 1</label>
-        <br />
-        <input type="checkbox" id="fname" name="1" onChange={handleChange_1} />
-        <label for="fname">Materia 2</label>
-        <br />
-        <input type="checkbox" id="fname" name="2" onChange={handleChange_1} />
-        <label for="fname">Materia 3</label>
-        <br />
-        <input type="checkbox" id="fname" name="3" onChange={handleChange_1} />
-        <label for="fname">Materia 4</label>
-        <br />
-        <input type="checkbox" id="fname" name="4" onChange={handleChange_1} />
-        <label for="fname">Materia 5</label>
-        <br />
-        <input type="checkbox" id="fname" name="5" onChange={handleChange_1} />
-        <label for="fname">Materia 6</label>
-        <br />
-        <input type="checkbox" id="fname" name="6" onChange={handleChange_1} />
-        <label for="fname">Materia 7</label>
-        <br />
-        <input type="checkbox" id="fname" name="7" onChange={handleChange_1} />
-        <label for="fname">Materia 8</label>
-        <br />
-        <input type="checkbox" id="fname" name="8" onChange={handleChange_1} />
-        <label for="fname">Materia 9</label>
-        <br />
-        <input type="checkbox" id="fname" name="9" onChange={handleChange_1} />
-        <label for="fname">Materia 10</label>
-        <br />
-        <input type="checkbox" id="fname" name="10" onChange={handleChange_1} />
-        <label for="fname">Materia 11</label>
-        <br />
-        <input type="checkbox" id="fname" name="11" onChange={handleChange_1} />
-        <label for="fname">Materia 12</label>
-        <br />
-        <input type="checkbox" id="fname" name="12" onChange={handleChange_1} />
-        <label for="fname">Materia 13</label>
-        <br />
-        <input type="checkbox" id="fname" name="13" onChange={handleChange_1} />
-        <label for="fname">Materia 14</label>
-        <br />
-        <input type="checkbox" id="fname" name="14" onChange={handleChange_1} />
-        <label for="fname">Materia 15</label>
-        <br />
-        <input type="checkbox" id="fname" name="15" onChange={handleChange_1} />
-        <label for="fname">Materia 16</label>
-        <br />
-        <input type="checkbox" id="fname" name="16" onChange={handleChange_1} />
-        <label for="fname">Materia 17</label>
-        <br />
-        <input type="checkbox" id="fname" name="17" onChange={handleChange_1} />
-        <label for="fname">Materia 18</label>
-        <br />
-        <input type="checkbox" id="fname" name="18" onChange={handleChange_1} />
-        <label for="fname">Materia 19</label>
-        <br />
-        <input type="checkbox" id="fname" name="19" onChange={handleChange_1} />
-        <label for="fname">Materia 20</label>
-        <br />
-        <button type="submit">Enviar</button>
-      </form>
+      <form onSubmit={submitData}>{count}</form>
     </div>
   );
 }

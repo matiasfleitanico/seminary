@@ -6,7 +6,7 @@ import React from "react";
 export default function Search() {
     const navigate = useNavigate();
     setTimeout(()=> {
-        navigate("/");
+        navigate("/foro");
     }, 1000)
     
   return (
