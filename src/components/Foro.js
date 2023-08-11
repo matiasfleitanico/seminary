@@ -635,24 +635,6 @@ export default function App() {
             </div>
           </div>
         </div>
-
-        <div style={sidebar_2}>
-          <a style={span_side_2} href="/">
-            <AiFillHome />
-          </a>
-          <a style={span_side_2} href="/materias">
-            <AiFillBook />
-          </a>
-          <a style={span_side_2} href="/foro">
-            <AiOutlineSearch />
-          </a>
-          <a style={span_side_2} href="/cuenta">
-            <RiAccountCircleFill />
-          </a>
-          <a style={span_side_2} href="/configuracion">
-            <AiFillSetting />
-          </a>
-        </div>
       </div>
     );
   } else {
@@ -672,24 +654,6 @@ export default function App() {
               <AiOutlinePlusSquare />
             </div>
           </div>
-        </div>
-
-        <div style={sidebar_2}>
-          <a style={span_side_2} href="/">
-            <AiFillHome />
-          </a>
-          <a style={span_side_2} href="/materias">
-            <AiFillBook />
-          </a>
-          <a style={span_side_2} href="/foro">
-            <AiOutlineSearch />
-          </a>
-          <a style={span_side_2} href="/cuenta">
-            <RiAccountCircleFill />
-          </a>
-          <a style={span_side_2} href="/configuracion">
-            <AiFillSetting />
-          </a>
         </div>
       </div>
     );

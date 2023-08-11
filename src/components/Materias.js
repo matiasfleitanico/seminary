@@ -1,9 +1,10 @@
-import { useRef } from "react";
+import { useRef, useState} from "react";
 import { useAuth } from "../context/authContext";
 import { useNavigate } from "react-router-dom";
 import { usuario } from "../Users";
 import React from "react";
 import { AiFillHome, AiOutlineSearch, AiFillSetting, AiFillBook } from "react-icons/ai";
+import Sidebar from "./Sidebar.js";
 import { RiAccountCircleFill } from "react-icons/ri";
 var counter = 0;
 
@@ -18,6 +19,7 @@ export default function App() {
   var button_pressed = {};
   const windowSize = useRef([window.innerWidth, window.innerHeight]);
   const { logout, loading, user } = useAuth();
+  const [activeIcon, setActiveIcon] = useState('book');
   const navigate = useNavigate();
   var datas;
   var courses;
@@ -367,24 +369,6 @@ export default function App() {
             <div style={bigbox}>{count}</div>
           </div>
         </div>
-
-        <div style={sidebar_2}>
-        <a style={span_side_2} href="/">
-            <AiFillHome />
-          </a>
-          <a style={span_side_2} href="/materias">
-            <AiFillBook />
-          </a>
-          <a style={span_side_2} href="/foro">
-            <AiOutlineSearch />
-          </a>
-          <a style={span_side_2} href="/cuenta">
-            <RiAccountCircleFill />
-          </a>
-          <a style={span_side_2} href="/configuracion">
-            <AiFillSetting />
-          </a>
-        </div>
       </div>
     );
   } else {
@@ -395,24 +379,6 @@ export default function App() {
           <h2>Mis Cursos</h2>
           <div style={bigbox}>{count}</div>
         </div>
-      </div>
-
-      <div style={sidebar_2}>
-      <a style={span_side_2} href="/">
-          <AiFillHome />
-        </a>
-        <a style={span_side_2} href="/materias">
-          <AiFillBook />
-        </a>
-        <a style={span_side_2} href="/foro">
-          <AiOutlineSearch />
-        </a>
-        <a style={span_side_2} href="/cuenta">
-          <RiAccountCircleFill />
-        </a>
-        <a style={span_side_2} href="/configuracion">
-          <AiFillSetting />
-        </a>
       </div>
     </div>
     );

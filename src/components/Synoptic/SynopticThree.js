@@ -397,20 +397,6 @@ export default function Identidad() {
           Cargando…
         </iframe>
       </div>
-      <div style={sidebar_2}>
-        <a style={span_side_2} href="/">
-          <AiFillHome />
-        </a>
-        <a style={span_side_2} href="/buscar">
-          <AiOutlineSearch />
-        </a>
-        <a style={span_side_2} href="/cuenta">
-          <RiAccountCircleFill />
-        </a>
-        <a style={span_side_2} href="/configuracion">
-          <AiFillSetting />
-        </a>
-      </div>
     </div>
   );
 }

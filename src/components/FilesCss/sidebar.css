@@ -1,0 +1,60 @@
+
+  .span_side_1 {
+    color: rgb(62, 20, 73);
+    margin: 0;
+    font-size: 1.5rem;
+    text-align: center;
+    text-decoration: none;
+    text-justify: inter-word;
+    align-items: center;
+  }
+  
+  .span_side_2 {
+    color: white;
+    font-size: 1rem;
+    text-align: center;
+    text-decoration: none;
+    text-justify: inter-word;
+    align-items: center;
+  }
+
+  .sidebar {
+    position: fixed;
+    background-color: #8C32FF;
+    width: 100%;
+    border-radius: 10px;
+    margin: 15px 0;
+    display: grid;
+    grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
+    align-items: center;
+    max-width: 6%!important;
+    min-height: 90%;
+    max-height: 100%;
+    right: 4%;
+    top:0;
+    height: 90%;
+    transition: all 5ms cubic-bezier(0.075, 0.82, 0.165, 1);
+  }
+  
+  /* Media query para pantallas de 950px o menos */
+  @media (max-width: 950px) {
+    .sidebar {
+      display: grid;
+      grid-template-columns:1fr 1fr 1fr 1fr 1fr!important; 
+      grid-template-rows: 1fr;
+      width: 100vh!important; 
+      max-width: 100%!important;
+      min-height: 7%!important;
+      height: 1rem!important; /* Ocupar toda la altura de la pantalla */
+      bottom: -15px!important;
+      top: auto;
+      left: -15px!important;
+      right: auto; /* Lo posicionamos abajo */
+      border-radius: 0!important; /* Sin borde redondeado */
+    }
+  
+    /* También ajusta los estilos para los íconos en el sidebar */
+    .span_side_1, .span_side_2 {
+      font-size: 1.5rem; /* Ajusta el tamaño de fuente */
+    }
+  }

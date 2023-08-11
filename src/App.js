@@ -1,4 +1,5 @@
 import { Routes, Route } from "react-router-dom";
+import React, { useState, useEffect } from 'react';
 import Home from "./components/Home";
 import Login from "./components/Login";
 import ProtectedRoute from "./components/ProtectedRoute";
@@ -6,9 +7,12 @@ import Register from "./components/Register";
 import Settings from "./components/Settings";
 import Account from "./components/Account";
 import Admin from "./components/Admin";
+import AdminUsers from "./components/AdminUsers";
+import AdminNotifications from "./components/AdminNotifications";
 import Search from "./components/Search";
 import Materias from "./components/Materias"
-import Foro from "./components/Foro"
+import Foro from "./components/Foro";
+import Sidebar from "./components/Sidebar";
 
 import IdentityOne from "./components/Identity/IdentityOne";
 import IdentityTwo from "./components/Identity/IdentityTwo";
@@ -86,6 +90,17 @@ import FundamentsFiveth from "./components/Fundaments/FundamentsFiveth";
 import { AuthProvider } from "./context/authContext";
 
 function App() {
+  const [activeIcon, setActiveIcon] = useState("book");
+
+  // Actualizar activeIcon cuando cambie la ruta
+  useEffect(() => {
+    const currentPath = window.location.pathname;
+    if (currentPath === '/') setActiveIcon('home');
+    else if (currentPath === '/materias') setActiveIcon('book');
+    else if (currentPath === '/foro') setActiveIcon('search');
+    else if (currentPath === '/cuenta'|| currentPath === '/admin'|| currentPath === '/admin/notifications'|| currentPath === '/admin/users') setActiveIcon('account');
+    else if (currentPath === '/configuracion') setActiveIcon('settings');
+  }, []);
   return (
     <AuthProvider>
       <Routes>
@@ -120,6 +135,22 @@ function App() {
           element={
             <ProtectedRoute>
               <Admin />
+            </ProtectedRoute>
+          }
+        />
+        <Route
+          path="/admin/users"
+          element={
+            <ProtectedRoute>
+              <AdminUsers />
+            </ProtectedRoute>
+          }
+        />
+                <Route
+          path="/admin/notifications"
+          element={
+            <ProtectedRoute>
+              <AdminNotifications />
             </ProtectedRoute>
           }
         />
@@ -649,6 +680,7 @@ function App() {
           }
         />
       </Routes>
+      <Sidebar activeIcon={activeIcon} />
     </AuthProvider>
   );
 }
