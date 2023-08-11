@@ -85,7 +85,17 @@ import FundamentsOne from "./components/Fundaments/FundamentsOne";
 import FundamentsTwo from "./components/Fundaments/FundamentsTwo";
 import FundamentsThree from "./components/Fundaments/FundamentsThree";
 import FundamentsFourth from "./components/Fundaments/FundamentsFourth";
-import FundamentsFiveth from "./components/Fundaments/FundamentsFiveth";
+import FundamentsFiveth from "./components/Fundaments/FundamentsFiveth";  
+
+import OldTestamentOne from "./components/OldTestament/OldTestamentOne";
+import OldTestamentTwo from "./components/OldTestament/OldTestamentTwo";
+import OldTestamentThree from "./components/OldTestament/OldTestamentThree";
+import OldTestamentFourth from "./components/OldTestament/OldTestamentFourth";
+import OldTestamentFiveth from "./components/OldTestament/OldTestamentFiveth";
+
+
+
+
 
 import { AuthProvider } from "./context/authContext";
 
@@ -471,6 +481,7 @@ function App() {
             </ProtectedRoute>
           }
         />
+
         <Route
           path="/escatologia/1"
           element={
@@ -679,6 +690,51 @@ function App() {
             </ProtectedRoute>
           }
         />
+
+
+        <Route
+          path="/antiguo/1"
+          element={
+            <ProtectedRoute>
+              <OldTestamentOne />
+            </ProtectedRoute>
+          }
+        />
+        <Route
+          path="/antiguo/2"
+          element={
+            <ProtectedRoute>
+              <OldTestamentTwo />
+            </ProtectedRoute>
+          }
+        />
+        <Route
+          path="/antiguo/3"
+          element={
+            <ProtectedRoute>
+              <OldTestamentThree />
+            </ProtectedRoute>
+          }
+        />
+        <Route
+          path="/antiguo/4"
+          element={
+            <ProtectedRoute>
+              <OldTestamentFourth />
+            </ProtectedRoute>
+          }
+        />
+        <Route
+          path="/antiguo/5"
+          element={
+            <ProtectedRoute>
+              <OldTestamentFiveth />
+            </ProtectedRoute>
+          }
+        />
+
+
+        
       </Routes>
       <Sidebar activeIcon={activeIcon} />
     </AuthProvider>

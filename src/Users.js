@@ -261,5 +261,14 @@ export const usuario = {
       path: "fundamentos/1",
     },
 
+    {
+      id: 10,
+      title: "Perspectiva y Síntesis del Antiguo Testamento",
+      description:
+      "BÍBLICA Un panorama macro con el propósito de conocer el trasfondo y lo más importante de cada libro del Antiguo Testamento, elaborado en una síntesis de los hechos que sucedieron desde el origen del mundo hasta la llegada del Mesías, con una mirada cristo-céntrica a las historias, leyes y rituales del antiguo pacto. ¿Cómo buscar y aplicar los patrones de diseño diseminados en las Escrituras?...",
+      link: "https://i.imgur.com/kK54SwP.jpg",
+      path: "antiguo/1",
+    },
+
   ],
 };
