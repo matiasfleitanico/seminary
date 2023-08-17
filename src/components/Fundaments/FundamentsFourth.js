@@ -373,7 +373,7 @@ export default function Identidad() {
           style={iframe}
           width="1280"
           height="720"
-          src="https://www.youtube.com/embed/twP72DrNoQI"
+          src="https://www.youtube.com/embed/pMUN1Jx4Uag"
           title="YouTube video player"
           frameborder="0"
           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
@@ -385,7 +385,7 @@ export default function Identidad() {
           style={iframe}
           width="1280"
           height="720"
-          src="https://www.youtube.com/embed/twP72DrNoQI"
+          src="https://www.youtube.com/embed/J_7JPxqix0c"
           title="YouTube video player"
           frameborder="0"
           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
