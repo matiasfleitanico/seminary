@@ -9,6 +9,7 @@ import Account from "./components/Account";
 import Admin from "./components/Admin";
 import AdminUsers from "./components/AdminUsers";
 import AdminNotifications from "./components/AdminNotifications";
+import AdminFiles from "./components/AdminFiles";
 import Search from "./components/Search";
 import Materias from "./components/Materias"
 import Foro from "./components/Foro";
@@ -87,11 +88,13 @@ import FundamentsThree from "./components/Fundaments/FundamentsThree";
 import FundamentsFourth from "./components/Fundaments/FundamentsFourth";
 import FundamentsFiveth from "./components/Fundaments/FundamentsFiveth";
 
+import Subject from "./components/subject/Subject"
+import SubjectEdit from "./components/subject/SubjectEdit"
+
 import { AuthProvider } from "./context/authContext";
 
 function App() {
   const [activeIcon, setActiveIcon] = useState("book");
-
   // Actualizar activeIcon cuando cambie la ruta
   useEffect(() => {
     const currentPath = window.location.pathname;
@@ -146,6 +149,22 @@ function App() {
             </ProtectedRoute>
           }
         />
+        <Route
+          path="/admin/files"
+          element={
+            <ProtectedRoute>
+              <AdminFiles />
+            </ProtectedRoute>
+          }
+        />
+        <Route
+          path="/admin/subject"
+          element={
+            <ProtectedRoute>
+              <SubjectEdit />
+            </ProtectedRoute>
+          }
+        />
                 <Route
           path="/admin/notifications"
           element={
@@ -183,499 +202,84 @@ function App() {
       
         /*Identidad */
         <Route
-          path="/identidad/1"
+          path="/identidad"
           element={
             <ProtectedRoute>
-              <IdentityOne />
+              <Subject pathname={"identidad"} />
             </ProtectedRoute>
           }
         />
-        <Route
-          path="/identidad/2"
-          element={
-            <ProtectedRoute>
-              <IdentityTwo />
-            </ProtectedRoute>
-          }
-        />
-        <Route
-          path="/identidad/3"
-          element={
-            <ProtectedRoute>
-              <IdentityThree />
-            </ProtectedRoute>
-          }
-        />
-        <Route
-          path="/identidad/4"
-          element={
-            <ProtectedRoute>
-              <IdentityFourth />
-            </ProtectedRoute>
-          }
-        />
-        <Route
-          path="/identidad/5"
-          element={
-            <ProtectedRoute>
-              <IdentityFiveth />
-            </ProtectedRoute>
-          }
-        />
+        
         /* Vino Nuevo */
         <Route
-          path="/vinonuevo/1"
+          path="/vinonuevo"
           element={
             <ProtectedRoute>
-              <NewWineOne />
+              <Subject pathname={"vinonuevo"} />
             </ProtectedRoute>
           }
         />
         <Route
-          path="/vinonuevo/2"
+          path="/espiritusanto"
           element={
             <ProtectedRoute>
-              <NewWineTwo />
+              <Subject pathname={"espiritusanto"} />
             </ProtectedRoute>
           }
         />
         <Route
-          path="/vinonuevo/3"
+          path="/oracion"
           element={
             <ProtectedRoute>
-              <NewWineThree />
+              <Subject pathname={"oracion"} />
             </ProtectedRoute>
           }
         />
         <Route
-          path="/vinonuevo/4"
+          path="/hermeneutica"
           element={
             <ProtectedRoute>
-              <NewWineFourth />
+              <Subject pathname={"hermeneutica"} />
             </ProtectedRoute>
           }
         />
         <Route
-          path="/vinonuevo/5"
+          path="/evangeliossinopticos"
           element={
             <ProtectedRoute>
-              <NewWineFiveth />
+              <Subject pathname={"evangelios"} />
             </ProtectedRoute>
           }
         />
         <Route
-          path="/vinonuevo/6"
+          path="/escatologia"
           element={
             <ProtectedRoute>
-              <NewWineSixth />
+              <Subject pathname={"escatologia"} />
             </ProtectedRoute>
           }
         />
         <Route
-          path="/espiritusanto/1"
+          path="/salud"
           element={
             <ProtectedRoute>
-              <HolySpiritOne />
+              <Subject pathname={"salud"} />
             </ProtectedRoute>
           }
         />
         <Route
-          path="/espiritusanto/2"
+          path="/avivamiento"
           element={
             <ProtectedRoute>
-              <HolySpiritTwo />
+              <Subject pathname={"avivamiento"} />
             </ProtectedRoute>
           }
         />
         <Route
-          path="/espiritusanto/3"
+          path="/fundamentos"
           element={
             <ProtectedRoute>
-              <HolySpiritThree />
-            </ProtectedRoute>
-          }
-        />
-        <Route
-          path="/espiritusanto/4"
-          element={
-            <ProtectedRoute>
-              <HolySpiritFourth />
-            </ProtectedRoute>
-          }
-        />
-        <Route
-          path="/espiritusanto/5"
-          element={
-            <ProtectedRoute>
-              <HolySpiritFiveth />
-            </ProtectedRoute>
-          }
-        />
-        <Route
-          path="/espiritusanto/6"
-          element={
-            <ProtectedRoute>
-              <HolySpiritSixth />
-            </ProtectedRoute>
-          }
-        />
-        <Route
-          path="/oracionyguerra/1"
-          element={
-            <ProtectedRoute>
-              <SpiritWarfareOne />
-            </ProtectedRoute>
-          }
-        />
-        <Route
-          path="/oracionyguerra/2"
-          element={
-            <ProtectedRoute>
-              <SpiritWarfareTwo />
-            </ProtectedRoute>
-          }
-        />
-        <Route
-          path="/oracionyguerra/3"
-          element={
-            <ProtectedRoute>
-              <SpiritWarfareThree />
-            </ProtectedRoute>
-          }
-        />
-        <Route
-          path="/oracionyguerra/4"
-          element={
-            <ProtectedRoute>
-              <SpiritWarfareFourth />
-            </ProtectedRoute>
-          }
-        />
-        <Route
-          path="/oracionyguerra/5"
-          element={
-            <ProtectedRoute>
-              <SpiritWarfareFiveth />
-            </ProtectedRoute>
-          }
-        />
-        <Route
-          path="/oracionyguerra/6"
-          element={
-            <ProtectedRoute>
-              <SpiritWarfareSixth />
-            </ProtectedRoute>
-          }
-        />
-        <Route
-          path="/hermeneutica/1"
-          element={
-            <ProtectedRoute>
-              <HermeneuticsOne />
-            </ProtectedRoute>
-          }
-        />
-        <Route
-          path="/hermeneutica/2"
-          element={
-            <ProtectedRoute>
-              <HermeneuticsTwo />
-            </ProtectedRoute>
-          }
-        />
-        <Route
-          path="/hermeneutica/3"
-          element={
-            <ProtectedRoute>
-              <HermeneuticsThree />
-            </ProtectedRoute>
-          }
-        />
-        <Route
-          path="/hermeneutica/4"
-          element={
-            <ProtectedRoute>
-              <HermeneuticsFourth />
-            </ProtectedRoute>
-          }
-        />
-        <Route
-          path="/hermeneutica/5"
-          element={
-            <ProtectedRoute>
-              <HermeneuticsFiveth />
-            </ProtectedRoute>
-          }
-        />
-        <Route
-          path="/evangeliossinopticos/1"
-          element={
-            <ProtectedRoute>
-              <SynopticOne />
-            </ProtectedRoute>
-          }
-        />
-        <Route
-          path="/evangeliossinopticos/2"
-          element={
-            <ProtectedRoute>
-              <SynopticTwo />
-            </ProtectedRoute>
-          }
-        />
-        <Route
-          path="/evangeliossinopticos/3"
-          element={
-            <ProtectedRoute>
-              <SynopticThree />
-            </ProtectedRoute>
-          }
-        />
-        <Route
-          path="/evangeliossinopticos/4"
-          element={
-            <ProtectedRoute>
-              <SynopticFourth />
-            </ProtectedRoute>
-          }
-        />
-        <Route
-          path="/evangeliossinopticos/5"
-          element={
-            <ProtectedRoute>
-              <SynopticFiveth />
-            </ProtectedRoute>
-          }
-        />
-        <Route
-          path="/evangeliossinopticos/6"
-          element={
-            <ProtectedRoute>
-              <SynopticSixth />
-            </ProtectedRoute>
-          }
-        />
-        <Route
-          path="/evangeliossinopticos/7"
-          element={
-            <ProtectedRoute>
-              <SynopticSeven />
-            </ProtectedRoute>
-          }
-        />
-        <Route
-          path="/evangeliossinopticos/8"
-          element={
-            <ProtectedRoute>
-              <SynopticEight />
-            </ProtectedRoute>
-          }
-        />
-        <Route
-          path="/escatologia/1"
-          element={
-            <ProtectedRoute>
-              <EschatologyOne />
-            </ProtectedRoute>
-          }
-        />
-        <Route
-          path="/escatologia/2"
-          element={
-            <ProtectedRoute>
-              <EschatologyTwo />
-            </ProtectedRoute>
-          }
-        />
-        <Route
-          path="/escatologia/3"
-          element={
-            <ProtectedRoute>
-              <EschatologyThree />
-            </ProtectedRoute>
-          }
-        />
-        <Route
-          path="/escatologia/4"
-          element={
-            <ProtectedRoute>
-              <EschatologyFourth />
-            </ProtectedRoute>
-          }
-        />
-        <Route
-          path="/escatologia/5"
-          element={
-            <ProtectedRoute>
-              <EschatologyFiveth />
-            </ProtectedRoute>
-          }
-        />
-        <Route
-          path="/escatologia/6"
-          element={
-            <ProtectedRoute>
-              <EschatologySixth />
-            </ProtectedRoute>
-          }
-        />
-        <Route
-          path="/escatologia/7"
-          element={
-            <ProtectedRoute>
-              <EschatologySeven />
-            </ProtectedRoute>
-          }
-        />
-        <Route
-          path="/salud/1"
-          element={
-            <ProtectedRoute>
-              <OverallHealthOne />
-            </ProtectedRoute>
-          }
-        />
-        <Route
-          path="/salud/2"
-          element={
-            <ProtectedRoute>
-              <OverallHealthTwo />
-            </ProtectedRoute>
-          }
-        />
-        <Route
-          path="/salud/3"
-          element={
-            <ProtectedRoute>
-              <OverallHealthThree />
-            </ProtectedRoute>
-          }
-        />
-        <Route
-          path="/salud/4"
-          element={
-            <ProtectedRoute>
-              <OverallHealthFourth />
-            </ProtectedRoute>
-          }
-        />
-        <Route
-          path="/salud/5"
-          element={
-            <ProtectedRoute>
-              <OverallHealthFiveth />
-            </ProtectedRoute>
-          }
-        />
-        <Route
-          path="/avivamiento/1"
-          element={
-            <ProtectedRoute>
-              <RevivalOne />
-            </ProtectedRoute>
-          }
-        />
-        <Route
-          path="/avivamiento/2"
-          element={
-            <ProtectedRoute>
-              <RevivalTwo />
-            </ProtectedRoute>
-          }
-        />
-        <Route
-          path="/avivamiento/3"
-          element={
-            <ProtectedRoute>
-              <RevivalThree />
-            </ProtectedRoute>
-          }
-        />
-        <Route
-          path="/avivamiento/4"
-          element={
-            <ProtectedRoute>
-              <RevivalFourth />
-            </ProtectedRoute>
-          }
-        />
-        <Route
-          path="/avivamiento/5"
-          element={
-            <ProtectedRoute>
-              <RevivalFiveth />
-            </ProtectedRoute>
-          }
-        />
-        <Route
-          path="/avivamiento/6"
-          element={
-            <ProtectedRoute>
-              <RevivalSixth />
-            </ProtectedRoute>
-          }
-        />
-        <Route
-          path="/avivamiento/7"
-          element={
-            <ProtectedRoute>
-              <RevivalSeven />
-            </ProtectedRoute>
-          }
-        />
-        <Route
-          path="/avivamiento/8"
-          element={
-            <ProtectedRoute>
-              <RevivalEight />
-            </ProtectedRoute>
-          }
-        />
-        <Route
-          path="/fundamentos/1"
-          element={
-            <ProtectedRoute>
-              <FundamentsOne />
-            </ProtectedRoute>
-          }
-        />
-        <Route
-          path="/fundamentos/2"
-          element={
-            <ProtectedRoute>
-              <FundamentsTwo />
-            </ProtectedRoute>
-          }
-        />
-        <Route
-          path="/fundamentos/3"
-          element={
-            <ProtectedRoute>
-              <FundamentsThree />
-            </ProtectedRoute>
-          }
-        />
-        <Route
-          path="/fundamentos/4"
-          element={
-            <ProtectedRoute>
-              <FundamentsFourth />
-            </ProtectedRoute>
-          }
-        />
-        <Route
-          path="/fundamentos/5"
-          element={
-            <ProtectedRoute>
-              <FundamentsFiveth />
-            </ProtectedRoute>
-          }
-        />
-        <Route
-          path="/vino-nuevo"
-          element={
-            <ProtectedRoute>
-              <NewWine />
+              <Subject pathname={"fundamentos"} />
             </ProtectedRoute>
           }
         />

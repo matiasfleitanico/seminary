@@ -1,0 +1,210 @@
+.app-container {
+    font-family: Arial, sans-serif;
+    padding-right: 10%;
+  }
+  .forum-content {
+    margin: 20px;
+    padding: 20px;
+    border: 1px solid #ccc;
+    background-color: #f9f9f9;
+  }
+  
+  .forum-title {
+    font-size: 24px;
+    margin-bottom: 10px;
+  }
+  
+  .forum-user {
+    color: #555;
+    margin-bottom: 10px;
+  }
+  
+  .forum-text {
+    margin-top: 10px;
+  }
+
+  
+.forum-item {
+    border: 1px solid #ccc;
+    padding: 10px;
+    margin: 10px;
+    cursor: pointer;
+    background-color: white;
+    transition: background-color 0.3s;
+  }
+  
+  .forum-item:hover {
+    background-color: #f0f0f0;
+  }
+  
+  .forum-title {
+    font-size: 20px;
+    margin-bottom: 5px;
+  }
+  
+  .forum-user {
+    color: #555;
+    margin-bottom: 5px;
+  }
+  
+  .forum-content {
+    margin-top: 5px;
+  }
+  
+  .forum-responses {
+    color: #888;
+  }
+  
+  .topic-form {
+    margin: 20px;
+    padding: 20px;
+    border: 1px solid #ccc;
+    background-color: #f9f9f9;
+  }
+  
+  .input-field {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+  
+  .submit-button {
+    background-color: #007bff;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  .topic-details {
+    margin: 20px;
+    padding: 20px;
+    border: 1px solid #ccc;
+    background-color: #f9f9f9;
+  }
+  
+  .comment {
+    margin: 10px 0;
+    padding: 10px;
+    border: 1px solid #ccc;
+    background-color: #fff;
+  }
+
+  
+.add-topic-button {
+    position: fixed;
+    bottom: 20rem;
+    left: 20px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+    font-size: 24px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s, transform 0.3s;
+  }
+  
+  .add-topic-button:hover {
+    background-color: #0056b3;
+    transform: scale(1.1);
+  }
+  .back-button {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.3s, transform 0.2s, box-shadow 0.3s;
+  }
+  
+  .back-button:hover {
+    background-color: #0056b3;
+    transform: scale(1.05);
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+  }
+
+  .comment {
+    display: grid;
+    border: 1px solid #ccc;
+    padding: 10px;
+    margin: 10px 0;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+  }
+  
+  .comment-content {
+    font-weight: bold;
+  }
+  
+  .comment-user {
+    color: #666;
+    display: grid;
+    align-self: start;
+    align-items: start;
+    justify-self: end;
+  }
+  
+  .comment-date {
+    font-size: 12px;
+    color: #999;
+  }
+  
+  .comment-likes {
+    display: grid;
+    align-self: end;
+    align-items: end;
+    width: auto;
+  }
+  
+  .like-button {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    font-size: 24px;
+    color: red; /* Cambia el color según tus preferencias */
+    transition: color 0.3s;
+    display: grid;
+    align-self: end;
+    align-items: end;
+    justify-self: end;
+    width: auto;
+  }
+  
+  .like-button.liked {
+    color: gray; /* Cambia el color según tus preferencias */
+  }
+  
+  .likes-count {
+    display: grid;
+    align-self: end;
+    align-items: end;
+    width: auto;
+    justify-self: end;
+    margin-left: 10px;
+    transition: color 0.3s;
+    margin-right: 18px;
+  }
+  
+  .likes-count.liked {
+    color: gray; /* Cambia el color según tus preferencias */
+  }
+
+  @media (max-width: 950px) {
+    .app-container {
+        padding-right: 0;
+      }
+  }

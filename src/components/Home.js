@@ -7,8 +7,9 @@
   import { usuario } from '../Users';
   import { Chart as ChartJS, ArcElement, Tooltip, Legend } from 'chart.js';
   import { Pie } from 'react-chartjs-2';
-  import Sidebar from './Sidebar';
+  import { getDownloadUrlForFile } from "../firebase";
   import './FilesCss/Home.css'; // Import your CSS file
+  import { useGlobalContext } from '../context/GlobalContext';
   var counter = 0;
   
   ChartJS.register(ArcElement, Tooltip, Legend);
@@ -22,6 +23,7 @@
     const [forum, setForum] = useState(<div className='lds-dual-ring'></div>);
     const [noti, setNoti] = useState(<div className='lds-dual-ring'></div>);
     const [mat, setMat] = useState(5);
+    const { globalRoute, setGlobalRoute } = useGlobalContext();
     var email_user = "";
     var user_id = 0;
     var datas;
@@ -75,58 +77,62 @@
         user.accessToken
     ).then((data) => {
       datas = data;
-      console.log(datas["user"]); // JSON data parsed by `data.json()` call
       if (counter <= 3) {
         getCourses(datas["user"]);
       }
     });
-  
-    function getCourses(username) {
-      getData(
-        "https://tecno-museo-default-rtdb.firebaseio.com/seminary/access/" +
-          username +
-          "/courses.json?auth=" +
-          user.accessToken
-      ).then((data) => {
-        courses = data;
-        setMat(courses.length)
-        let aleatorio1 = courses[Math.floor(Math.random() * courses.length)];
-        let aleatorio2 =
-          courses[Math.floor(Math.random() * courses.length)] === aleatorio1
-            ? courses[Math.floor(Math.random() * courses.length)]
-            : courses[Math.floor(Math.random() * courses.length)];
-        let aleatorio3 =
-          courses[Math.floor(Math.random() * courses.length)] === aleatorio1
-            ? courses[Math.floor(Math.random() * courses.length)]
-            : courses[Math.floor(Math.random() * courses.length)];
-        let courses_random = [aleatorio1, aleatorio2, aleatorio3]
-        console.log(courses_random);
-        console.log(courses); // JSON data parsed by `data.json()` call
-        setTimeout(() => {
-          getForum();
-          getNotifications(username);
-          setCount(
-            courses_random.map((number) => (
-              <a className='box' href={usuario.materias[number].path}>
-                <img className='img' src={usuario.materias[number].link}></img>
-                <h2>{usuario.materias[number].title}</h2>
-              </a>
-            ))
+
+    async function getCourses(username) {
+      const url = `https://tecno-museo-default-rtdb.firebaseio.com/seminary/access/${username}/courses.json?auth=${user.accessToken}`;
+      getData(url)
+        .then(async (data) => {
+          const coursesArray = Object.values(data); // Convertir el objeto en un array
+          const coursesCount = coursesArray.length;
+          setMat(coursesCount);
+    
+          let courses_random = [];
+          if (coursesCount >= 3) {
+            const uniqueRandomIndexes = new Set();
+            while (uniqueRandomIndexes.size < 3) {
+              const randomIndex = Math.floor(Math.random() * coursesCount);
+              uniqueRandomIndexes.add(randomIndex);
+            }
+    
+            courses_random = Array.from(uniqueRandomIndexes).map((index) => coursesArray[index]);
+          } else if (coursesCount > 0) {
+            courses_random = coursesArray;
+          }
+    
+          // Descargar las imágenes y preparar el JSX
+          const coursesJSX = await Promise.all(
+            courses_random.map(async (course) => {
+              const imageUrl = await getDownloadUrlForFile(course.link);
+              setGlobalRoute(course.key);
+
+              return (
+                <a className='box' href={course.key} key={course.id}>
+                  <img className='img' src={imageUrl} alt='Course Image' />
+                  <h3>{course.title}</h3>
+                </a>
+              );
+            })
           );
-        }, 700);
-      });
+    
+          setTimeout(() => {
+            getForum();
+            getNotifications(username);
+    
+            setCount(coursesJSX);
+          }, 700);
+        });
     }
-  
-  
-  
     function getForum() {
       getData(
         "https://tecno-museo-default-rtdb.firebaseio.com/seminary/forum.json?auth=" +
           user.accessToken
       ).then((data) => {
         forumes = data;
-       
-        console.log(forumes); // JSON data parsed by `data.json()` call
+      
         setTimeout(() => {
           setForum(() => (
               <a  className='link' href={"foro"}>
@@ -144,8 +150,6 @@
           user.accessToken
       ).then((data) => {
         notis = data;
-  
-        console.log("asdasdweneisniefn " + notis); // JSON data parsed by `data.json()` call
         setTimeout(() => {
           setNoti(() => (
               <a className='link_1' href={notis[notis.length-1]["link"]}>
@@ -156,10 +160,6 @@
         }, 200);
       });
     }
-  
-    var whitebox;
-    var bigbox;
-    var blackbox;
     const HandleLogout = async () => {
       await logout();
       navigate("/login");
@@ -171,20 +171,6 @@
         user_id = i;
       }
     }
-  
-  
-    useEffect(() => {
-      // ...
-  
-      // Use other useEffect hooks here for the rest of your data fetching and setting
-  
-    }, []); // Empty dependency array to trigger this effect only on mount
-  
-    const isUserAllowed =
-      user.email === 'matiasfleitanico@gmail.com' ||
-      user.email === 'ezekielfleita10@gmail.com' ||
-      user.email === 'seminariopoderdedios@gmail.com' ||
-      user.email === 'fleita.ariana@gmail.com';
   
     return (
       <div className='customStyle'>

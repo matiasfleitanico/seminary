@@ -1,246 +1,266 @@
+.file-uploader-container {
+  max-width: 400px;
+  margin: 0 auto;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
 
-.container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    height: auto;
-    background-color: #f0f7fa;
-  }
-  
-  .user-list-container {
-    width: 80%;
-    max-width: 1000px;
-    margin-top: 20px;
-  }
-  
-  .user-list {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 10px;
-  }
-  
-  .user-item {
-    background-color: #b0d4e5;
-    border-radius: 8px;
-    padding: 15px;
-    cursor: pointer;
-    transition: background-color 0.3s;
-    text-align: center;
-  }
-  
-  .user-item h3 {
-    margin: 5px 0;
-    color: #355c7d;
-  }
-  
-  .user-item p {
-    margin: 0;
-    color: #355c7d;
-  }
-  
-  .user-item:hover {
-    background-color: #88a9bc;
-  }
-  
-  .editor {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    background-color: #ffffff;
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
-    width: 80%;
-    max-width: 600px;
-  }
-  
-  .editor h2 {
-    color: #355c7d;
-    margin-bottom: 10px;
-  }
-  
-  .editor h3 {
-    color: #355c7d;
-    margin-bottom: 5px;
-  }
-  
-  .editor ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-  }
-  
-  .editor li {
-    color: #355c7d;
-    margin-bottom: 5px;
-  }
-  
-  .editor label {
-    color: #355c7d;
-    display: block;
-    margin-bottom: 5px;
-  }
-  
-  .editor input {
-    width: 100%;
-    padding: 8px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    margin-bottom: 10px;
-  }
-  
-  .editor button {
-    background-color: #355c7d;
-    color: #ffffff;
-    border: none;
-    padding: 8px 15px;
-    border-radius: 4px;
-    cursor: pointer;
-  }
-  
-  .editor button:hover {
-    background-color: #2a465a;
-  }
-  
+.file-uploader-title {
+  font-size: 24px;
+  margin-bottom: 15px;
+}
+
+.file-uploader-form {
+  display: flex;
+  flex-direction: column;
+}
+
+.file-input-label {
+  font-size: 16px;
+  margin-bottom: 10px;
+}
+
+.file-input {
+  margin-bottom: 10px;
+}
+
+.path-input-label {
+  font-size: 16px;
+  margin-bottom: 10px;
+  width: 100%;
+}
+
+.path-input {
+  margin-bottom: 10px;
+}
+
+.path-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 15px;
+}
+
+.path-button {
+  padding: 5px 10px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.submit-button {
+  padding: 10px;
+  background-color: #28a745;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.file-url {
+  font-size: 18px;
+  margin-top: 20px;
+}
+
+.file-uploader-container {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 20px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  background-color: #f9f9f9;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.file-uploader-title {
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+.file-uploader-form {
+  display: flex;
+  flex-direction: column;
+}
+
+.file-input-container,
+.path-input-container {
+  margin-bottom: 10px;
+}
+
+.file-input-label,
+.path-input-label {
+  font-size: 18px;
+  margin-bottom: 5px;
+}
+
+.file-input,
+.path-input {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.path-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 10px;
+}
+
+.path-button {
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  padding: 8px 15px;
+  margin-right: 10px;
+  margin-bottom: 10px;
+  cursor: pointer;
+}
+
+.submit-button {
+  background-color: #28a745;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 15px;
+  cursor: pointer;
+}
+
+.submit-button:hover,
+.path-button:hover {
+  background-color: #218838;
+}
+
+/* Additional styles for titles */
+.path-buttons p {
+  font-size: 16px;
+  font-weight: bold;
+  margin-bottom: 5px;
+  width: 100%;
+}
+
+/* Contenedor principal */
+.main-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+}
+
+/* Encabezado principal */
+.main-heading {
+  margin-bottom: 20px;
+}
+
+/* Lista de usuarios */
+.user-list {
+  list-style: none;
+  padding: 0;
+}
+
+.user-item {
+  cursor: pointer;
+  padding: 10px;
+  border: 1px solid #ccc;
+  margin-bottom: 10px;
+  transition: background-color 0.3s, transform 0.3s;
+}
+
+.user-item:hover {
+  background-color: #f0f0f0;
+  transform: scale(1.05);
+}
+
+/* Editor flotante */
+.editor-container {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border: 1px solid #ccc;
+  padding: 20px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+  background-color: #b8b8b8;
+}
+
+.editor-heading {
+  margin-top: 0;
+}
+
 .back-button {
-    background-color: #ccc;
-    color: #ffffff;
-    border: none;
-    padding: 8px 15px;
-    border-radius: 4px;
-    cursor: pointer;
-    margin-bottom: 10px;
-  }
-  
-  .back-button:hover {
-    background-color: #999;
-  }
-  .sidebar_2 {
-    position: absolute;
-    background-color: #8C32FF;
-    width: 100%;
-    border-radius: 10px;
-    margin: 15px 0;
-    display: grid;
-    grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
-    align-items: center;
-    max-width: 6%!important;
-    max-height: 100%;
-    right: 4%;
-    top:0;
-    height: 90%;
-  }
-  
-  .span_1 {
-    color: black;
-    margin: 0;
-  }
-  
-  .span_side_2 {
-    color: white;
-    font-size: 2rem;
-    text-align: center;
-    text-decoration: none;
-    text-justify: inter-word;
-    align-items: center;
-  }
-  /* Admin.css */
+  background-color: #f0f0f0;
+  border: none;
+  padding: 5px 10px;
+  cursor: pointer;
+}
 
-/* Estilos para el contenido fuera del sidebar */
-.admin-content {
-    padding: 20px;
-    height: 100vh;
-    background-color: #f0f0f0;
-    display: grid;
-    justify-content: center;
-    align-items: center;
-    align-content: center;
-    justify-items: center;
-  }
-  
-  .admin-title {
-    font-size: 24px;
-    margin-bottom: 20px;
-    color: #333;
-  }
-  
-  .admin-link {
-    display: block;
-    margin-bottom: 10px;
-    text-decoration: none;
-  }
-  
-  .admin-button {
-    display: block;
-    width: 20rem;
-    padding: 10px;
-    background-color: #337ab7;
-    color: #fff;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-  }
-  
-  .admin-button:hover {
-    background-color: #286090;
-  }
+.sub-heading {
+  margin-top: 20px;
+}
 
-  
-/* Estilos generales */
-.container {
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
-    padding: 20px;
-    background-color: #f0f0f0;
-    height: 100vh;
-  }
-  
-  /* Formulario de notificación */
-  .notification-form {
-    background-color: white;
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    width: 60%;
-  }
-  
-  .notification-form label {
-    display: block;
-    margin-bottom: 5px;
-    font-weight: bold;
-  }
-  
-  .notification-form input,
-  .notification-form textarea {
-    width: 100%;
-    padding: 8px;
-    margin-bottom: 10px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-  }
-  
-  .notification-form button {
-    padding: 10px 20px;
-    background-color: #007bff;
-    color: white;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-  }
-  
-  .notification-form button:hover {
-    background-color: #0056b3;
-  }
-  /* Media query para pantallas de 950px o menos */
-  @media (max-width: 950px) {
-    .user-list {
-        grid-template-columns:1fr;
-      }
-  }
+.access-list {
+  list-style: none;
+  padding: 0;
+}
+
+.access-list li {
+  margin-bottom: 5px;
+}
+
+.add-course-form {
+  margin-top: 20px;
+}
+
+.form-label {
+  display: block;
+  margin-bottom: 5px;
+}
+
+.form-input {
+  padding: 5px;
+  width: 100%;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+}
+
+.form-button {
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  padding: 5px 10px;
+  cursor: pointer;
+}
+
+.form-button:hover {
+  background-color: #0056b3;
+}
+
+.list {
+  list-style: none;
+  padding: 10px;
+  border: 1px solid #ccc;
+  margin-bottom: 10px;
+}
+
+.course-card {
+  background-color: #f0f0f0;
+  padding: 10px;
+  border-radius: 5px;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.course-title {
+  font-size: 16px;
+  margin: 0;
+}
+
+.course-id {
+  font-size: 12px;
+  margin: 5px 0 0;
+  color: #555;
+}

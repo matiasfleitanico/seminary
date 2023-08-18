@@ -1,299 +1,203 @@
-import { useState } from "react";
-import { useRef } from "react";
-import { useAuth } from "../context/authContext";
-import { useNavigate } from "react-router-dom";
-import { usuario } from "../Users";
-import React from "react";
-import { AiFillHome, AiOutlineSearch, AiFillSetting, AiFillBook } from "react-icons/ai";
-import { RiAccountCircleFill } from "react-icons/ri";
+import React, { useState, useEffect } from 'react';
+import { useAuth } from '../context/authContext';
+import { useNavigate } from 'react-router-dom';
+import { getDownloadUrlForFile, uploadFile } from '../firebase'; // Asegúrate de importar correctamente esta función
+import './FilesCss/account.css'; // Importa tu archivo CSS
 
-export default function Identidad() {
-    const { logout, loading, user } = useAuth();
-    const HandleLogout = async () => {
-        await logout();
-        navigate("/login");
-      };
-  const windowSize = useRef([window.innerWidth, window.innerHeight]);
+export default function ProfilePage() {
+  const { logout, user } = useAuth();
   const navigate = useNavigate();
-  var user_id;
-  var main = {};
-  var sidebar_2 = {};
-  var span_1 = {};
-  var span_side_2 = {};
-  var sidebar = {};
-  var button_selected = {};
-  var button = {};
-  console.log(user);
-  if (windowSize.current[0] < 900) {
-    main = {
-      display: "grid",
-      gridTemplateRows: "auto auto",
-      padding: "10px",
-    };
-    sidebar_2 = {
-      backgroundColor: "#8C32FF",
-      width: "100%",
-      margin: "15px 0",
-      display: "grid",
-      gridTemplateColumns: "1fr 1fr 1fr 1fr",
-      alignItems: "center",
-      position: "fixed",
-      bottom: "-15px",
-      left: "0",
-      height: "4%",
-    };
-    span_1 = {
-      color: "black",
-      margin: "0",
-      fontSize: "small",
-    };
-    span_side_2 = {
-      color: "white",
-      fontSize: "1rem",
-      textAlign: "center",
-      textDecoration: "none",
-      textJustify: "inter-word",
-      alignItems: "center",
-    };
-    sidebar = {
-      display: "grid",
-      alignItems: "center",
-      justifyItems: "center",
-      gridTemplateColumns: "1fr",
-      gridGap: "15px",
-      width: "100%",
-      height: "auto",
-      margin: "15px",
-      justifySelf: "center",
-      alignSelf: "start",
-      borderRadius: "10px",
-    };
-    button_selected = {
-      display: "grid",
-      alignItems: "center",
-      justifyItems: "center",
-      gridTemplateColumns: "1fr",
-      gridGap: "30px",
-      backgroundColor: "#333333",
-      width: "100%",
-      height: "45px",
-      justifySelf: "center",
-      alignSelf: "center",
-      borderRadius: "10px",
-      boxShadow: "rgba(0, 0, 0, 0.35) 0px 5px 15px",
-    };
-    button = {
-      display: "grid",
-      alignItems: "center",
-      justifyItems: "center",
-      gridTemplateColumns: "1fr",
-      gridGap: "30px",
-      backgroundColor: "grey",
-      width: "100px",
-      height: "45px",
-      justifySelf: "center",
-      alignSelf: "center",
-      borderRadius: "10px",
-      boxShadow: "rgba(0, 0, 0, 0.35) 0px 5px 15px",
-      color: "white"
-    };
-  } else {
-    main = {
-      display: "grid",
-      gridTemplateColumns: "auto 7%",
-      padding: "10px",
-      gridGap: "1%",
-    };
-    sidebar_2 = {
-      backgroundColor: "#8C32FF",
-      width: "100%",
-      borderRadius: "10px",
-      margin: "15px 0",
-      display: "grid",
-      gridTemplateRows: "1fr 1fr 1fr 1fr",
-      alignItems: "center",
-      height: "800px",
-    };
-    span_1 = {
-      color: "black",
-      margin: "0",
-    };
-    span_side_2 = {
-      color: "white",
-      fontSize: "2rem",
-      textAlign: "center",
-      textDecoration: "none",
-      textJustify: "inter-word",
-      alignItems: "center",
-    };
-    sidebar = {
-      display: "grid",
-      alignItems: "center",
-      justifyItems: "center",
-      gridTemplateColumns: "1fr",
-      gridGap: "15px",
-      width: "100%",
-      height: "auto",
-      margin: "15px",
-      justifySelf: "center",
-      alignSelf: "start",
-      borderRadius: "10px",
-    };
-    button_selected = {
-      display: "grid",
-      alignItems: "center",
-      justifyItems: "center",
-      gridTemplateColumns: "1fr",
-      gridGap: "30px",
-      backgroundColor: "#333333",
-      width: "100%",
-      height: "100px",
-      justifySelf: "center",
-      alignSelf: "center",
-      borderRadius: "10px",
-      boxShadow: "rgba(0, 0, 0, 0.35) 0px 5px 15px",
-    };
-    button = {
-      display: "grid",
-      alignItems: "center",
-      justifyItems: "center",
-      gridTemplateColumns: "1fr",
-      gridGap: "30px",
-      backgroundColor: "grey",
-      width: "300px",
-      height: "100px",
-      justifySelf: "center",
-      alignSelf: "center",
-      borderRadius: "10px",
-      boxShadow: "rgba(0, 0, 0, 0.35) 0px 5px 15px",
-      color: "white"
-    };
-  }
+  const [profileData, setProfileData] = useState(null);
+  const [profileImageUrl, setProfileImageUrl] = useState(null);
+  const [isEditing, setIsEditing] = useState(false);
+  const [editedProfileData, setEditedProfileData] = useState({});
+  const [previewImageUrl, setPreviewImageUrl] = useState(null);
 
-  const customStyle = {
-    display: "grid",
-    alignItems: "center",
-    justifyItems: "center",
-    gridTemplateColumns: "1fr",
-    padding: "15px",
-    gridGap: "30px",
-    backgroundColor: "white",
-    width: "auto",
-    height: "100%",
-    margin: "15px",
-    justifySelf: "center",
-    alignSelf: "center",
-    borderRadius: "10px",
-    boxShadow: "rgba(0, 0, 0, 0.35) 0px 5px 15px",
-  };
-
-  const customStyle_1 = {
-    display: "grid",
-    alignItems: "center",
-    justifyItems: "center",
-    gridTemplateColumns: "1fr",
-    padding: "15px",
-    gridGap: "30px",
-    backgroundColor: "white",
-    width: "100%",
-    height: "auto",
-    margin: "15px 0",
-    justifySelf: "center",
-    alignSelf: "center",
-    borderRadius: "10px",
-    boxShadow: "rgba(0, 0, 0, 0.35) 0px 5px 15px",
-  };
-
-  for (let i = 0; i < usuario.alumnos.length; i++) {
-    if (user.email) {
-      if (user.email === usuario.alumnos[i].email) {
-        user_id = i;
-        connectSubject(user_id);
-        console.log("You have access requested");
-        break;
-      } else if (i === usuario.alumnos.length - 1) {
-        setTimeout(() => {
-          navigate("/");
-        }, 300);
-        console.log("You don't have access requested");
+  useEffect(() => {
+    // Obtener los datos del perfil desde la API
+    async function fetchProfileData() {
+      try {
+        const response = await fetch(`https://tecno-museo-default-rtdb.firebaseio.com/seminary/back-data/${user.uid}.json?auth=${user.accessToken}`);
+        const data = await response.json();
+        setProfileData(data);
+      } catch (error) {
+        console.error('Error fetching profile data:', error);
       }
     }
-  }
-  var img = {
-    borderRadius: "8px",
-    width: "100%",
-  };
-  var img_1 = {
-    borderRadius: "8px",
-    width: "100%",
-    maxHeight: "300px",
-    objectFit: "cover",
-  };
-  var box = {
-    backgroundColor: "#EAE8E8",
-    borderRadius: "12px",
-    boxShadow: "0px 4px 4px rgba(0, 0, 0, 0.25)",
-    padding: "10px",
-    width: "80%",
-    display: "grid",
-    margin: "10px",
-    textDecoration: "none",
-    color: "black",
-  };
-  var content = {
-    display: "grid",
-    gridTemplateColumns: "1fr 1fr",
-    alignItems: "center",
-    justifyItems: "center",
-  };
-  var center = {
-    alignItems: "center",
-    justifyItems: "center",
-    textAlign: "center",
-  };
 
-  var span = {
-    color: "white",
-    margin: "0",
-  };
-  var span_1 = {
-    color: "black",
-    margin: "0",
-  };
-  var box = {
-    textDecoration: "none",
-    width: "100%",
-  };
-  var img = {
-    textDecoration: "none",
-    width: "70%",
-    padding: "0 15%",
-  };
+    fetchProfileData();
+  }, [user.uid, user.accessToken]);
 
-  function connectSubject(a) {
-    let hasSubject = true;
-    for (let i = 0; i <= usuario.alumnos.length; i++) {
-      console.log("You are?");
-      if (usuario.alumnos[a].access[i] === 0) {
-        hasSubject = true;
-        break;
-      } else if (i === usuario.alumnos.length) {
-        hasSubject = false;
-        navigate("/");
+  useEffect(() => {
+    // Obtener los datos del perfil desde la API
+    async function fetchProfileData() {
+      try {
+        const response = await fetch(`https://tecno-museo-default-rtdb.firebaseio.com/seminary/back-data/${user.uid}.json?auth=${user.accessToken}`);
+        const data = await response.json();
+        setProfileData(data);
+        setEditedProfileData(data); // Inicializar los datos editados con los datos actuales
+      } catch (error) {
+        console.error('Error fetching profile data:', error);
       }
     }
+
+    fetchProfileData();
+  }, [user.uid, user.accessToken]);
+
+  useEffect(() => {
+    // Obtener la URL de descarga de la imagen de perfil desde el almacenamiento
+    async function fetchProfileImageUrl() {
+      if (profileData && profileData.profile && typeof profileData.profile === 'string') {
+        const imageUrl = await getDownloadUrlForFile(profileData.profile);
+        setProfileImageUrl(imageUrl);
+      } else {
+        const imageUrl = await getDownloadUrlForFile('/profile/generic.jpg');
+        setProfileImageUrl(imageUrl);
+      }
+    }
+
+    fetchProfileImageUrl();
+  }, [profileData]);
+
+  const handleLogout = async () => {
+    await logout();
+    navigate('/login');
+  };
+
+  if (!profileData || profileImageUrl === null) {
+    return <div className='loading'>Cargando perfil...</div>;
   }
+
+  const handleEdit = () => {
+    setIsEditing(true);
+    console.log(isEditing)
+  };
+
+  const handleSave = async () => {
+    try {
+      // Hacer una solicitud para guardar los datos editados en la base de datos
+      const response = await fetch(`https://tecno-museo-default-rtdb.firebaseio.com/seminary/back-data/${user.uid}.json?auth=${user.accessToken}`, {
+        method: 'PATCH', // Puedes usar PATCH para actualizar solo los campos modificados
+        body: JSON.stringify(editedProfileData),
+      });
+
+      if (response.ok) {
+        setProfileData(editedProfileData); // Actualizar los datos principales con los datos editados
+        setIsEditing(false);
+      } else {
+        console.error('Error saving profile data:', response.statusText);
+      }
+    } catch (error) {
+      console.error('Error saving profile data:', error);
+    }
+  };
+
+  const handleFieldChange = (field, value) => {
+    setEditedProfileData(prevData => ({
+      ...prevData,
+      [field]: value,
+    }));
+  };
+
+  const handleFileChange = async (e) => {
+    e.preventDefault();
+    const file = e.target.files[0];
+    setEditedProfileData((prevData) => ({
+      ...prevData,
+      profile: `/profile/${user.uid}`,
+    }));
+    const reader = new FileReader();
+
+    reader.onload = (event) => {
+      setPreviewImageUrl(event.target.result);
+    };
+
+    if (file) {
+      reader.readAsDataURL(file);
+    } else {
+      setPreviewImageUrl(null);
+    }
+    try {
+      const downloadUrl = await uploadFile(file, `/profile/${user.uid}`);
+      console.log('se envia');
+      setProfileImageUrl(downloadUrl);
+    } catch (error) {
+      console.error('Error uploading file:', error);
+      // Manejar el error de carga aquí, por ejemplo, mostrar un mensaje al usuario
+    }
+  };
+
   return (
-    <div style={main}>
-      <div style={customStyle_1}>
-        <h3>Mi cuenta</h3>
-        <h4>Mi email: {user.email} </h4>
-        <button style={button} onClick={HandleLogout}>
-          Cerrar Sesión
-        </button>
-
-        <a href="/admin">PANEL DE ADMINISTRADOR</a>
+    <div className='profile-page'>
+      <div className='profile-container'>
+        <h3 className='centered-text'>Mi cuenta</h3>
+        <div className='profile-info'>
+          <div className='profile-image-container centered'>
+            <img src={profileImageUrl} alt='Profile' className='profile-image' />
+            {isEditing ? (
+              <div className='file-input-container'>
+                <input type='file' onChange={handleFileChange} accept='image/*' />
+                {previewImageUrl && (
+                  <img src={previewImageUrl} alt='Preview' className='preview-image' />
+                )}
+              </div>
+            ) : null}
+          </div>
+          <div className='user-details'>
+            <h4 className='email'>{profileData.email}</h4>
+            <p className='full-name'>
+              {isEditing ? (
+                <input
+                  type='text'
+                  value={editedProfileData.full_name}
+                  onChange={e => handleFieldChange('full_name', e.target.value)}
+                />
+              ) : (
+                profileData.full_name
+              )}
+            </p>
+            <p className='birth-date'>
+              {isEditing ? (
+                <input
+                  type='text'
+                  value={editedProfileData['birth-date']}
+                  onChange={e => handleFieldChange('birth-date', e.target.value)}
+                />
+              ) : (
+                profileData['birth-date']
+              )}
+            </p>
+            <p className='user'>
+              <span className='at-symbol'>@</span>
+              {profileData['user']}
+            </p>
+            {isEditing ? (
+              <div className='button-container'>
+                <button className='save-button' onClick={handleSave}>
+                  Guardar
+                </button>
+                <button className='cancel-button' onClick={() => setIsEditing(false)}>
+                  Cancelar
+                </button>
+              </div>
+            ) : (
+              <div className='button-container'>
+                <button className='edit-button' onClick={handleEdit}>
+                  Editar
+                </button>
+                {profileData.admin && (
+                  <a href='/admin' className='admin-button'>
+                    PANEL DE ADMINISTRADOR
+                  </a>
+                )}
+              </div>
+            )}
+            <button className='logout-button' onClick={handleLogout}>
+              Cerrar Sesión
+            </button>
+          </div>
+        </div>
       </div>
-      </div>
+    </div>
   );
 }

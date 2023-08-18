@@ -4,8 +4,9 @@ import Menu from '../MenuSubject';
 import VideoPlayer from "../VideoPlayer";
 import { getDownloadUrlForFile } from "../../firebase";
 import { useAuth } from '../../context/authContext';
+import PropTypes from 'prop-types';
 
-function App() {
+function App({ pathname }) {
   const { logout, user } = useAuth();
   const [selectedSubtitle, setSelectedSubtitle] = useState(null);
   const [selectedOption, setSelectedOption] = useState(null);
@@ -22,7 +23,7 @@ function App() {
     // Realizar la solicitud GET aquí
     async function fetchSubjects() {
       try {
-        const response = await fetch('https://tecno-museo-default-rtdb.firebaseio.com/seminary/subjects/identidad.json');
+        const response = await fetch(`https://tecno-museo-default-rtdb.firebaseio.com/seminary/subjects/${pathname}.json`);
         const data = await response.json();
         handleAdventureClick(data[0]["subtitles"][0]); // Establecer el primer objeto como seleccionado
         setSubjects(data);
@@ -43,7 +44,7 @@ function App() {
     }
 
     fetchSubjects();
-  }, []);
+  }, [pathname]);
 
 
   const handleNextSubtitleClick = () => {
@@ -181,54 +182,8 @@ function App() {
   );
 }
 
-export default App;
+App.propTypes = {
+    pathname: PropTypes.string.isRequired, // Definir propType para 'pathname'
+  };
 
-/*const subjects2 = [
-  {
-    title: 'Aventura 1',
-    subtitles: [
-      {
-        title: 'Comenzando la aventura',
-        type: 'class-video',
-        description: 'Esta es una introducción a la aventura.',
-        videoPath: 'videos/identidad/Identidad y genética del AVIVAMIENTO - Materia # 1 - Certificado en Ministerio - Lic. Mario Fleita (1).mp4',
-        coverImage: 'covers/identidad/photo1675362372.jpeg',
-        onClick: () => handleAdventureClick('Comenzando la aventura'),
-      },
-      {
-        title: 'Continuando la aventura',
-        type: 'module',
-        description: 'Este es un módulo para aprender más.',
-        pdfPath: 'modules/identity/file',
-        coverImage: 'ruta/de/imagen2.jpg',
-        onClick: () => handleAdventureClick('Continuando la aventura'),
-      },
-    ],
-    onClick: () => handleAdventureClick('Aventura 1'),
-  },
-  {
-    title: 'Aventura 2',
-    subtitles: [
-      {
-        title: 'Lección 1',
-        type: 'video',
-        description: 'Una lección en video sobre un tema interesante.',
-        videoPath: 'videos/identidad/Identidad y genética del AVIVAMIENTO - Materia # 1 - Certificado en Ministerio - Lic. Mario Fleita (1).mp4',
-        coverImage: 'ruta/de/imagen3.jpg',
-        onClick: () => handleAdventureClick('Lección 1'),
-      },
-      {
-        title: 'Lección 2',
-        type: 'quizz',
-        description: 'Un cuestionario para poner a prueba tus conocimientos.',
-        quizOptions: [
-          { option: 'Opción 1', isCorrect: true },
-          { option: 'Opción 2', isCorrect: false },
-          { option: 'Opción 3', isCorrect: false },
-        ],
-        onClick: () => handleAdventureClick('Lección 2'),
-      },
-    ],
-    onClick: () => handleAdventureClick('Aventura 2'),
-  },
-]; */
+export default App;

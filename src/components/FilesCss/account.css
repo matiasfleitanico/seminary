@@ -1,0 +1,136 @@
+/* Estilos generales de centrado */
+.centered-text {
+    text-align: center;
+  }
+  
+  .centered {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+  
+  /* Estilos para la página de perfil */
+  .profile-page {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+  }
+  
+  .profile-container {
+    background-color: #f5f5f5;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    width: 80%;
+    max-width: 600px;
+  }
+  
+  .profile-info {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+  
+  .profile-image-container {
+    text-align: center;
+  }
+  
+  .profile-image {
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 50%;
+  }
+  
+  .file-input-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+  }
+  
+  .preview-image {
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 50%;
+    margin-top: -15rem;
+    filter: brightness(70%); /* Aplicar un filtro de brillo del 70% */
+    transition: filter 0.3s ease; /* Agregar una transición suave */
+  }
+  
+  .preview-image:hover {
+    filter: brightness(100%); /* Aumentar el brillo al 100% en el hover */
+  }
+  
+  .email {
+    font-size: 18px;
+    font-weight: bold;
+  }
+  
+  .full-name,
+  .birth-date,
+  .user {
+    font-size: 16px;
+  }
+  
+  .at-symbol {
+    font-size: 18px;
+    margin-right: 5px;
+  }
+  
+  .button-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .save-button,
+  .cancel-button,
+  .edit-button,
+  .logout-button,
+  .admin-button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background-color 0.3s, color 0.3s;
+  }
+  
+  .save-button {
+    background-color: #4caf50;
+    color: white;
+  }
+  
+  .cancel-button {
+    background-color: #f44336;
+    color: white;
+  }
+  
+  .edit-button {
+    background-color: #2196f3;
+    color: white;
+  }
+  
+  .logout-button {
+    background-color: #555555;
+    color: white;
+  }
+  
+  .admin-button {
+    background-color: #ff9800;
+    color: white;
+    text-decoration: none;
+  }
+  
+  .loading {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    font-size: 24px;
+    font-weight: bold;
+  }

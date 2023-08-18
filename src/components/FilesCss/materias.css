@@ -1,0 +1,52 @@
+.whitebox {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    padding: 10px;
+    width: 100%;
+    background-color: white;
+    border-radius: 10px;
+    margin: 40px 0;
+  }
+  
+  .bigbox {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    padding: 10px;
+    width: 100%;
+  }
+  
+  .courses-list {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .course-box {
+    display: block;
+    text-align: center;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    margin: 10px;
+    transition: transform 0.2s, box-shadow 0.2s;
+  }
+  
+  .course-box:hover {
+    transform: scale(1.05);
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .course-img {
+    width: 100%;
+    border-radius: 8px;
+  }
+  
+  .course-title {
+    margin: 10px 0;
+  }
+  
+  .course-description {
+    color: #666;
+  }
+  a {
+    text-decoration: none;
+  }
