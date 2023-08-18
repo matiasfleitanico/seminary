@@ -1,9 +1,9 @@
-import React, { useState } from 'react';
-import "../FilesCss/subject copy.css";
+import React, { useState, useEffect } from 'react';
+import "../FilesCss/subject-copy.css";
 
 
 const Adventures = () => {
-  const [currentAdventureIndex, setCurrentAdventureIndex] = useState(0);
+  const [currentAdventureIndex, setCurrentAdventureIndex] = useState(1  );
   const [currentSubtitleIndex, setCurrentSubtitleIndex] = useState(0);
   const [subjectName, setSubjectName] = useState('');
   const [adventures, setAdventures] = useState([
@@ -136,7 +136,7 @@ const Adventures = () => {
   const handleDeleteAdventure = (index) => {
     const updatedAdventures = [...adventures];
     updatedAdventures.splice(index, 1);
-  
+    console.log(currentSubtitle)
     if (currentAdventureIndex === index) {
       setCurrentAdventureIndex(0);
       setCurrentSubtitleIndex(0);
@@ -168,6 +168,7 @@ const Adventures = () => {
       updatedSubtitle.coverImage = '';
       updatedSubtitle.type = 'module';
       updatedSubtitle.description = 'Modulo Pdf';
+      updatedSubtitle.complement = 'url para lectura complementaria';
     } else if (newType === 'quizz') {
       updatedSubtitle.pdfPath = '';
       updatedSubtitle.videoPath = '';
@@ -179,7 +180,14 @@ const Adventures = () => {
         { option: "Opción 2", isCorrect: false },
         { option: "Opción 3", isCorrect: false }
       ]
-
+    } else if (newType === 'form') {
+      updatedSubtitle.pdfPath = '';
+      updatedSubtitle.videoPath = '';
+      updatedSubtitle.coverImage = '';
+      updatedSubtitle.type = 'form';
+      updatedSubtitle.description = 'Este es un examen/tarea';
+      updatedSubtitle.quizOptions = '';
+      updatedSubtitle.formLink = 'aqui va el link de google embebed';
     }
     
     updatedAdventures[currentAdventureIndex].subtitles[currentSubtitleIndex] = updatedSubtitle;
@@ -204,8 +212,49 @@ const Adventures = () => {
     updatedAdventures[currentAdventureIndex].subtitles[currentSubtitleIndex] = updatedSubtitle;
     setAdventures(updatedAdventures);
   };
+
+  const [subjects, setSubjects] = useState({});
+  const [selectedSubject, setSelectedSubject] = useState(null);
+
+  useEffect(() => {
+    fetch('https://tecno-museo-default-rtdb.firebaseio.com/seminary/subjects.json')
+      .then(response => response.json())
+      .then(data => {
+        setSubjects(data);
+      })
+      .catch(error => {
+        console.error('Error fetching subjects:', error);
+      });
+  }, []);
+
+  const handleSelectSubject = (subjectKey) => {
+    const selected = subjects[subjectKey];
+    setSelectedSubject(selected);
+    console.log('Subject seleccionado:', selected);
+    setSubjectName(subjectKey);
+    setAdventures(selected)
+  };
+
   return (
     <div className="adventures-container">
+      <div>
+        <h2>Selecciona un tema:</h2>
+        <div>
+          {Object.keys(subjects).map((subjectKey) => (
+            <button
+              key={subjectKey}
+              onClick={() => handleSelectSubject(subjectKey)}
+            >
+              {subjectKey}
+            </button>
+          ))}
+        </div>
+        {selectedSubject && (
+          <div>
+            <h3>Materia seleccionada:</h3>
+          </div>
+        )}
+      </div>
       <input
         type="text"
         placeholder="Nombre de la materia"
@@ -217,33 +266,34 @@ const Adventures = () => {
       <div className="page-buttons">
         {adventures.map((adventure, index) => (
           <div key={index} className={`page-button ${index === currentAdventureIndex ? 'active' : ''}`}>
-            <div onClick={() => setCurrentAdventureIndex(index)}>
+            <div className='button-title' onClick={() => {setCurrentAdventureIndex(index); setCurrentSubtitleIndex(0)}}>
               {adventure.title}
             </div>
-            <button onClick={() => handleDeleteAdventure(index)}>Eliminar</button>
+            <button className='button'  onClick={() => handleDeleteAdventure(index)}>Eliminar</button>
           </div>
         ))}
-        <button onClick={handleAddAdventure}>+</button>
+        <button  className='button' onClick={handleAddAdventure}>+</button>
       </div>
         
         {/* Menú de Subtítulos */}
       <div className="subtitles-menu">
         {currentAdventure.subtitles.map((subtitle, index) => (
           <div key={index} className={`subtitle-item ${index === currentSubtitleIndex ? 'active' : ''}`}>
-            <div onClick={() => setCurrentSubtitleIndex(index)}>
+            <div className='button-title' onClick={() => setCurrentSubtitleIndex(index)}>
               {subtitle.title}
             </div>
-            <button onClick={() => handleDeleteSubtitle(index)}>Eliminar</button>
+            <button className='button'  onClick={() => handleDeleteSubtitle(index)}>Eliminar</button>
           </div>
         ))}
-        <button onClick={handleAddSubtitle}>+</button>
+        <button className='button'  onClick={handleAddSubtitle}>+</button>
       </div>
 
       <div className="content-container">
-      <button onClick={() => handleSubtitleTypeChange('class-video')}>Cambiar a Introducción</button>
-      <button onClick={() => handleSubtitleTypeChange('video')}>Cambiar a Video</button>
-      <button onClick={() => handleSubtitleTypeChange('quizz')}>Cambiar a Quiz</button>
-      <button onClick={() => handleSubtitleTypeChange('module')}>Cambiar a Modulo</button>
+      <button className='button' onClick={() => handleSubtitleTypeChange('class-video')}>Cambiar a Introducción</button>
+      <button className='button' onClick={() => handleSubtitleTypeChange('video')}>Cambiar a Video</button>
+      <button className='button' onClick={() => handleSubtitleTypeChange('quizz')}>Cambiar a Quiz</button>
+      <button className='button' onClick={() => handleSubtitleTypeChange('module')}>Cambiar a Modulo</button>
+      <button className='button' onClick={() => handleSubtitleTypeChange('form')}>Cambiar a Form</button>
       <h3>Tipo de subtitulo: {currentSubtitle.type.length ? currentSubtitle.type : ""}</h3>
       {currentSubtitle.type === 'class-video' && (
           <div className="module">
@@ -284,6 +334,7 @@ const Adventures = () => {
           </div>
         )}
         {currentSubtitle.type === 'module' &&(
+           <div className="module">
           <div className="module">
             <h1>Modulo</h1>
             <div className="module-link">
@@ -294,6 +345,30 @@ const Adventures = () => {
               />
             </div>
           </div>
+          <div className="module">
+                    <h1>Lectura complementaria:</h1>
+                    <div className="module-link">
+                      <input
+                        type="text"
+                        value={currentAdventure.subtitles[currentSubtitleIndex].complement}
+                        onChange={(e) => handleSubtitleChange(currentAdventureIndex, currentSubtitleIndex, 'complement', e.target.value)}
+                      />
+                    </div>
+                    </div>
+                    </div>
+        )}
+        {currentSubtitle.type === 'form' &&(
+          <div className="module">
+            <h1>Link de formulario:</h1>
+            <div className="module-link">
+              <input
+                type="text"
+                value={currentAdventure.subtitles[currentSubtitleIndex].formLink}
+                onChange={(e) => handleSubtitleChange(currentAdventureIndex, currentSubtitleIndex, 'formLink', e.target.value)}
+              />
+            </div>
+          </div>
+
         )}
         {currentSubtitle.type === 'quizz' && (
           <div className="quizz">
@@ -313,15 +388,15 @@ const Adventures = () => {
                 onChange={(e) => handleQuizOptionChange(currentAdventureIndex, currentSubtitleIndex, index, 'isCorrect', e.target.checked)}
               />
             </label>
-            <button onClick={() => handleDeleteQuizOption(index)}>Eliminar</button>
+            <button className='button' v onClick={() => handleDeleteQuizOption(index)}>Eliminar</button>
           </div>
             )): ""}
-            <button onClick={handleAddQuizOption}>Agregar Opción</button>
+            <button className='button'  onClick={handleAddQuizOption}>Agregar Opción</button>
           </div>
         )}
         </div>
       </div>
-      <button onClick={handleSendData}>Enviar</button>
+      <button className='button'  onClick={handleSendData}>Enviar</button>
     </div>
   );
 }

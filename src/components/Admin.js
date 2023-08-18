@@ -10,7 +10,7 @@ export default function Sidebar() {
         <button className='admin-button'>Lista de usuarios</button>
       </a>
       <a className='admin-link' href='/admin/subject'>
-        <button className='admin-button'>Crear Materia</button>
+        <button className='admin-button'>Crear/Editar Materia</button>
       </a>
       <a className='admin-link' href='/admin/notifications'>
         <button className='admin-button'>Manejar notificaciones</button>

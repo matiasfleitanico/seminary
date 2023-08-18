@@ -95,9 +95,6 @@ import OldTestamentFourth from "./components/OldTestament/OldTestamentFourth";
 import OldTestamentFiveth from "./components/OldTestament/OldTestamentFiveth";
 
 
-
-
-
 import Subject from "./components/subject/Subject"
 import SubjectEdit from "./components/subject/SubjectEdit"
 
@@ -117,10 +114,6 @@ function App() {
   }, []);
   return (
     <AuthProvider>
-                     <div class="maintenance-page">
-                  <div class="robot">😢</div>
-                  <div class="message">Estamos en mantenimiento, disculpen las molestias</div>
-                </div>
       <Routes>
         <Route
           path="/"

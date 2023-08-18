@@ -33,10 +33,25 @@
   border: none;
   transition: background-color 0.3s;
   border-radius: 5px;
+  border: 1px solid #ccc; 
 }
 
 .page-button.active {
-  background-color: #f0f0f0;
+  background-color: #6c56cb;
+}
+.button-title {
+  width: auto;
+  min-width: 5rem;
+  height: 3rem;
+  border-radius: 15px;
+  text-align: center;
+  padding: 7px;
+  color: #000;
+  transition: all 500ms cubic-bezier(0.075, 0.82, 0.165, 1);
+}
+.button-title:hover {
+  background-color: #272727;
+  color: #f9f9f9;
 }
 
 /* Menú de Subtítulos */
@@ -50,25 +65,37 @@
 .subtitle-item {
   padding: 5px;
   cursor: pointer;
-  background-color: transparent;
   font-size: 12px;
   transition: background-color 0.3s;
   border: none;
   border-radius: 5px;
   margin: 3px 0;
+  border-radius: 5px;
+  border: 1px solid #ccc; 
 }
 
 .subtitle-item.active {
-  background-color: #f0f0f0;
+  background-color: #6c56cb;
 }
 
 /* Contenido */
 .content-container {
   flex:9;
+  background-color: #f9f9f9;
+  border-radius: 5px;
+  margin-left: 20px;
+  width: 85%;
+}
+
+.text-center {
+  flex:9;
   padding: 20px;
   background-color: #f9f9f9;
   border-radius: 5px;
   margin-left: 20px;
+  text-align: center;
+  padding-right: 3rem;
+  width: 70%;
 }
 
 /* Estilos para los inputs y textarea */
@@ -140,7 +167,7 @@ textarea {
 }
 
 /* Estilos para los botones */
-button {
+.button {
   padding: 10px 15px;
   margin-top: 10px;
   background-color: #007bff;
@@ -149,8 +176,9 @@ button {
   border-radius: 5px;
   cursor: pointer;
   transition: background-color 0.3s;
+  width: auto;
 }
 
-button:hover {
+.button:hover {
   background-color: #0056b3;
 }

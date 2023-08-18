@@ -41,11 +41,11 @@
     padding: 5px 0;
   }
   
-  .subtitle-button {
-    background: none;
+  .subtitle-buttons {
     border: none;
     cursor: pointer;
     width: 100%;
+    background-color: transparent;
   }
   
   /* Estilos para pantalla pequeña */

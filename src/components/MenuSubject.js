@@ -110,7 +110,7 @@ class Menu extends Component {
         </div>
         {this.state.isOpen ? 
         subjects.map((item, index) => (
-          <div key={index}>{this.renderMenuItem(item, index)}</div>
+          <div className='title-buttons' key={index}>{this.renderMenuItem(item, index)}</div>
         )) : ""}
         
       </div>

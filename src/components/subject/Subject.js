@@ -122,16 +122,27 @@ function App({ pathname }) {
               height="100%"
             />
           </div>
+          {selectedSubtitle.complement && selectedSubtitle.complement !== "" && (
+            <a href={selectedSubtitle.complement} className="complementary-link">
+              <h3 className="complementary-title">Lectura complementaria</h3>
+            </a>
+          )}
         </div>
       );
     } else if (selectedSubtitle.type === 'class-video') {
       const videoUrl = await getDownloadUrlForFile(selectedSubtitle.videoPath);
       const coverImage = await getDownloadUrlForFile(selectedSubtitle.coverImage);
+      const descriptionWithLineBreaks = selectedSubtitle.description.split('\n').map((line, index) => (
+        <React.Fragment key={index}>
+          {line}
+          <br />
+        </React.Fragment>
+      ));
       setContentScreen(
       <div className="content-container">
         <img src={coverImage} alt="Cover" className="cover-image" />
         <h1>{selectedSubtitle.title}</h1>
-        <p>{selectedSubtitle.description}</p>
+        <div className="text-center">{descriptionWithLineBreaks}</div>
         {videoUrl && <VideoPlayer videoUrl={videoUrl} />}
       </div>
       );
@@ -144,10 +155,9 @@ function App({ pathname }) {
         <p>{selectedSubtitle.description}</p>
         {/* Agregar el cuestionario aquí */}
         <div className="question-container">
-          <p>Pregunta:</p>
           <ul className="options-list">
             {selectedSubtitle.quizOptions && selectedSubtitle.quizOptions.map((option, index) => (
-              <button className="quiz-option" onClick={() => setSign(option.isCorrect ? "¡Correcto!" : "Intenta nuevamente")} key={index}>
+              <button className="quiz-option" onClick={() => setSign(option.isCorrect ? "¡Correcto! Sigue así" : "Intenta nuevamente")} key={index}>
                 {option.option}
               </button>
             ))}
@@ -155,24 +165,27 @@ function App({ pathname }) {
         </div>
       </div>
       );
-    }
-    else if (selectedSubtitle.type === 'form') {
-      console.log(selectedSubtitle)
+    } else if (selectedSubtitle.type === 'form') {
       setSign("")
+      const descriptionWithLineBreaks = selectedSubtitle.description.split('\n').map((line, index) => (
+        <React.Fragment key={index}>
+          {line}
+          <br />
+        </React.Fragment>
+      ));
       setContentScreen(
       <div className="quiz-container">
         <h1>{selectedSubtitle.title}</h1>
-        <p>{selectedSubtitle.description}</p>
-        {/* Agregar el cuestionario aquí */}
+        <div className="text-center">{descriptionWithLineBreaks}</div>
         <div className="question-container">
-          <p>Pregunta:</p>
-          <ul className="options-list">
-            {selectedSubtitle.quizOptions && selectedSubtitle.quizOptions.map((option, index) => (
-              <button className="quiz-option" onClick={() => setSign(option.isCorrect ? "¡Correcto!" : "Intenta nuevamente")} key={index}>
-                {option.option}
-              </button>
-            ))}
-          </ul>
+          <iframe
+          src={selectedSubtitle.formLink}
+          width="340"
+            height="1376"
+            frameborder="0"
+            marginheight="0"
+            marginwidth="0"
+          />
         </div>
       </div>
       );
@@ -189,12 +202,12 @@ function App({ pathname }) {
       <div className="subtitle-buttons-container">
         {!(selectedAdventureIndex === 0 && selectedSubtitleIndex === 0) && (
           <button className="previous-subtitle-button" onClick={handlePreviousSubtitleClick}>
-            Anterior Subtitle
+            Anterior 
           </button>
         )}
         {!(selectedAdventureIndex === subjects.length - 1 && selectedSubtitleIndex === subjects[selectedAdventureIndex].subtitles.length - 1) && (
           <button className="next-subtitle-button" onClick={handleNextSubtitleClick}>
-            Siguiente Subtitle
+            Siguiente 
           </button>
         )}
       </div>

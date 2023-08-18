@@ -370,8 +370,8 @@ export default function Identidad() {
       <div style={customStyle}>
                 <h1>Módulos</h1>
                 <p style={center}>
-                Lee los módulos antes de continuar con la tarea. <br/>
-                Es importante que te encuentres registrado con tu Gmail para poder acceder a los módulos.<br/>
+                  Lee los módulos antes de continuar con la tarea. <br/>
+                  Es importante que te encuentres registrado con tu Gmail para poder acceder a los módulos.<br/>
                 <b>Presiona la imagen corespondiente </b>
                 </p>
                 <div style={content}>
