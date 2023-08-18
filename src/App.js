@@ -102,6 +102,7 @@ import Subject from "./components/subject/Subject"
 import SubjectEdit from "./components/subject/SubjectEdit"
 
 import { AuthProvider } from "./context/authContext";
+import "./components/FilesCss/app.css"
 
 function App() {
   const [activeIcon, setActiveIcon] = useState("book");
@@ -116,6 +117,10 @@ function App() {
   }, []);
   return (
     <AuthProvider>
+                     <div class="maintenance-page">
+                  <div class="robot">😢</div>
+                  <div class="message">Estamos en mantenimiento, disculpen las molestias</div>
+                </div>
       <Routes>
         <Route
           path="/"

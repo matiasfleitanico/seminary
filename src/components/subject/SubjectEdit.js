@@ -244,7 +244,7 @@ const Adventures = () => {
       <button onClick={() => handleSubtitleTypeChange('video')}>Cambiar a Video</button>
       <button onClick={() => handleSubtitleTypeChange('quizz')}>Cambiar a Quiz</button>
       <button onClick={() => handleSubtitleTypeChange('module')}>Cambiar a Modulo</button>
-      <h3>Tipo de subtitulo: {currentSubtitle.type}</h3>
+      <h3>Tipo de subtitulo: {currentSubtitle.type.length ? currentSubtitle.type : ""}</h3>
       {currentSubtitle.type === 'class-video' && (
           <div className="module">
             <h1>Portada:</h1>

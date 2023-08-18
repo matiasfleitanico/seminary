@@ -156,6 +156,27 @@ function App({ pathname }) {
       </div>
       );
     }
+    else if (selectedSubtitle.type === 'form') {
+      console.log(selectedSubtitle)
+      setSign("")
+      setContentScreen(
+      <div className="quiz-container">
+        <h1>{selectedSubtitle.title}</h1>
+        <p>{selectedSubtitle.description}</p>
+        {/* Agregar el cuestionario aquí */}
+        <div className="question-container">
+          <p>Pregunta:</p>
+          <ul className="options-list">
+            {selectedSubtitle.quizOptions && selectedSubtitle.quizOptions.map((option, index) => (
+              <button className="quiz-option" onClick={() => setSign(option.isCorrect ? "¡Correcto!" : "Intenta nuevamente")} key={index}>
+                {option.option}
+              </button>
+            ))}
+          </ul>
+        </div>
+      </div>
+      );
+    }
   };
 
   return (
