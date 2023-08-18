@@ -50,7 +50,7 @@ export default function Identidad() {
 
   function loopOn() {
     /* el próximo número sería el ID de la materia */
-   let ids = 9
+   let ids = 6
        for (let i = 0; i < datas.access.length; i++) {  
          if(datas.access[i] < ids){
          console.log("This is not your subject")
@@ -340,52 +340,64 @@ export default function Identidad() {
   }
   return (
     <div style={main}>
-      <div style={sidebar}>
-        <a style={box} href="/fundamentos/1">
+     <div style={sidebar}>
+     <a style={box} href="/antiguo/1">
           <div style={button_pressed}>
             <h2 style={span}>Introducción</h2>
           </div>
         </a>
-        <a style={box} href="/fundamentos/2">
+        <a style={box} href="/antiguo/2">
           <div style={button_pressed}>
             <h2 style={span_1}>Módulos</h2>
           </div>
         </a>
-        <a style={box} href="/fundamentos/3">
+        <a style={box} href="/antiguo/3">
           <div style={button_pressed}>
-            <h2 style={span_1}>Tarea 1</h2>
+            <h2 style={span_1}>Tarea</h2>
           </div>
         </a>
-        <a style={box} href="/fundamentos/4">
+        <a style={box} href="/antiguo/4">
           <div style={button_selected}>
-            <h2 style={span_1}>Video-Clase 1 - 2</h2>
+            <h2 style={span_1}>Video-Clases</h2>
           </div>
         </a>
-        <a style={box} href="/fundamentos/5">
+        <a style={box} href="/antiguo/5">
           <div style={button}>
             <h2 style={span_1}>Examen</h2>
           </div>
         </a>
       </div>
       <div style={customStyle_1}>
-        <h1>Videoclase 1/2</h1>
+        <h1>Videoclase 1/3</h1>
         <iframe
           style={iframe}
           width="1280"
           height="720"
-          src="https://www.youtube.com/embed/pMUN1Jx4Uag"
+          src="https://www.youtube.com/embed/_N4nxCvC1fs"
           title="YouTube video player"
           frameborder="0"
           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
           allowfullscreen
         ></iframe>
 
-        <h1>Videoclase 2/2</h1>
+        <h1>Videoclase 2/3</h1>
         <iframe
           style={iframe}
           width="1280"
           height="720"
-          src="https://www.youtube.com/embed/J_7JPxqix0c"
+          src="https://www.youtube.com/embed/NH-NokaQQeU"
+          title="YouTube video player"
+          frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          allowfullscreen
+        ></iframe>
+
+        <h1>Videoclase 3/3</h1>
+        <iframe
+          style={iframe}
+          width="1280"
+          height="720"
+          src="https://www.youtube.com/embed/eHBuUVsXhMw"
           title="YouTube video player"
           frameborder="0"
           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
@@ -393,6 +405,7 @@ export default function Identidad() {
         ></iframe>
       </div>
       
+    
     </div>
   );
 }

@@ -50,7 +50,7 @@ export default function Identidad() {
 
   function loopOn() {
     /* el próximo número sería el ID de la materia */
-   let ids = 9
+   let ids = 6
        for (let i = 0; i < datas.access.length; i++) {  
          if(datas.access[i] < ids){
          console.log("This is not your subject")
@@ -267,7 +267,7 @@ export default function Identidad() {
     backgroundColor: "white",
     width: "95%",
     height: "auto",
-    margin: "15px 0 200px",
+    margin: "15px 0",
     justifySelf: "center",
     alignSelf: "center",
     borderRadius: "10px",
@@ -323,10 +323,6 @@ export default function Identidad() {
     textDecoration: "none",
     width: "100%",
   };
-  var iframe = {
-    width: "100%",
-    height: "28em",
-  };
 
   function connectSubject(a) {
     for (let i = 0; i <= usuario.alumnos.length; i++) {
@@ -341,58 +337,50 @@ export default function Identidad() {
   return (
     <div style={main}>
       <div style={sidebar}>
-        <a style={box} href="/fundamentos/1">
+        <a style={box} href="/antiguo/1">
           <div style={button_pressed}>
             <h2 style={span}>Introducción</h2>
           </div>
         </a>
-        <a style={box} href="/fundamentos/2">
+        <a style={box} href="/antiguo/2">
           <div style={button_pressed}>
             <h2 style={span_1}>Módulos</h2>
           </div>
         </a>
-        <a style={box} href="/fundamentos/3">
-          <div style={button_pressed}>
-            <h2 style={span_1}>Tarea 1</h2>
-          </div>
-        </a>
-        <a style={box} href="/fundamentos/4">
+        <a style={box} href="/antiguo/3">
           <div style={button_selected}>
-            <h2 style={span_1}>Video-Clase 1 - 2</h2>
+            <h2 style={span_1}>Tarea</h2>
           </div>
         </a>
-        <a style={box} href="/fundamentos/5">
+        <a style={box} href="/antiguo/4">
+          <div style={button}>
+            <h2 style={span_1}>Video-Clases</h2>
+          </div>
+        </a>
+        <a style={box} href="/antiguo/5">
           <div style={button}>
             <h2 style={span_1}>Examen</h2>
           </div>
         </a>
       </div>
       <div style={customStyle_1}>
-        <h1>Videoclase 1/2</h1>
+        <h1>Tarea</h1>
+        <p style={center}>
+          TAREA: Luego de leer los MÓDULOS 1, 2, 3, Y 4 responder el siguiente
+          cuestionario. <br />
+          <b>IMPORTANTE: sólo se permite enviarla una sola vez.</b>{" "}
+        </p>
         <iframe
-          style={iframe}
-          width="1280"
-          height="720"
-          src="https://www.youtube.com/embed/pMUN1Jx4Uag"
-          title="YouTube video player"
-          frameborder="0"
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-          allowfullscreen
-        ></iframe>
-
-        <h1>Videoclase 2/2</h1>
-        <iframe
-          style={iframe}
-          width="1280"
-          height="720"
-          src="https://www.youtube.com/embed/J_7JPxqix0c"
-          title="YouTube video player"
-          frameborder="0"
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-          allowfullscreen
-        ></iframe>
+          src="https://docs.google.com/forms/d/e/1FAIpQLSdkVak8QCCJY-CBATdi5ABcrfNVJvOCY3Wv2ottFrjmNhP2mw/viewform?embedded=true"
+          width="340"
+            height="1376"
+            frameborder="0"
+            marginheight="0"
+            marginwidth="0"
+        >
+          Cargando…
+        </iframe>
       </div>
-      
     </div>
   );
 }
