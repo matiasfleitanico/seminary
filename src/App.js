@@ -252,7 +252,7 @@ function App() {
           }
         />
         <Route
-          path="/evangeliossinopticos"
+          path="/evangelios"
           element={
             <ProtectedRoute>
               <Subject pathname={"evangeliossinopticos"} />
