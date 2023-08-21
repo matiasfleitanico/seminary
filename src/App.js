@@ -255,7 +255,7 @@ function App() {
           path="/evangeliossinopticos"
           element={
             <ProtectedRoute>
-              <Subject pathname={"evangelios"} />
+              <Subject pathname={"evangeliossinopticos"} />
             </ProtectedRoute>
           }
         />
