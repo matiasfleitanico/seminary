@@ -88,7 +88,7 @@ class Menu extends Component {
             >
               <button
                 className="subtitle-button"
-                onClick={() => this.props.onSubtitleClick(subtitle)}
+                onClick={() => {this.props.onSubtitleClick(subtitle, subIndex, index)}}
               >
                 {subtitle.title}
               </button>
@@ -132,7 +132,7 @@ Menu.propTypes = {
     })
   ).isRequired,
   onSubtitleClick: PropTypes.func.isRequired,
-  activeSubtitle: PropTypes.object, // Asegúrate de definir el propType correcto aquí
+  activeSubtitle: PropTypes.object,
 };
 
 export default Menu;

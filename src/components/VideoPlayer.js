@@ -5,7 +5,7 @@ import './FilesCss/subject.css';
 function VideoPlayer({ videoUrl }) {
   return (
     <div className="video-player">
-      <video autoPlay={true} controls>
+      <video controlsList='nodownload' autoPlay={true} controls>
         <source src={videoUrl} type="video/mp4" />
         Your browser does not support the video tag.
       </video>

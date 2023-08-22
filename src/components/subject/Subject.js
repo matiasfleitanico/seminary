@@ -96,9 +96,10 @@ function App({ pathname }) {
     }
   };
 
-  const handleAdventureClick = async (selectedSubtitle) => {
+  const handleAdventureClick = async (selectedSubtitle, indexSubtitle, indexAdventure) => {
     setSelectedSubtitle(selectedSubtitle);
-
+    if(indexSubtitle){setSelectedSubtitleIndex(indexSubtitle)};
+    if(indexAdventure){setSelectedAdventureIndex(indexAdventure)}
     if (selectedSubtitle.type === 'video') {
       const videoUrl = await getDownloadUrlForFile(selectedSubtitle.videoPath);
       setContentScreen(
@@ -194,7 +195,7 @@ function App({ pathname }) {
 
   return (
   <div className="App">
-    <Menu subjects={subjects} onSubtitleClick={handleAdventureClick} activeSubtitle={selectedSubtitle} />
+    <Menu subjects={subjects} onSubtitleClick={handleAdventureClick} activeSubtitle={selectedSubtitle}/>
     <div className="adventure-details">
       {contentScreen}
       {sign === "" ? "" : sign}
