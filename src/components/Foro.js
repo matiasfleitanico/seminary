@@ -17,6 +17,8 @@ export default function App() {
   const [showNewTopicForm, setShowNewTopicForm] = useState(false);
   const [showBackButton, setShowBackButton] = useState(false);
   const [originalCount, setOriginalCount] = useState(null); 
+  const [liked, setLiked] = useState(<div className="heart-liked"></div>);
+  let like = null;
   
   const newTopicIs = {
     title: "",
@@ -25,7 +27,7 @@ export default function App() {
     comments: [{ 
       content: "aaaa",
       date: new Date(),
-      likes: ["seminary"],
+      likes: [["seminary"]],
       user: "matifleita"
     }]
   };
@@ -119,12 +121,7 @@ export default function App() {
     setShowNewTopicForm(true);
     setCount(
       <div className="topic-form">
-        <form
-          onSubmit={(e) => {
-            sendTopic1(e);
-            setShowNewTopicForm(false);
-            setCount(originalCount);
-          }}
+        <div
         >
           <input
             type="text"
@@ -132,20 +129,23 @@ export default function App() {
             placeholder="Escribe el título del tema"
             className="input-field"
           ></input>
-          <input
+          <textarea
             type="text"
             id="content"
             placeholder="Escribe la descripción"
             className="input-field"
-          ></input>
-          <input type="submit" value="Enviar datos" className="submit-button"/>
-        </form>
+          ></textarea>
+          <div onClick={(e) => {
+            sendTopic1(e);
+            setShowNewTopicForm(false);
+          }} className="submit-button">Enviar</div>
+        </div>
       </div>
     );
   }
   
   function sendTopic1(e) {
-    e.preventDefault();
+    e.preventDefault()
     getData(
       "https://tecno-museo-default-rtdb.firebaseio.com/seminary/back-data/" +
       user.uid +
@@ -158,6 +158,7 @@ export default function App() {
 
 
   function handleLike(commentIndex, replyIndex, li) {
+    like = <div className="heart-liked"></div>;
     fetch(
       "https://tecno-museo-default-rtdb.firebaseio.com/seminary/back-data/" +
       user.uid +
@@ -167,7 +168,7 @@ export default function App() {
       .then((response) => response.json())
       .then((data) => {
         const currentUser = data["user"];
-        updateLikes(currentUser, commentIndex, replyIndex, li);
+        updateLikes(user.uid, commentIndex, replyIndex, li);
       })
       .catch((error) => {
         console.error("Error fetching username:", error);
@@ -175,10 +176,9 @@ export default function App() {
   }
   
   function updateLikes(username, commentIndex, replyIndex, like) {
-    console.log(username, commentIndex, replyIndex)
     const url =
       "https://tecno-museo-default-rtdb.firebaseio.com/seminary/forum/" +
-      (commentIndex - 1) +
+      (commentIndex -1) +
       "/comments/" +
       (replyIndex - 1) +
       "/likes.json?auth=" +
@@ -194,6 +194,7 @@ export default function App() {
       .then((response) => response.json())
       .then((data) => {
         console.log(`User ${username} liked comment ${commentIndex} - reply ${replyIndex}`);
+        navigate("/foro");
       })
       .catch((error) => {
         console.error("Error updating likes:", error);
@@ -205,29 +206,53 @@ export default function App() {
   
     let username;
     function onPressButton(a, i, q) {
-      let comments = a.comments.map((comen, i) =>
-        i < 1 ? (
-          ""
-        ) : (
-      <div className="comment">
-        <p className="comment-content">{comen.content}</p>
-        <p className="comment-user">@{comen.user}</p>
-        <p className="comment-date">{comen.date}</p>
-        <div className="comment-likes">
-          <button className={`like-button ${comen.isLiked ? 'liked' : ''}`} onClick={() => handleLike(i, q, comen?.likes.length)}>
-            ❤️
-          </button>
-          <p className={`likes-count ${comen.isLiked ? 'liked' : ''}`}>{comen?.likes.length - 1}</p>
-        </div>
-      </div>
-          )
-      );
+
+      for (let i = 0; i < a.comments.length; i++) {
+        const comentary = a.comments[i];
+        const userLiked = comentary.likes.some(like => like[0] === user.uid);
+      
+        if (userLiked) {
+          like = <div className="heart-liked"></div>;
+          break;
+        } else {
+          like = (
+            <div onClick={() => handleLike(i, q, comentary.likes.length)} className="heart"></div>
+          );
+        }
+      }
+
+      let comments = a.comments.map((comen, i) =>{
+
+      if (i >= 1) {
+        
+        return (
+          <div className="comment" key={i}>
+            <p className="comment-content">{comen.content}</p>
+            <p className="comment-user">@{comen.user}</p>
+            <p className="comment-date">{comen.date}</p>
+            <div className="comment-likes">
+              <button className={`like-button`}>
+              {like}
+              </button>
+              <p className={`likes-count ${comen.isLiked ? 'liked' : ''}`}>{comen?.likes.length - 1}</p>
+            </div>
+          </div>
+        );
+      } else {
+        return null; // No renderizar nada para el primer comentario
+      }});
+      const descriptionWithLineBreaks = a.content.split('\n').map((line, index) => (
+        <React.Fragment key={index}>
+          {line}
+          <br />
+        </React.Fragment>
+      ));
       setCount(
         <div className="topic-details">
         <div>
           <h2>{a.title}</h2>
           <p className="comment-user">@{a.user}</p>
-          <p>{a.content}</p>
+          <p><br/>{descriptionWithLineBreaks}<br/></p>
         </div>
         {comments}
         <form
@@ -263,21 +288,31 @@ export default function App() {
       ids = forumes.length;
       setTimeout(() => {
         setCount(
-          forumes.map((counter, i) => (
-            <div
-              className="forum-item"
-              onClick={() => {
-                onPressButton(counter, i, counter?.comments.length);
-              }}
-            >
-              <h2 className="forum-title">{counter.title}</h2>
-              <p className="comment-user">@{counter.user}</p>
-              <p className="forum-content">{counter.content}</p>
-              <p className="forum-responses">
-                {counter?.comments.length - 1} respuestas
-              </p>
-            </div>
-          ))
+          forumes.map((counter, i) => {
+            const descriptionWithLineBreaks = counter.content.split('\n').map((line, index) => (
+              <React.Fragment key={index}>
+                {line}
+                <br />
+              </React.Fragment>
+            ));
+        
+            return (
+              <div
+                className="forum-item"
+                onClick={() => {
+                  onPressButton(counter, i, counter?.comments.length);
+                }}
+                key={i}
+              >
+                <h2 className="forum-title">{counter.title}</h2>
+                <p className="comment-user"></p>
+                <p className="forum-content"><em/>@{counter.user}<em/><br/><br/>{descriptionWithLineBreaks}</p>
+                <p className="forum-responses">
+                  {counter?.comments.length - 1} respuestas
+                </p>
+              </div>
+            );
+          })
         );
         setShowBackButton(false); // Desactiva el botón de regreso después de cargar los datos
         setShowNewTopicForm(false); // Oculta el formulario de nuevo tema después de cargar los datos

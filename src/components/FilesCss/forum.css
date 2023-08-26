@@ -142,8 +142,12 @@
     border: 1px solid #ccc;
     padding: 10px;
     margin: 10px 0;
-    grid-template-columns: 1fr 1fr;
-    grid-template-rows: 1fr 1fr;
+    grid-template-columns: 80% 20%;
+    grid-template-rows: 80% 20%;
+  }
+  textarea {
+    min-height: 150px;
+    max-height: 300px;
   }
   
   .comment-content {
@@ -161,6 +165,8 @@
   .comment-date {
     font-size: 12px;
     color: #999;
+    display: grid;
+    align-self: end;
   }
   
   .comment-likes {
@@ -182,6 +188,8 @@
     align-items: end;
     justify-self: end;
     width: auto;
+    height: 75px;
+    padding-right: 13px;
   }
   
   .like-button.liked {
@@ -207,4 +215,65 @@
     .app-container {
         padding-right: 0;
       }
+  }
+  .heart {
+    width: 25px;
+    height: 25px;
+    position: relative;
+    margin: 50px auto;
+    transform: rotate(-22.5deg);
+  }
+
+  .heart::before,
+  .heart::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    width: 13px;
+    height: 20px;
+    border-radius: 50px 50px 0 0;
+    background: gray;
+  }
+
+  .heart::before {
+    left: 12.5px;
+    transform: rotate(-22.5deg);
+    transform-origin: 0 100%;
+  }
+
+  .heart::after {
+    left: 0;
+    transform: rotate(67.5deg);
+    transform-origin: 100% 100%;
+  }
+
+  .heart-liked {
+    width: 25px;
+    height: 25px;
+    position: relative;
+    margin: 50px auto;
+    transform: rotate(-22.5deg);
+  }
+
+  .heart-liked::before,
+  .heart-liked::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    width: 13px;
+    height: 20px;
+    border-radius: 50px 50px 0 0;
+    background: red;
+  }
+
+  .heart-liked::before {
+    left: 12.5px;
+    transform: rotate(-22.5deg);
+    transform-origin: 0 100%;
+  }
+
+  .heart-liked::after {
+    left: 0;
+    transform: rotate(67.5deg);
+    transform-origin: 100% 100%;
   }
