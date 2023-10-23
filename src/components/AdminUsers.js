@@ -220,7 +220,7 @@ export default function App() {
   <div className="editor-container">
     <h2 className="editor-heading">Editor para {"@" + selectedUser.user}</h2> 
     {selectedUser && (
-      <div>
+      <div className='access-grid'>
         <button onClick={handleCloseEditor} className="back-button">Atrás</button>
         <h3 className="sub-heading">Materias con ingreso:</h3>
         <ul className="access-list">
