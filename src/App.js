@@ -212,10 +212,10 @@ function App() {
           }
         />
         <Route
-          path="/avivamiento"
+          path="/avivamiento1"
           element={
             <ProtectedRoute>
-              <Subject pathname={"avivamiento"} />
+              <Subject pathname={"avivamiento1"} />
             </ProtectedRoute>
           }
         />
@@ -227,45 +227,75 @@ function App() {
             </ProtectedRoute>
           }
         />
-
-
         <Route
-          path="/antiguo/1"
+          path="/nuevotestamento"
           element={
             <ProtectedRoute>
-              <OldTestamentOne />
+              <Subject pathname={"nuevotestamento"} />
             </ProtectedRoute>
           }
         />
         <Route
-          path="/antiguo/2"
+          path="/hogarcristiano"
           element={
             <ProtectedRoute>
-              <OldTestamentTwo />
+              <Subject pathname={"hogarcristiano"} />
             </ProtectedRoute>
           }
         />
         <Route
-          path="/antiguo/3"
+          path="/homiletica"
           element={
             <ProtectedRoute>
-              <OldTestamentThree />
+              <Subject pathname={"homiletica"} />
             </ProtectedRoute>
           }
         />
         <Route
-          path="/antiguo/4"
+          path="/avivamiento2"
           element={
             <ProtectedRoute>
-              <OldTestamentFourth />
+              <Subject pathname={"avivamiento2"} />
             </ProtectedRoute>
           }
         />
         <Route
-          path="/antiguo/5"
+          path="/teologia"
           element={
             <ProtectedRoute>
-              <OldTestamentFiveth />
+              <Subject pathname={"teologia"} />
+            </ProtectedRoute>
+          }
+        />
+        <Route
+          path="/eticacristiana"
+          element={
+            <ProtectedRoute>
+              <Subject pathname={"eticacristiana"} />
+            </ProtectedRoute>
+          }
+        />
+        <Route
+          path="/teologiapastoral"
+          element={
+            <ProtectedRoute>
+              <Subject pathname={"teologiapastoral"} />
+            </ProtectedRoute>
+          }
+        />
+        <Route
+          path="/culturaymedios"
+          element={
+            <ProtectedRoute>
+              <Subject pathname={"culturaymedios"} />
+            </ProtectedRoute>
+          }
+        />
+        <Route
+          path="/didactica"
+          element={
+            <ProtectedRoute>
+              <Subject pathname={"didactica"} />
             </ProtectedRoute>
           }
         />
