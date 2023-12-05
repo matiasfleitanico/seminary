@@ -10,83 +10,10 @@ import Admin from "./components/Admin";
 import AdminUsers from "./components/AdminUsers";
 import AdminNotifications from "./components/AdminNotifications";
 import AdminFiles from "./components/AdminFiles";
-import Search from "./components/Search";
 import Materias from "./components/Materias"
 import Foro from "./components/Foro";
 import Sidebar from "./components/Sidebar";
 
-import IdentityOne from "./components/Identity/IdentityOne";
-import IdentityTwo from "./components/Identity/IdentityTwo";
-import IdentityThree from "./components/Identity/IdentityThree";
-import IdentityFourth from "./components/Identity/IdentityFourth";
-import IdentityFiveth from "./components/Identity/IdentityFiveth";
-
-import NewWineOne from "./components/NewWine/NewWineOne";
-import NewWineTwo from "./components/NewWine/NewWineTwo";
-import NewWineThree from "./components/NewWine/NewWineThree";
-import NewWineFourth from "./components/NewWine/NewWineFourth";
-import NewWineFiveth from "./components/NewWine/NewWineFiveth";
-import NewWineSixth from "./components/NewWine/NewWineSixth";
-
-import NewWine from "./components/NewWinBase";
-
-import HolySpiritOne from "./components/HolySpirit/HolySpiritOne";
-import HolySpiritTwo from "./components/HolySpirit/HolySpiritTwo";
-import HolySpiritThree from "./components/HolySpirit/HolySpiritThree";
-import HolySpiritFourth from "./components/HolySpirit/HolySpiritFourth";
-import HolySpiritFiveth from "./components/HolySpirit/HolySpiritFiveth";
-import HolySpiritSixth from "./components/HolySpirit/HolySpiritSixth";
-
-import SpiritWarfareOne from "./components/SpiritWarfare/SpiritWarfareOne";
-import SpiritWarfareTwo from "./components/SpiritWarfare/SpiritWarfareTwo";
-import SpiritWarfareThree from "./components/SpiritWarfare/SpiritWarfareThree";
-import SpiritWarfareFourth from "./components/SpiritWarfare/SpiritWarfareFourth";
-import SpiritWarfareFiveth from "./components/SpiritWarfare/SpiritWarfareFiveth";
-import SpiritWarfareSixth from "./components/SpiritWarfare/SpiritWarfareSixth";
-
-import HermeneuticsOne from "./components/Hermeneutics/HermeneuticsOne";
-import HermeneuticsTwo from "./components/Hermeneutics/HermeneuticsTwo";
-import HermeneuticsThree from "./components/Hermeneutics/HermeneuticsThree";
-import HermeneuticsFourth from "./components/Hermeneutics/HermeneuticsFourth";
-import HermeneuticsFiveth from "./components/Hermeneutics/HermeneuticsFiveth";
-
-import SynopticOne from "./components/Synoptic/SynopticOne";
-import SynopticTwo from "./components/Synoptic/SynopticTwo";
-import SynopticThree from "./components/Synoptic/SynopticThree";
-import SynopticFourth from "./components/Synoptic/SynopticFourth";
-import SynopticFiveth from "./components/Synoptic/SynopticFiveth";
-import SynopticSixth from "./components/Synoptic/SynopticSixth";
-import SynopticSeven from "./components/Synoptic/SynopticSeven";
-import SynopticEight from "./components/Synoptic/SynopticEight";
-
-import EschatologyOne from "./components/Eschatology/EschatologyOne";
-import EschatologyTwo from "./components/Eschatology/EschatologyTwo";
-import EschatologyThree from "./components/Eschatology/EschatologyThree";
-import EschatologyFourth from "./components/Eschatology/EschatologyFourth";
-import EschatologyFiveth from "./components/Eschatology/EschatologyFiveth";
-import EschatologySixth from "./components/Eschatology/EschatologySixth";
-import EschatologySeven from "./components/Eschatology/EschatologySeven";
-
-import OverallHealthOne from "./components/OverallHealth/OverallHealthOne";
-import OverallHealthTwo from "./components/OverallHealth/OverallHealthTwo";
-import OverallHealthThree from "./components/OverallHealth/OverallHealthThree";
-import OverallHealthFourth from "./components/OverallHealth/OverallHealthFourth";
-import OverallHealthFiveth from "./components/OverallHealth/OverallHealthFiveth";
-
-import RevivalOne from "./components/Revival/RevivalOne";
-import RevivalTwo from "./components/Revival/RevivalTwo";
-import RevivalThree from "./components/Revival/RevivalThree";
-import RevivalFourth from "./components/Revival/RevivalFourth";
-import RevivalFiveth from "./components/Revival/RevivalFiveth";
-import RevivalSixth from "./components/Revival/RevivalSixth";
-import RevivalSeven from "./components/Revival/RevivalSeven";
-import RevivalEight from "./components/Revival/RevivalEight";
-
-import FundamentsOne from "./components/Fundaments/FundamentsOne";
-import FundamentsTwo from "./components/Fundaments/FundamentsTwo";
-import FundamentsThree from "./components/Fundaments/FundamentsThree";
-import FundamentsFourth from "./components/Fundaments/FundamentsFourth";
-import FundamentsFiveth from "./components/Fundaments/FundamentsFiveth";  
 
 import OldTestamentOne from "./components/OldTestament/OldTestamentOne";
 import OldTestamentTwo from "./components/OldTestament/OldTestamentTwo";
@@ -189,7 +116,7 @@ function App() {
             </ProtectedRoute>
           }
         />
-        /*Materias */
+
         <Route
           path="/materias"
           element={
@@ -198,7 +125,7 @@ function App() {
             </ProtectedRoute>
           }
         />
-        /*Foro */
+
         <Route
           path="/foro"
           element={
@@ -208,7 +135,7 @@ function App() {
           }
         />
       
-        /*Identidad */
+
         <Route
           path="/identidad"
           element={
@@ -218,7 +145,16 @@ function App() {
           }
         />
         
-        /* Vino Nuevo */
+        
+        <Route
+          path="/antiguotestamento"
+          element={
+            <ProtectedRoute>
+              <Subject pathname={"antiguotestamento"} />
+            </ProtectedRoute>
+          }
+        />
+
         <Route
           path="/vinonuevo"
           element={
@@ -276,10 +212,10 @@ function App() {
           }
         />
         <Route
-          path="/avivamiento"
+          path="/avivamiento1"
           element={
             <ProtectedRoute>
-              <Subject pathname={"avivamiento"} />
+              <Subject pathname={"avivamiento1"} />
             </ProtectedRoute>
           }
         />
@@ -291,45 +227,75 @@ function App() {
             </ProtectedRoute>
           }
         />
-
-
         <Route
-          path="/antiguo/1"
+          path="/nuevotestamento"
           element={
             <ProtectedRoute>
-              <OldTestamentOne />
+              <Subject pathname={"nuevotestamento"} />
             </ProtectedRoute>
           }
         />
         <Route
-          path="/antiguo/2"
+          path="/hogarcristiano"
           element={
             <ProtectedRoute>
-              <OldTestamentTwo />
+              <Subject pathname={"hogarcristiano"} />
             </ProtectedRoute>
           }
         />
         <Route
-          path="/antiguo/3"
+          path="/homiletica"
           element={
             <ProtectedRoute>
-              <OldTestamentThree />
+              <Subject pathname={"homiletica"} />
             </ProtectedRoute>
           }
         />
         <Route
-          path="/antiguo/4"
+          path="/avivamiento2"
           element={
             <ProtectedRoute>
-              <OldTestamentFourth />
+              <Subject pathname={"avivamiento2"} />
             </ProtectedRoute>
           }
         />
         <Route
-          path="/antiguo/5"
+          path="/teologia"
           element={
             <ProtectedRoute>
-              <OldTestamentFiveth />
+              <Subject pathname={"teologia"} />
+            </ProtectedRoute>
+          }
+        />
+        <Route
+          path="/eticacristiana"
+          element={
+            <ProtectedRoute>
+              <Subject pathname={"eticacristiana"} />
+            </ProtectedRoute>
+          }
+        />
+        <Route
+          path="/teologiapastoral"
+          element={
+            <ProtectedRoute>
+              <Subject pathname={"teologiapastoral"} />
+            </ProtectedRoute>
+          }
+        />
+        <Route
+          path="/culturaymedios"
+          element={
+            <ProtectedRoute>
+              <Subject pathname={"culturaymedios"} />
+            </ProtectedRoute>
+          }
+        />
+        <Route
+          path="/didactica"
+          element={
+            <ProtectedRoute>
+              <Subject pathname={"didactica"} />
             </ProtectedRoute>
           }
         />

@@ -211,6 +211,8 @@
 .access-list {
   list-style: none;
   padding: 0;
+  display:grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
 }
 
 .access-list li {
@@ -269,3 +271,4 @@
   margin: 5px 0 0;
   color: #555;
 }
+

@@ -22,72 +22,141 @@ export default function App() {
     {
       id: 0,
       title: "Identidad y Genética del Avivamiento",
-      description: "El origen de nuestra identidad...",
+      description: "Despertar Esporitual y Ministerial",
       link: "covers/identidad/photo1675362372.jpeg",
       key: "identidad",
     },
     {
       id: 1,
       title: "Vino Nuevo en Odres Nuevos",
-      description: "El vino nuevo como metáfora...",
+      description: "Despertar Espiritual y doctrinal",
       link: "covers/identidad/photo1675362372.jpeg",
       key: "vinonuevo",
     },
     {
       id: 2,
       title: "La persona del Espíritu Santo",
-      description: "La doctrina de la naturaleza...",
+      description: "Teológica y doctrinal",
       link: "covers/identidad/photo1675362372.jpeg",
       key: "espiritusanto",
     },
     {
       id: 3,
       title: "La oración y la guerra espiritual",
-      description: "El campo de instrucción espiritual...",
+      description: "Doctrinal",
       link: "covers/identidad/photo1675362372.jpeg",
       key: "oracion",
     },
     {
       id: 4,
       title: "Hermenéutica y las NTICX",
-      description: "Las actitudes, principios, métodos...",
+      description: "Ministerial y personal",
       link: "covers/identidad/photo1675362372.jpeg",
       key: "hermeneutica",
     },
     {
       id: 5,
       title: "Evangelios sinópticos y cristología",
-      description: "Un recorrido desde la relación de...",
+      description: "Bíblica y Teológica",
       link: "covers/identidad/photo1675362372.jpeg",
       key: "evangelios",
     },
     {
       id: 6,
       title: "Escatología con Daniel y Apocalipsis",
-      description: "La revelación de los secretos celestiales...",
+      description: "Teológica y Bíblica",
       link: "covers/identidad/photo1675362372.jpeg",
       key: "escatologia",
     },
     {
       id: 7,
       title: "Salud física, emocional y espiritual",
-      description: "Examina los fundamentos de la salud mental...",
+      description: "Personal, doctrinal y teológico",
       link: "covers/identidad/photo1675362372.jpeg",
       key: "salud",
     },
     {
       id: 8,
       title: "Seminario de Avivamiento I",
-      description: "Consolida, amplía, profundiza, discute...",
+      description: "Despertar Espiritual, Bíblica",
       link: "covers/identidad/photo1675362372.jpeg",
-      key: "avivamiento",
+      key: "avivamiento1",
     },
     {
       id: 9,
       title: "Fundamentos de las Doctrinas Cristianas",
-      description: "Los motivos principales para responder...",
+      description: "Doctrinal y Teológico",
       link: "covers/identidad/photo1675362372.jpeg",
       key: "fundamentos",
+    },
+    {
+      id: 10,
+      title: "Perspectiva y Síntesis del Antiguo Testamento",
+      description: "Bíblica",
+      link: "covers/identidad/photo1675362372.jpeg",
+      key: "antiguotestamento",
+    },
+    {
+      id: 11,
+      title: "Perspectiva y Síntesis del Nuevo Testamento",
+      description: "´Bíblica",
+      link: "covers/identidad/photo1675362372.jpeg",
+      key: "nuevotestamento",
+    },
+    {
+      id: 12,
+      title: "Bases bíblicas para la familia y el hogar cristiano",
+      description: "Bíblica, personal y ministerial",
+      link: "covers/identidad/photo1675362372.jpeg",
+      key: "hogarcristiano",
+    },
+    {
+      id: 13,
+      title: "Comunicación oral y escrita. Homilética y locución",
+      description: "Ministerial, Personal y teológica",
+      link: "covers/identidad/photo1675362372.jpeg",
+      key: "homiletica",
+    },
+    {
+      id: 14,
+      title: "Avivamiento 2",
+      description: "Despertar Espiritual, Bíblica",
+      link: "covers/identidad/photo1675362372.jpeg",
+      key: "avivamiento2",
+    },
+    {
+      id: 15,
+      title: "Teología Bíblica y sistemática",
+      description: "Teológica y Bíblica",
+      key: "teologia",
+    },
+    {
+      id: 16,
+      title: "Ética cristiana y deontología profesional",
+      description: "Ministerial y teológica",
+      link: "covers/identidad/photo1675362372.jpeg",
+      key: "eticacristiana",
+    },
+    {
+      id: 17,
+      title: "Didáctica de la enseñanza Cristiana",
+      description: "Ministerial",
+      link: "covers/identidad/photo1675362372.jpeg",
+      key: "didactica",
+    },
+    {
+      id: 18,
+      title: "Teología Pastoral avanzada",
+      description: "Teológica, Ministerial",
+      link: "covers/identidad/photo1675362372.jpeg",
+      key: "teologiapastoral",
+    },
+    {
+      id: 19,
+      title: "La biblia, la cultura y los medios de comunicación",
+      description: "Ministerial, personal y tesis final",
+      link: "covers/identidad/photo1675362372.jpeg",
+      key: "culturaymedios",
     },
   ];
 
@@ -193,8 +262,7 @@ export default function App() {
       <ul className="user-list">
         {fetchedData &&
           Object.entries(fetchedData).map(([key, userInfo]) => {
-            const fullName = `${userInfo.full_name} (${userInfo.user})`;
-            const email = userInfo.email;
+            const fullName = `${userInfo.full_name} (${userInfo.user})`;            const email = userInfo.email;
 
             if (
               fullName.toLowerCase().includes(searchTerm.toLowerCase()) ||
