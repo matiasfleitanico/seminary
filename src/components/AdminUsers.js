@@ -221,7 +221,6 @@ export default function App() {
     <h2 className="editor-heading">Editor para {"@" + selectedUser.user}</h2> 
     {selectedUser && (
       <div>
-        <button onClick={handleCloseEditor} className="back-button">Atrás</button>
         <h3 className="sub-heading">Materias con ingreso:</h3>
         <ul className="access-list">
           {userAccessData && userAccessData.courses && (
@@ -250,7 +249,9 @@ export default function App() {
             className="form-input"
           />
           <button type="submit" className="form-button">Agregar Curso</button>
+          <div onClick={handleCloseEditor} className="back-button">Atrás</div>
         </form>
+        
       </div>
     )}
   </div>

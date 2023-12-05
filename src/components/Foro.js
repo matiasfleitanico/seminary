@@ -13,7 +13,7 @@ var ids ;
 export default function App() {
   const { logout, user } = useAuth();
   const navigate = useNavigate();
-  const [count, setCount] = useState(<h1></h1>);
+  const [count, setCount] = useState(<div className='lds-dual-ring'></div>);
   const [showNewTopicForm, setShowNewTopicForm] = useState(false);
   const [showBackButton, setShowBackButton] = useState(false);
   const [originalCount, setOriginalCount] = useState(null); 

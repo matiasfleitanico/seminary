@@ -62,7 +62,6 @@ export default function App() {
     <div className="whitebox">
       <div className="whitebox">
         <h2>Mis Cursos</h2>
-        <div className="bigbox">
           <ul className="courses-list">
             {courses.map((course) => (
               <li key={course.id}>
@@ -74,7 +73,6 @@ export default function App() {
               </li>
             ))}
           </ul>
-        </div>
       </div>
     </div>
   );
