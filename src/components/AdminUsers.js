@@ -99,7 +99,7 @@ export default function App() {
     {
       id: 11,
       title: "Perspectiva y Síntesis del Nuevo Testamento",
-      description: "´Bíblica",
+      description: "Bíblica",
       link: "covers/identidad/photo1675362372.jpeg",
       key: "nuevotestamento",
     },
