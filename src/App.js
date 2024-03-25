@@ -303,7 +303,7 @@ function App() {
 
         
       </Routes>
-      <Sidebar activeIcon={activeIcon} />
+
     </AuthProvider>
   );
 }

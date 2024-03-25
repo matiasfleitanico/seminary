@@ -20,6 +20,7 @@ const Sidebar = ({ activeIcon }) => {
       <a className={activeIcon === 'settings' ? 'span_side_2' : 'span_side_1'} href='/configuracion'>
         <AiFillSetting />
       </a>
+      
     </div>
   );
 };

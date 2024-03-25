@@ -1,4 +1,38 @@
 /* Estilos para bigbox, whitebox y blackbox */
+
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-button {
+  width: 32px;
+  height: 32px;
+}
+::-webkit-scrollbar-thumb {
+  background: #e1e1e1;
+  border: 0px none #ffffff;
+  border-radius: 50px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #ffffff;
+}
+::-webkit-scrollbar-thumb:active {
+  background: #cfcfcf;
+}
+::-webkit-scrollbar-track {
+  background: #666666;
+  border: 0px none #ffffff;
+  border-radius: 50px;
+}
+::-webkit-scrollbar-track:hover {
+  background: #666666;
+}
+::-webkit-scrollbar-track:active {
+  background: #333333;
+}
+::-webkit-scrollbar-corner {
+  background: transparent;
+}
 .bigbox {
     display: grid;
     grid-template-columns: repeat(3, 1fr)!important;
@@ -82,22 +116,192 @@
     border-radius: 10px;
     box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
   }
+
   /* Estilos para customStyle */
-  .customStyle {
+  .customStyleBack {
+    position: absolute;
     display: grid;
     align-items: center;
     justify-items: center;
     grid-template-columns: 85% 15%;
     grid-template-rows: 1fr;
-    padding: 15px;
+    padding: 0;
     width: auto;
-    height: auto;
-    margin: 15px 0;
     justify-self: center;
     align-self: center;
-    height: auto;
+    height: 100%;
+
+    background:linear-gradient(280deg, rgb(24, 24, 24, 1) 0%, rgb(31, 31, 32, 0.4) 100%), url("https://imgur.com/Sl2asOL.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;  
+  }
+  .identidad {
+    position: absolute;
+    align-items: center;
+    justify-items: center;
+    grid-template-columns: 85% 15%;
+    grid-template-rows: 1fr;
+    padding: 0;
+    width: 100%;
+    justify-self: center;
+    align-self: center;
+    height: 100%;
+    background:linear-gradient(280deg, rgb(24, 24, 24, 1) 0%, rgb(31, 31, 32, 0.4) 100%), url("https://imgur.com/Sl2asOL.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;  
+  }
+  .vinonuevo {
+    position: absolute;
+    align-items: center;
+    justify-items: center;
+    grid-template-columns: 85% 15%;
+    grid-template-rows: 1fr;
+    padding: 0;
+    width: 100%;
+    justify-self: center;
+    align-self: center;
+    height: 100%;
+    background:linear-gradient(280deg, rgb(24, 24, 24, 1) 0%, rgb(31, 31, 32, 0.4) 100%), url("https://imgur.com/gxYph1o.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;  
+  }
+  .espiritu {
+    position: absolute;
+    align-items: center;
+    justify-items: center;
+    grid-template-columns: 85% 15%;
+    grid-template-rows: 1fr;
+    padding: 0;
+    width: 100%;
+    justify-self: center;
+    align-self: center;
+    height: 100%;
+    background:linear-gradient(280deg, rgb(24, 24, 24, 1) 0%, rgb(31, 31, 32, 0.4) 100%), url("https://imgur.com/jLFfNTW.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;  
+  }
+  .guerra {
+    position: absolute;
+    align-items: center;
+    justify-items: center;
+    grid-template-columns: 85% 15%;
+    grid-template-rows: 1fr;
+    padding: 0;
+    width: 100%;
+    justify-self: center;
+    align-self: center;
+    height: 100%;
+    background:linear-gradient(280deg, rgb(24, 24, 24, 1) 0%, rgb(31, 31, 32, 0.4) 100%), url("https://imgur.com/rJX9hGy.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;  
+  }
+  .box {
+    display: grid;
+    width: 14vw;
+    height: 13vw;
+    background:linear-gradient(280deg, rgb(24, 24, 24, 0.8) 0%, rgb(31, 31, 32, 0.4) 100%), url("https://imgur.com/gxYph1o.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    color: #EAE8E8!important;
+    padding: 1.5vw!important;
+  }
+  .slide {
+    height: 100vh; /* Establece la altura al 100% del viewport */
+    max-height: 100vh; /* Establece la altura máxima al 100% del viewport */
+    overflow-y: auto; 
+    padding-left: 60%;
+  }
+  .titulo {
+    position: absolute;
+    left: 15%;
+    top: 20%;
+  }
+  .numb-cuadro {
+    color: #c8c8c8; 
+    font-family: "Lora";
+    font-size: 10vw;
+  }
+  .titlecuadro {
+    width: 60%;
+    white-space: normal;
+    word-wrap: break-word; 
+    font-family: "Poppins", sans-serif;
+    font-weight: 500;
+    font-style: normal;
+    font-size: 2.5vw;
+    color: white;
+    line-height: 1.1;
+    margin: 0;
+  }
+  .teacher{
+    font-family: "Poppins", sans-serif;
+    font-weight: 300;
+    font-style: normal;
+    color: #c8c8c8; 
+    font-size: 1.5vw;
+  }
+  .boton-reproducir {
+    width: 50px; /* Ancho del botón */
+    height: 50px; /* Altura del botón */
+    position: relative; /* Posición relativa para permitir posicionar elementos hijos de forma absoluta */
   }
   
+  .circulo {
+    width: 100%; /* Ancho del círculo igual al del contenedor */
+    height: 100%; /* Altura del círculo igual al del contenedor */
+    border-radius: 50%; /* Hace que el elemento sea un círculo */
+    background-color: white; /* Color del círculo */
+  }
+
+  .numb {
+    color: #c8c8c8; 
+    font-family: "Lora";
+    font-size: 2vw;
+    text-align: end;
+  }
+  .triangulo {
+    width: 0; /* Ancho inicial del triángulo */
+    height: 0; /* Altura inicial del triángulo */
+    border-style: solid; /* Define el estilo del borde como sólido */
+    border-width: 12.5px 0 12.5px 20px; /* Ancho del borde del triángulo (arriba, derecha, abajo, izquierda) */
+    border-color: transparent transparent transparent black; /* Color del borde (arriba, derecha, abajo, izquierda) */
+    position: absolute; /* Posición absoluta para posicionar el triángulo dentro del círculo */
+    top: 50%; /* Posiciona el triángulo en la mitad vertical del círculo */
+    left:55%; /* Posiciona el triángulo en la mitad horizontal del círculo */
+    transform: translate(-50%, -50%) rotate(0deg); /* Centra el triángulo dentro del círculo y le da una rotación inicial */
+  }
+  .boton-reproducir2 {
+    cursor: pointer;
+    width: 80px; /* Ancho del botón */
+    height: 80px; /* Altura del botón */
+    position: relative; /* Posición relativa para permitir posicionar elementos hijos de forma absoluta */
+  }
+  
+  .circulo2 {
+    width: 100%; /* Ancho del círculo igual al del contenedor */
+    height: 100%; /* Altura del círculo igual al del contenedor */
+    border-radius: 50%; /* Hace que el elemento sea un círculo */
+    background-color: white; /* Color del círculo */
+  }
+
+
+  .triangulo2 {
+    cursor: pointer;
+    width: 0; /* Ancho inicial del triángulo */
+    height: 0; /* Altura inicial del triángulo */
+    border-style: solid; /* Define el estilo del borde como sólido */
+    border-width: 20.5px 0 20.5px 28px; /* Ancho del borde del triángulo (arriba, derecha, abajo, izquierda) */
+    border-color: transparent transparent transparent black; /* Color del borde (arriba, derecha, abajo, izquierda) */
+    position: absolute; /* Posición absoluta para posicionar el triángulo dentro del círculo */
+    top: 50%; /* Posiciona el triángulo en la mitad vertical del círculo */
+    left:55%; /* Posiciona el triángulo en la mitad horizontal del círculo */
+    transform: translate(-50%, -50%) rotate(0deg); /* Centra el triángulo dentro del círculo y le da una rotación inicial */
+  }
   .title-white{
     color: #EAE8E8;
     text-align: start;
